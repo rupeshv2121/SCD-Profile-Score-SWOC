@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CareerSite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: antiquewhite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
+            overflow: hidden; /* Hide scrollbar for the falling snowflakes */
+            position: relative;
+        }
+
+        /* Snowflakes animation */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            font-size: 1em;
+            pointer-events: none;
+            user-select: none;
+            animation: fall linear;
+            z-index: 1000;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Adjust the size and speed of the snowflakes */
+        .snowflake:nth-child(1) { left: 5%; font-size: 1.5em; animation-duration: 8s; }
+        .snowflake:nth-child(2) { left: 15%; font-size: 1.2em; animation-duration: 10s; }
+        .snowflake:nth-child(3) { left: 25%; font-size: 2em; animation-duration: 12s; }
+        .snowflake:nth-child(4) { left: 35%; font-size: 1.8em; animation-duration: 9s; }
+        .snowflake:nth-child(5) { left: 45%; font-size: 1.6em; animation-duration: 11s; }
+        .snowflake:nth-child(6) { left: 55%; font-size: 1.7em; animation-duration: 13s; }
+        .snowflake:nth-child(7) { left: 65%; font-size: 1.4em; animation-duration: 14s; }
+        .snowflake:nth-child(8) { left: 75%; font-size: 1.3em; animation-duration: 10s; }
+        .snowflake:nth-child(9) { left: 85%; font-size: 1.5em; animation-duration: 12s; }
+        .snowflake:nth-child(10) { left: 95%; font-size: 2em; animation-duration: 15s; }
+
+        /* Image styling (just above the box) */
+        .login-image {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: -50px; /* Adjust this to overlap the image with the box */
+            z-index: 2;
+            position: relative;
+        }
+
+        .login-container {
+            width: 550px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px rgb(137,79,31);
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Border animation */
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: white;
+            background-size: 600% 600%;
+            border-radius: 12px;
+            z-index: -1;
+            animation: borderAnimation 3s ease infinite;
+        }
+
+  
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 40px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .input-group .icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .input-group .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #888;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #d6a52b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #d6a52b;
+        }
+
+        .register-link {
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+            color: black; /* Blue color for visibility */
+            font-size: 16px; /* Increase font size */
+            text-decoration: none; /* Remove underline */
+            line-height: 1.5; /* Adjust line height */
+            transition: color 0.3s; /* Smooth transition for color change */
+        }
+
+        .register-link:hover {
+            color: #0056b3; /* Darker blue on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Social Media Icons */
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            background: #333;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #555;
+        }
+
+        .social-icon i {
+            font-size: 20px;
+        }
+
+        /* Hover animation */
+        .login-btn:hover, .input-group input:focus {
+            box-shadow: 0 0 5px rgba(0, 150, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Add the image outside the login-container -->
+    <img src="./image.png" alt="Logo" class="login-image">
+    
+    <div class="login-container">
+        <h2><i class="fas fa-lock"></i> Ajivika Access</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <i class="fas fa-user icon"></i>
+                <input type="text" placeholder="Username" name="username" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock icon"></i>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+                <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <a href="register.html" class="register-link">Don’t have an account? Register here</a>
+        </form>
+        <div class="social-media">
+            <a href="https://www.facebook.com" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.google.com" class="social-icon" aria-label="Google"><i class="fab fa-google"></i></a>
+            <a href="https://www.linkedin.com" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Add your validation logic here
+            // For demonstration, we'll assume the login is always successful
+
+            // Redirect to index2.html after successful login
+            window.location.href = 'index2.html';
+        });
+    </script>
+</body>
+</html>

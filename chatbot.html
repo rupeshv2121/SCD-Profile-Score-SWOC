@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Recommendation Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cursive', sans-serif;
+            height: 100%;
+            background: url('https://files.123freevectors.com/wp-content/original/202641-light-color-plain-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chatbot-app {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-container {
+            width: 100%;
+            height: 100%;
+            max-width: 800px; /* Set a max-width for better readability */
+            background-color:transparent;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .chat-header {
+            background-color:transparent;
+            padding: 20px;
+            color: rgb(137, 79, 31);
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Cursive';
+        }
+
+        .chat-body {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+            background-color:transparent;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            background-color:gray;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-footer input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            background-color: #f1f1f1;
+        }
+
+        .chat-footer button {
+            background-color: rgb(137, 79, 31);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .chat-footer button:hover {
+            background-color: #3b89a1;
+            transform: scale(1.1);
+        }
+
+        /* Circular buttons on the left side */
+        .side-buttons {
+            position: absolute;
+            top: 50%;
+            left: -70px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-button {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(137, 79, 31);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .side-button:hover {
+            background-color: #3b89a1;
+            transform: scale(1.1);
+        }
+
+        /* Toggle switch container */
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: antiquewhite;
+        }
+
+        .toggle-label {
+            font-size: 18px;
+            margin: 0 10px;
+            color: rgb(137, 79, 31);
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgb(137, 79, 31);
+            border-radius: 24px;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #47CACC;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="chatbot-app">
+        <!-- Chatbot UI -->
+        <div class="chatbot-container">
+            <div class="chat-header">
+                Ajiviya's Virtual Assistant
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <!-- Chat messages go here -->
+            </div>
+
+            <!-- Toggle section for skills and target job -->
+            <div class="toggle-container">
+                <span class="toggle-label">Enter Skills</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="input-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">Target Job</span>
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" id="user-input" placeholder="Type here...">
+                <button id="send-btn"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Side buttons -->
+        <div class="side-buttons">
+            <button data-target="home" class="side-button">
+                <i class="fas fa-home"></i>
+            </button>
+            <button data-target="contact" class="side-button">
+                <i class="fas fa-comment-alt"></i>
+            </button>
+            <button data-target="info" class="side-button">
+                <i class="fa-solid fa-chart-line"></i>
+            </button>
+            <button data-target="resume" class="side-button">
+                <i class="fa-solid fa-pen-nib"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.side-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    let url;
+                    switch (this.dataset.target) {
+                        case 'home':
+                            url = 'index.html';
+                            break;
+                        case 'contact':
+                            url = 'contact.html';
+                            break;
+                        case 'info':
+                            url = ''; // Replace with correct URL
+                            break;
+                        case 'resume':
+                            url = 'resume.html';
+                            break;
+                        default:
+                            url = '#'; // Fallback URL
+                    }
+
+                    // Debugging output
+                    console.log('Redirecting to:', url);
+                    
+                    // Perform redirection
+                    window.location.href = url;
+                });
+            });
+        });
+
+        const sendButton = document.getElementById('send-btn');
+        const inputField = document.getElementById('user-input');
+        const chatBody = document.getElementById('chat-body');
+        const inputToggle = document.getElementById('input-toggle');
+
+        sendButton.addEventListener('click', () => {
+            const userInput = inputField.value.trim();
+            if (userInput === '') return;
+
+            const userMessage = document.createElement('div');
+            userMessage.style.textAlign = 'right';
+            userMessage.innerHTML = `<p><strong>You:</strong> ${userInput}</p>`;
+            chatBody.appendChild(userMessage);
+
+            const requestPayload = {
+                skills: userInput
+            };
+
+            let url = '/predict';  // Default to skills input prediction
+            if (inputToggle.checked) {
+                url = '/predict_skills';  // Change to target job prediction
+                requestPayload.job = userInput;
+            }
+
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestPayload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const botMessage = document.createElement('div');
+                botMessage.innerHTML = `<p><strong>Bot:</strong> ${data.results.join(', ')}</p>`;
+                chatBody.appendChild(botMessage);
+            })
+            .catch(error => console.error('Error:', error));
+
+            inputField.value = '';
+        });
+    </script>
+</body>
+</html>

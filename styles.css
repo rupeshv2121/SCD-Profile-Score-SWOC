@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: antiquewhite;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(43, 43, 40);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo h2 {
+    color: aliceblue;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: double;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 50px; /* Rounded edges */
+    background-color: rgb(8, 7, 6); /* Slightly darker than navbar */
+}
+
+.nav-links a i {
+    margin-right: 8px;
+    border-radius: 50%; /* Make icons round */
+    padding: 5px;
+    background-color: #E1C16E; /* Slightly transparent background for icons */
+}
+
+.nav-links a:hover {
+    color: #000;
+    background-color: #efb106; /* A bit lighter on hover */
+}
+
+/* Sections */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.home-section {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.resume-section {
+    background-color: #f47200;
+}
+
+/* Headings */
+h1, h2 {
+    margin-bottom: 20px;
+    color: rgb(202, 98, 12);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+/* Paragraph */
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: rgb(45, 43, 42);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

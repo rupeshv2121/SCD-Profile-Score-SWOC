@@ -16,6 +16,71 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
+        .section1{
+            margin-top: 50px;
+        }
+        /* Navbar Container */
+.navbar {
+  width: 100%; /* Full width of the page */
+  position: fixed; /* Navbar ko screen ke top pe fix kar de */
+  top: 0; /* Top space bilkul zero */
+  left: 0;
+  background-color: #333; /* Aap apna background color yahan set kar sakte hain */
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+/* Navbar items */
+.navbar ul {
+  list-style: none;
+  margin: 0; /* Removes any default margin */
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin: 0;
+}
+
+.navbar ul li a {
+  color: white; /* Text color */
+  text-decoration: none;
+  padding: 10px 20px; /* Adjust padding for a balanced look */
+  display: block;
+}
+
+.navbar ul li a:hover {
+  background-color: #b08c1a; /* Hover effect */
+}
+
+        .image-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Aligns the button to the left side */
+            background-color: transparent; /* Transparent background */
+            border: none;
+            border-radius: 50%;
+            padding: 0; /* No padding for image button */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+
+        .image-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
         .resume-box {
             background-color: #fff;
             padding: 20px;
@@ -23,7 +88,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: auto;
+            transition: transform 0.3s ease;
         }
+        .resume-box:hover {
+            transform: scale(1.02);
+        }
+
         h2 {
             text-align: center;
             color: #333;
@@ -129,9 +199,11 @@
         .add-icon:hover {
             color: #8b4513;
         }
+        
     </style>
 </head>
 <body>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">
@@ -156,6 +228,7 @@
     </nav>
 
     <!-- Resume Section -->
+    <div class="section1">
     <section class="section resume-section" style="background-color: white;">
         <h1>My Resume</h1>
         <p>This is where you can view and manage your resume details.</p>
@@ -235,7 +308,8 @@
             </form>
         </div>
     </section>
-
+</div>
+    
     <script>
         // Populate year options
         const yearSelect = document.getElementById('year');
@@ -409,5 +483,6 @@
 }
 
    </script>
+   
 </body>
 </html>

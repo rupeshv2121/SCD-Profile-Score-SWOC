@@ -18,6 +18,33 @@
             justify-content: center;
             align-items: center;
         }
+        .image-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Aligns the button to the left side */
+            background-color: transparent; /* Transparent background */
+            border: none;
+            border-radius: 50%;
+            padding: 0; /* No padding for image button */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+
+        .image-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
 
         .chatbot-app {
             position: relative;
@@ -295,5 +322,32 @@
             inputField.value = '';
         });
     </script>
+ <!-- Floating Image Button -->
+ <button class="image-button">
+    <img src="./image.png" alt="Image Button" class="image-icon">
+</button>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
 </body>
 </html>

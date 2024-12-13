@@ -1,1 +1,1 @@
-job-website
+In order to address the lack of an intelligent and adaptive Job Recommendation Portal, the idea to make a website-Ajivika(literal meaning : career) has been presented. This website covers all the features of a career portal ranging from resume making, getting smart Job recommendations and best suggestions for courses.

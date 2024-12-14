@@ -35,6 +35,28 @@ Models are trained periodically on the latest collected data for enhanced accura
 
 
 
-# Summary
+# 📄 Summary:
 
-The website can be deployed for a small patch of population and tested. The points of technical , financial, operational and market feasibility have been covered in the presentation. The initial cost for set-up would be required but once functional the cost can be recovered in a shorter span of time from subscription and premium features, even keeping the rates low and affordable for customers. The large amounts of data wwould be handled with strong data handling capabilities, complimenting a robust backend. The frontend will be made easy to surf for a new user. The AI/ML models would be maintained and updated timely. The social peaks of this website would be addressing smaller areas job opportunities, reducing need for commutation and hence, promoting green economy.
+The website can be deployed for a small patch of the population and tested.
+
+**✔️ Feasibility Covered:**
+
+The points of technical, financial, operational, and market feasibility have been thoroughly addressed in the presentation.
+
+**💰 Cost Effectiveness:**
+
+The initial cost for setup would be required.
+Once functional, costs can be recovered in a shorter span of time through subscriptions and premium features—keeping rates low and affordable for customers.
+
+**📊 Data Management:**
+
+Large volumes of data will be managed with strong data handling capabilities, complemented by a robust backend.
+The frontend will be user-friendly and easy to navigate for new users.
+
+**🤖 AI/ML Maintenance:**
+
+AI/ML models will be maintained and updated periodically to ensure optimal performance.
+
+**🌍 Social Impact:**
+
+The website's focus on addressing job opportunities in smaller areas reduces the need for commutation, promoting a green economy and sustainability.

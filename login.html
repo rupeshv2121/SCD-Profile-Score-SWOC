@@ -19,6 +19,24 @@
             position: relative;
         }
 
+        /* Back button styling */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 999;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #d6a52b;
+        }
+
         /* Snowflakes animation */
         .snowflake {
             position: absolute;
@@ -200,6 +218,11 @@
 </head>
 <body>
 
+
+    <!-- Back button -->
+    <button class="back-button" onclick="window.history.back();">
+        <i class="fas fa-arrow-left"></i>
+    </button>
 
     <!-- Add the image outside the login-container -->
     <img src="./image.png" alt="Logo" class="login-image">

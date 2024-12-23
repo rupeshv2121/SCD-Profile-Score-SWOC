@@ -120,6 +120,22 @@
         .bottom-icons a:hover {
             background-color: #3798a3;
         }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 999;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #d6a52b;
+        }
         .chatbot-panel {
             position: fixed;
             top: 0;
@@ -163,6 +179,9 @@
 
     <h1>Ajivika ~ At your Service</h1>
 
+    <button class="back-button" onclick="window.history.back();">
+        <i class="fas fa-arrow-left"></i>
+    </button>
     <div class="background-videos">
         <video src="https://cdn.pixabay.com/video/2021/01/03/61037-497754241_tiny.mp4" autoplay muted loop></video>
         <video src="https://cdn.pixabay.com/video/2023/05/28/164807-831084936_tiny.mp4" autoplay muted loop></video>

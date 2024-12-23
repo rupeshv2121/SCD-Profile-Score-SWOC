@@ -9,13 +9,238 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <style>
-        /* Styles remain unchanged */
         body {
-            font-family: Arial, Times, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
         }
+        .translate-button {
+            position: fixed;
+            top: 160px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .translate-button:hover {
+            background-color: #0056b3;
+        }
+
+        #google_translate_element {
+            position: fixed;
+            top: 90px;
+            left: 20px;
+            z-index: 1000;
+            display: none;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            color: #FFD465;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .text {
+            color: #fff;
+            font-size: 24px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color:#FFD465;
+            color: #FFD465;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .options-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .options-section h2 {
+            color: #4a4a4a;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .options-section p {
+            color: #6f6f6f;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .option {
+            text-align: center;
+            background-color:  #f7f7f7;
+            border-radius: 8px;
+            padding: 20px;
+            width: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        .option img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .option p {
+            font-size: 16px;
+            color: #333;
+        }
+        .options-container:hover{
+            color: #FFD465;
+        }
+        .option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .option a {
+        text-decoration: none;
+    }
+
+
+        .orange {
+            color: #d6a52b;
+        }
+
+        section h2 {
+            color: #000;
+            font-size: 30px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        /* Styles for floating chat button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color:#d6a52b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #000;
+        }
+
+        /* Styles for floating image button */
+        .image-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Aligns the button to the left side */
+            background-color: transparent; /* Transparent background */
+            border: none;
+            border-radius: 50%;
+            padding: 0; /* No padding for image button */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 9999;
+        }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+        /* Styles remain unchanged */
         .back-button {
             position: absolute;
             top: 100px;
@@ -34,13 +259,19 @@
         }
         .section1{
             margin-top: 50px;
+            border: 2px solid #d6a52b;
         }
         /* Navbar Container */
 .navbar {
+  display: flex;
+  align-items: center;
   width: 100%; /* Full width of the page */
+  justify-content: space-between;
   position: fixed; /* Navbar ko screen ke top pe fix kar de */
   top: 0; /* Top space bilkul zero */
   left: 0;
+  height: 80px;
+  padding: 10px 20px;
   background-color: #333; /* Aap apna background color yahan set kar sakte hain */
   z-index: 1000; /* Ensures it stays above other elements */
 }
@@ -51,18 +282,23 @@
   margin: 0; /* Removes any default margin */
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .navbar ul li {
   display: inline-block;
-  margin: 0;
+  margin-right: 10px; /* 10px gap between links */
 }
+
+.navbar ul li:last-child {
+  margin-right: 0; /* Last link ke liye margin remove karna */
+}
+
 
 .navbar ul li a {
   color: white; /* Text color */
   text-decoration: none;
-  padding: 10px 20px; /* Adjust padding for a balanced look */
+  padding: 5px 15px; /* Adjust padding for a balanced look */
   display: block;
 }
 
@@ -100,6 +336,7 @@
         .resume-box {
             background-color: #fff;
             padding: 20px;
+            border: 2px solid #d6a52b;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
@@ -227,8 +464,9 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="index2.html"><i class="fas fa-home"></i> Home</a>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
             </li>
+            <li><a href="./about.html"><i class="fas fa-address-card"></i> About Us</a></li>
             <li>
                 <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
             </li>

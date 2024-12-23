@@ -313,6 +313,39 @@
             text-align: justify;
             color: #191970;
         }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #fdf4dc;
+            border: 2px solid #ffd465;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 40px;
+            color: #d6a52b;
+            margin-bottom: 10px;
+        }
+
+        .feature-card h3 {
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -338,36 +371,57 @@
 </button>
 <section class="about-section">
     <div class="about-box">
+    
     <h1>
         <i class="fas fa-info-circle" style="color: #cf00a3;"></i> About Us
     </h1>
-    <p style="color:#191970">In order to address the lack of an intelligent and adaptive Job Recommendation Portal, the idea to create a website Ajivika (literal meaning: career) has been presented. This website covers all the features of a career portal, ranging from:</p>
-    <ul>
-        <li><strong style="color:  #8b4513;">📄 Resume Making:</strong> Create professional resumes effortlessly.</li>
-        <li><strong style="color:  #8b4513;">🔍 Smart Job Recommendations:</strong> Get personalized job suggestions based on your profile.</li>
-        <li><strong style="color:  #8b4513;">🎓 Best Suggestions for Courses:</strong> Explore courses tailored to enhance your skills.</li>
-        <li><strong style="color:  #8b4513;">📝 Skill Assessments with Shareable Certificates:</strong> Validate your expertise and share certifications.</li>
-        <li><strong style="color:  #8b4513;">💬 Chatbot for Job Queries:</strong> Instant support for all your career-related questions.</li>
-        <li><strong style="color:  #8b4513;">📊 Real Job Trends Dashboard:</strong> Analyze current trends in the job market with data-driven insights.</li>
-        <li><strong style="color:  #8b4513;">🎯 Personalized Progress Tracker:</strong> Keep track of your learning and job application progress.</li>
-        <li><strong style="color:  #8b4513;">🌍 Access to Jobs in Smaller Areas:</strong> Unlike most portals, Ajivika focuses on uncovering opportunities in smaller towns and regions, bridging the gap between job seekers and recruiters.</li>
-    </ul>
+    <div class="about-section">
+        <p>In order to address the lack of an intelligent and adaptive Job Recommendation Portal, the idea to create a website Ajivika (literal meaning: career) has been presented. This website covers all the features of a career portal, ranging from:</p>
 
-    <h2>💡 Powered by AI/ML:</h2>
-    <p><strong style="color:  #8b4513;"><li>🧠 AI for Job and Course Recommendation:</strong> Personalized suggestions that evolve with your preferences.</li></p>
-    <p><strong style="color:  #8b4513;"><li>📈 Data-Driven Insights:</strong> Leverage advanced data analysis to ensure smart decisions.</li></p>
-
-    <h2>📄 Summary:</h2>
-    <p><li>The website can be deployed for a small patch of the population and tested.</li></p>
-
-    <h2>✔️ Feasibility Covered:</h2>
-    <p><li>The points of technical, financial, operational, and market feasibility have been thoroughly addressed in the presentation.</li></p>
-
-    <h2>🤖 AI/ML Maintenance:</h2>
-    <p><li>AI/ML models will be maintained and updated periodically to ensure optimal performance.</li></p>
-
-    <h2>🌍 Social Impact:</h2>
-    <p><li>The website's focus on addressing job opportunities in smaller areas reduces the need for commutation, promoting a green economy and sustainability.</li></p>
+        <!-- Features Section -->
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>📄 Resume Making</h3>
+                <p>Create professional resumes effortlessly.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-search"></i>
+                <h3>🔍 Smart Job Recommendations</h3>
+                <p>Get personalized job suggestions based on your profile.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>🎓 Best Course Suggestions</h3>
+                <p>Explore courses tailored to enhance your skills.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>📝 Skill Assessments</h3>
+                <p>Validate your expertise and share certifications.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-comments"></i>
+                <h3>💬 Chatbot for Job Queries</h3>
+                <p>Instant support for all your career-related questions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>📊 Real Job Trends Dashboard</h3>
+                <p>Analyze current trends in the job market with data-driven insights.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-tasks"></i>
+                <h3>🎯 Personalized Progress Tracker</h3>
+                <p>Keep track of your learning and job application progress.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>🌍 Access to Jobs in Smaller Areas</h3>
+                <p>Unlike most portals, Ajivika focuses on uncovering opportunities in smaller towns and regions, bridging the gap between job seekers and recruiters.</p>
+            </div>
+        </div>
+    </div>
 </div>
 </section>
     <!-- Floating Image Button -->

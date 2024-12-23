@@ -1,4 +1,6 @@
-# 🌐 Description:
+# 🌐 Description
+![image](https://github.com/user-attachments/assets/d64cac1d-3385-40da-920c-7105a10c525f)
+
 
 In order to address the lack of an intelligent and adaptive Job Recommendation Portal, the idea to create a website Ajivika (literal meaning: career) has been presented. This website covers all the features of a career portal, ranging from:
 
@@ -35,7 +37,7 @@ Models are trained periodically on the latest collected data for enhanced accura
 
 
 
-# 📄 Summary:
+# 📄 Summary
 
 The website can be deployed for a small patch of the population and tested.
 

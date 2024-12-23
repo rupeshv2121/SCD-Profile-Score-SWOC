@@ -452,7 +452,35 @@
         .add-icon:hover {
             color: #8b4513;
         }
-        
+        .navbar .logo {
+            margin-left: 65px;
+        }
+        .image-button1 {
+            position: fixed;
+            top: 5px;
+            right: 720px; /* Aligns the button to the left side */
+            background-color: transparent; /* Transparent background */
+            border: none;
+            border-radius: 50%;
+            padding: 0; /* No padding for image button */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-button1:hover {
+            transform: scale(1.1);
+        }
+
+        .image-icon1 {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -462,6 +490,9 @@
         <div class="logo">
             <h2>Ajivika</h2>
         </div>
+        <button class="image-button1">
+            <img src="./image.png" alt="Image Button1" class="image-icon1">
+        </button>
         <ul class="nav-links">
             <li>
                 <a href="index.html"><i class="fas fa-home"></i> Home</a>
@@ -471,7 +502,7 @@
                 <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
             </li>
             <li>
-                <a href="https://vwfds2rwkfwfree87eappta.streamlit.app/" target="_blank">
+                <a href="https://vwfds2rwkfwfree87eappta.streamlit.app/">
                     <i class="fas fa-book"></i> Courses
                 </a>
             </li>

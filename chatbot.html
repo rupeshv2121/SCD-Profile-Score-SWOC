@@ -18,32 +18,36 @@
             justify-content: center;
             align-items: center;
         }
-        .image-button {
-            position: fixed;
-            bottom: 20px;
-            left: 20px; /* Aligns the button to the left side */
-            background-color: transparent; /* Transparent background */
+        /* Circular buttons on the left side */
+        .side-buttons {
+            position: absolute;
+            top: 50%;
+            left: 255px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-button {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(137, 79, 31);
             border: none;
             border-radius: 50%;
-            padding: 0; /* No padding for image button */
+            color: white;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        .image-button:hover {
+        .side-button:hover {
+            background-color: #3b89a1;
             transform: scale(1.1);
-        }
-
-        .image-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 2;
-            position: relative;
         }
 
         .chatbot-app {
@@ -56,11 +60,10 @@
         }
 
         .chatbot-container {
-            width: 100%;
-            height: 100%;
-            max-width: 800px; /* Set a max-width for better readability */
-            background-color:transparent;
-            border-radius: 20px;
+            width: 900px;
+            height: 96%; /* Set the height to 80% of the viewport */
+            background-color: transparent;
+            border-radius: 0px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             display: flex;
@@ -69,24 +72,24 @@
         }
 
         .chat-header {
-            background-color:transparent;
             padding: 20px;
             color: rgb(137, 79, 31);
-            font-size: 30px;
+            font-size: 40px;
             text-align: center;
             font-family: 'Cursive';
+            flex: 0 1 10%; /* Takes up 10% of the container height */
         }
 
         .chat-body {
             padding: 20px;
             flex-grow: 1;
             overflow-y: auto;
-            background-color:transparent;
+            background-color: transparent;
         }
 
         .chat-footer {
             padding: 10px;
-            background-color:gray;
+            background-color: gray;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -116,238 +119,103 @@
             transform: scale(1.1);
         }
 
-        /* Circular buttons on the left side */
-        .side-buttons {
-            position: absolute;
-            top: 50%;
-            left: -70px;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        /* Iframe styling for chatbot */
+        .iframe-container {
+            width: 100%;
+            height: 90%; /* Takes up 90% of the chatbot-container */
+            overflow: hidden;
+            border: none;
         }
 
-        .side-button {
-            width: 50px;
-            height: 50px;
-            background-color: rgb(137, 79, 31);
+        .image-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: transparent;
             border: none;
             border-radius: 50%;
-            color: white;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 0;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 1000;
         }
 
-        .side-button:hover {
-            background-color: #3b89a1;
+        .image-button:hover {
             transform: scale(1.1);
         }
 
-        /* Toggle switch container */
-        .toggle-container {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            background-color: antiquewhite;
-        }
-
-        .toggle-label {
-            font-size: 18px;
-            margin: 0 10px;
-            color: rgb(137, 79, 31);
-        }
-
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 24px;
-        }
-
-        .toggle-switch input {
-            display: none;
-        }
-
-        .slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgb(137, 79, 31);
-            border-radius: 24px;
-            transition: .4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 20px;
-            width: 20px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
+        .image-icon {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            transition: .4s;
-        }
-
-        input:checked + .slider {
-            background-color: #47CACC;
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
         }
     </style>
 </head>
 <body>
-    
+    <!-- Side buttons -->
+    <div class="side-buttons">
+        <button data-target="home" class="side-button">
+            <i class="fas fa-home"></i>
+        </button>
+        <button data-target="contact" class="side-button">
+            <i class="fas fa-comment-alt"></i>
+        </button>
+        <button data-target="info" class="side-button">
+            <i class="fa-solid fa-chart-line"></i>
+        </button>
+        <button data-target="resume" class="side-button">
+            <i class="fa-solid fa-pen-nib"></i>
+        </button>
+    </div>
+
     <div class="chatbot-app">
         <!-- Chatbot UI -->
         <div class="chatbot-container">
             <div class="chat-header">
-                Ajiviya's Virtual Assistant
+                <i class="fas fa-robot" style="margin-right: 10px;"></i>
+                Ajivika's Virtual Assistant
+                <i class="fas fa-headset" style="margin-left: 10px;"></i>
+            </div>                    
+        
+            <!-- Iframe container for chatbot -->
+            <div class="iframe-container" id="iframe-container">
+                <iframe src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/12/23/07/20241223075256-8E9BNGRI.json"
+                        width="100%" height="100%" style="border: none;"></iframe>
             </div>
-
-            <div class="chat-body" id="chat-body">
-                <!-- Chat messages go here -->
-            </div>
-
-            <!-- Toggle section for skills and target job -->
-            <div class="toggle-container">
-                <span class="toggle-label">Enter Skills</span>
-                <label class="toggle-switch">
-                    <input type="checkbox" id="input-toggle">
-                    <span class="slider"></span>
-                </label>
-                <span class="toggle-label">Target Job</span>
-            </div>
-
-            <div class="chat-footer">
-                <input type="text" id="user-input" placeholder="Type here...">
-                <button id="send-btn"><i class="fas fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <!-- Side buttons -->
-        <div class="side-buttons">
-            <button data-target="home" class="side-button">
-                <i class="fas fa-home"></i>
-            </button>
-            <button data-target="contact" class="side-button">
-                <i class="fas fa-comment-alt"></i>
-            </button>
-            <button data-target="info" class="side-button">
-                <i class="fa-solid fa-chart-line"></i>
-            </button>
-            <button data-target="resume" class="side-button">
-                <i class="fa-solid fa-pen-nib"></i>
-            </button>
         </div>
     </div>
 
+    <!-- Floating Image Button -->
+    <button class="image-button">
+        <img src="./image.png" alt="Image Button" class="image-icon">
+    </button>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.side-button').forEach(button => {
-                button.addEventListener('click', function() {
-                    let url;
-                    switch (this.dataset.target) {
-                        case 'home':
-                            url = 'index.html';
-                            break;
-                        case 'contact':
-                            url = 'contact.html';
-                            break;
-                        case 'info':
-                            url = ''; // Replace with correct URL
-                            break;
-                        case 'resume':
-                            url = 'resume.html';
-                            break;
-                        default:
-                            url = '#'; // Fallback URL
-                    }
+        // JavaScript logic for iframe control
+        document.getElementById("send-btn").addEventListener("click", function() {
+            var iframeContainer = document.getElementById("iframe-container");
 
-                    // Debugging output
-                    console.log('Redirecting to:', url);
-                    
-                    // Perform redirection
-                    window.location.href = url;
-                });
-            });
-        });
+            // If iframe already exists, remove it
+            if (iframeContainer.querySelector("iframe")) {
+                iframeContainer.removeChild(iframeContainer.querySelector("iframe"));
+            } else {
+                // Otherwise, create a new iframe
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/12/23/07/20241223075256-8E9BNGRI.json";
+                iframe.width = "100%";
+                iframe.height = "100%";  // Adjust the height to 100%
+                iframe.style.border = "none";
 
-        const sendButton = document.getElementById('send-btn');
-        const inputField = document.getElementById('user-input');
-        const chatBody = document.getElementById('chat-body');
-        const inputToggle = document.getElementById('input-toggle');
-
-        sendButton.addEventListener('click', () => {
-            const userInput = inputField.value.trim();
-            if (userInput === '') return;
-
-            const userMessage = document.createElement('div');
-            userMessage.style.textAlign = 'right';
-            userMessage.innerHTML = `<p><strong>You:</strong> ${userInput}</p>`;
-            chatBody.appendChild(userMessage);
-
-            const requestPayload = {
-                skills: userInput
-            };
-
-            let url = '/predict';  // Default to skills input prediction
-            if (inputToggle.checked) {
-                url = '/predict_skills';  // Change to target job prediction
-                requestPayload.job = userInput;
+                // Append the iframe to the container
+                iframeContainer.appendChild(iframe);
             }
-
-            fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestPayload)
-            })
-            .then(response => response.json())
-            .then(data => {
-                const botMessage = document.createElement('div');
-                botMessage.innerHTML = `<p><strong>Bot:</strong> ${data.results.join(', ')}</p>`;
-                chatBody.appendChild(botMessage);
-            })
-            .catch(error => console.error('Error:', error));
-
-            inputField.value = '';
         });
     </script>
- <!-- Floating Image Button -->
- <button class="image-button">
-    <img src="./image.png" alt="Image Button" class="image-icon">
-</button>
 
-<script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-</script>
 </body>
 </html>

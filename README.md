@@ -1,4 +1,4 @@
-# 🌐 Description:
+# 🌐 Description
 ![image](https://github.com/user-attachments/assets/d64cac1d-3385-40da-920c-7105a10c525f)
 
 
@@ -37,7 +37,7 @@ Models are trained periodically on the latest collected data for enhanced accura
 
 
 
-# 📄 Summary:
+# 📄 Summary
 
 The website can be deployed for a small patch of the population and tested.
 

@@ -170,16 +170,44 @@
     </div>
 
     <div class="content">
-        <form onsubmit="event.preventDefault(); getRecommendations();">
+        <form onsubmit="event.preventDefault(); useChatbot();">
             <label for="skills">Enter Skills:</label>
             <input type="text" id="skills" name="skills" required>
             <button type="submit">Search Jobs</button>
         </form>
-
-        <div id="results"></div>
-<!-- "Show More" button to load more jobs -->
-<button id="showMoreButton" class="hidden" onclick="loadMoreJobs()"><i class="fa-solid fa-circle-down"></i></i></button>
+    
+        <div id="results">
+            <!-- Iframe for displaying chatbot responses -->
+            <iframe id="chatbotFrame" style="width: 100%; height: 500px; border: none; display: none;"></iframe>
+        </div>
     </div>
+    
+    <script>
+        function useChatbot() {
+            const skillsInput = document.getElementById('skills').value.trim();
+            const chatbotFrame = document.getElementById('chatbotFrame');
+    
+            // Toggle visibility of the chatbot iframe
+            if (chatbotFrame.style.display === 'block') {
+                // If iframe is already visible, hide it
+                chatbotFrame.style.display = 'none';
+            } else {
+                if (skillsInput) {
+                    // Construct chatbot link with skills as query parameter
+                    const chatbotURL = `https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/12/23/07/20241223075256-8E9BNGRI.json&skills=${encodeURIComponent(skillsInput)}`;
+                    
+                    // Set the iframe source to the chatbot URL
+                    chatbotFrame.src = chatbotURL;
+    
+                    // Make the iframe visible
+                    chatbotFrame.style.display = 'block';
+                } else {
+                    alert('Please enter some skills before searching.');
+                }
+            }
+        }
+    </script>
+    
 
     <div class="bottom-icons">
         <a href="./index2.html"><i class="fas fa-home"></i></a>

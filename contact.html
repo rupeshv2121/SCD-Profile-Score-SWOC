@@ -7,12 +7,271 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
     <style>
-        /* General Styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
         }
+        .translate-button {
+            position: fixed;
+            top: 160px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .translate-button:hover {
+            background-color: #0056b3;
+        }
+
+        #google_translate_element {
+            position: fixed;
+            top: 90px;
+            left: 20px;
+            z-index: 1000;
+            display: none;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            color: #FFD465;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .text {
+            color: #fff;
+            font-size: 24px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color:#FFD465;
+            color: #FFD465;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .options-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .options-section h2 {
+            color: #4a4a4a;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .options-section p {
+            color: #6f6f6f;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .option {
+            text-align: center;
+            background-color:  #f7f7f7;
+            border-radius: 8px;
+            padding: 20px;
+            width: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        .option img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .option p {
+            font-size: 16px;
+            color: #333;
+        }
+        .options-container:hover{
+            color: #FFD465;
+        }
+        .option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .option a {
+        text-decoration: none;
+    }
+
+
+        .orange {
+            color: #d6a52b;
+        }
+
+        section h2 {
+            color: #000;
+            font-size: 30px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        /* Styles for floating chat button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color:#d6a52b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #000;
+        }
+
+        /* Styles for floating image button */
+        .image-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Aligns the button to the left side */
+            background-color: transparent; /* Transparent background */
+            border: none;
+            border-radius: 50%;
+            padding: 0; /* No padding for image button */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 9999;
+        }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+        .about-box {
+    background-color: #f9f9f9;
+    border: 2px solid #d6a52b;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto; /* Auto margin centers the box horizontally */
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block; /* Ensures it behaves like a block-level element */
+    text-align: left; /* Adjusts text alignment, optional */
+}
+
+
+        .image-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2b2b28;
+            padding: 10px 20px;
+            position: sticky;
+            height: 80px;
+            top: 0;
+            z-index: 1000;
+        }
+      
         .back-button {
             position: absolute;
             top: 100px;
@@ -58,31 +317,11 @@
             position: relative;
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgb(43, 43, 40);
-            padding: 10px 20px;
-            position: sticky;
-            height: 90px;
-            top: 0;
-            z-index: 1000;
-}
-
         .navbar .logo h2 {
             margin: 0;
             margin-top: -15px;
             color:  aliceblue;
             font-size: 32px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            padding: 0;
-            margin: 0;
         }
 
         .nav-links li {
@@ -122,6 +361,7 @@
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
             border-radius: 10px;
             transition: transform 0.3s ease;
+            border: 2px solid #d6a52b;
         }
 
         .contact-section:hover {
@@ -195,6 +435,17 @@
             margin-right: 10px;
             color: #d6a52b;
         }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2b2b28;
+            padding: 10px 20px;
+            position: sticky;
+            height: 80px;
+            top: 0;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -204,8 +455,9 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="index2.html"><i class="fas fa-home"></i> Home</a>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
             </li>
+            <li><a href="./about.html"><i class="fas fa-address-card"></i> About Us</a></li>
             <li>
                 <a href="resume.html"><i class="fas fa-file-alt"></i> Resume</a>
             </li>

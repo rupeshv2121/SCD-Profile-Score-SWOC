@@ -44,6 +44,8 @@ Ajivika, meaning "career," is an intelligent and adaptive job recommendation por
 
 **🌍 Jobs in Smaller Regions:** Discover opportunities in smaller towns and cities.
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
+
 ## 🔄 Tech Stack
 
 Proposed tech stack for project(although you are free to use any other stack outside of these):
@@ -84,6 +86,8 @@ Proposed tech stack for project(although you are free to use any other stack out
    - Data Visualization: D3.js or Chart.js for interactive and visually appealing data representation 📊
    - Testing: Jest for React.js unit testing, Selenium for end-to-end testing 🧪
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
+
 ## ✔ Key Features
 
 - **Project Showcase:** Showcase your projects and discover what other students are working on.
@@ -96,6 +100,8 @@ Proposed tech stack for project(although you are free to use any other stack out
 1. **Explore Projects:** Browse through projects and find ones that interest you.
 2. **Create Your Profile:** Showcase your skills, projects, and aspirations.
 3. **Start Collaborating:** Connect with like-minded individuals and start collaborating.
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
 
 ## 👀 Vision
 
@@ -128,6 +134,8 @@ To create a comprehensive platform that empowers individuals in their career jou
 5. **Impact Measurement:** Stories of career growth and success enabled by Ajivika.
 
 By aligning with these goals, Ajivika aspires to revolutionize career growth and create meaningful connections in the job market.
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
 
 ## ⚠️ Caution 
 

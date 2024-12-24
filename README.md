@@ -1,5 +1,7 @@
 
 ![image](https://github.com/user-attachments/assets/d64cac1d-3385-40da-920c-7105a10c525f)
+![image](https://github.com/user-attachments/assets/66404181-83ae-4e84-8996-60e3e794817e)
+
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&background=FFF52500&width=435&lines=Ajivika%3A+Knowledge+without+boundary)](https://git.io/typing-svg)
 

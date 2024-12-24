@@ -139,34 +139,40 @@ By aligning with these goals, Ajivika aspires to revolutionize career growth and
 6. **Resource Management**: Use platform resources responsibly. Avoid activities that could harm the platform's integrity or availability for other users.
 7. **Compliance with Guidelines**: Adhere to all platform guidelines and policies. Regularly review updates to ensure continued compliance.
 
+By adhering to these cautions, Ajivika aims to create a safe, respectful, and productive environment for all users.
 
 
+## 🌱 Contribute
+
+We believe in the power of collaboration. If you have ideas to improve Ajivika, feel free to contribute! Check out our [Contribution Guidelines](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/CONTRIBUTING.md) to get started.
+
+## 🧑‍💼 Project Admin 
+ 
+<div align="center">
+<table>
+<tr>
+<td align="center"><a href="https://github.com/Ojas-Arora"><img src="https://github.com/Ojas-Arora/SCD-Profile-Score/Ojas3" width=150px height=150px /></a></br> <h4 style="color:cyan;">Ojas Arora</h4>
+<a href="https://www.linkedin.com/in/ojasarora14/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+ <a href="https://github.com/Ojas-Arora"><img src="https://img.icons8.com/fluency/2x/github.png" width="32px" height="32px"></img></a>
+   </td>
+
+</tr>
+</table>
+</div>
+
+## 📬 Contact Details
+
+You can connect with me on various platforms:<br>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ojas-arora-34910a24b/) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ojas.arora14/) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/OjasArora2314) [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://www.facebook.com/ojas.arora.12)
+[![Gmail](https://img.shields.io/badge/Gmail-%23FFFFFF.svg?logo=gmail&logoColor=red)](mailto:ojas.arora14@gmail.com)
+
+## 🌟 Join Us 
+
+Ready to embark on a journey of collaborative learning? Join Ajivika now and be a part of a community that believes in the power of collaboration!
+Thank you for contributing to our open-source project! We appreciate your support 🚀
+Don't forget to leave a star ⭐
 
 
+![image](https://github.com/user-attachments/assets/34d63e02-a533-4249-9a97-d8338f6cc0a2)
 
 
-# 📄 Summary
-
-The website can be deployed for a small patch of the population and tested.
-
-**✔️ Feasibility Covered:**
-
-The points of technical, financial, operational, and market feasibility have been thoroughly addressed in the presentation.
-
-**💰 Cost Effectiveness:**
-
-The initial cost for setup would be required.
-Once functional, costs can be recovered in a shorter span of time through subscriptions and premium features—keeping rates low and affordable for customers.
-
-**📊 Data Management:**
-
-Large volumes of data will be managed with strong data handling capabilities, complemented by a robust backend.
-The frontend will be user-friendly and easy to navigate for new users.
-
-**🤖 AI/ML Maintenance:**
-
-AI/ML models will be maintained and updated periodically to ensure optimal performance.
-
-**🌍 Social Impact:**
-
-The website's focus on addressing job opportunities in smaller areas reduces the need for commutation, promoting a green economy and sustainability.

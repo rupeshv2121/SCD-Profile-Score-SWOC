@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pricing - Ajivika</title>
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .translate-button {
+            position: fixed;
+            top: 160px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .translate-button:hover {
+            background-color: #0056b3;
+        }
+
+        #google_translate_element {
+            position: fixed;
+            top: 90px;
+            left: 0px;
+            z-index: 1000;
+            display: none;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            color: #FFD465;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .text {
+            color: #fff;
+            font-size: 24px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color:#FFD465;
+            color: #FFD465;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .options-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .options-section h2 {
+            color: #4a4a4a;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .options-section p {
+            color: #6f6f6f;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .option {
+            text-align: center;
+            background-color:  #f7f7f7;
+            border-radius: 8px;
+            padding: 20px;
+            width: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        .option img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .option p {
+            font-size: 16px;
+            color: #333;
+        }
+        .options-container:hover{
+            color: #FFD465;
+        }
+        .option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .option a {
+        text-decoration: none;
+    }
+
+
+        .orange {
+            color: #d6a52b;
+        }
+
+        section h2 {
+            color: #000;
+            font-size: 30px;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        /* Styles for floating chat button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color:#d6a52b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            background-color: #000;
+        }
+
+        /* Styles for floating image button */
+        .image-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* Aligns the button to the left side */
+            background-color: transparent; /* Transparent background */
+            border: none;
+            border-radius: 50%;
+            padding: 0; /* No padding for image button */
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-button:hover {
+            transform: scale(1.1);
+        }
+
+        .image-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+        /* Reusing given styles with additional customization */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pricing-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .pricing-section h1 {
+            font-size: 36px;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+
+        .pricing-section p {
+            color: #6f6f6f;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: #fdf4dc;
+            border: 2px solid #ffd465;
+            border-radius: 8px;
+            width: 280px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            color: #d6a52b;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card .price {
+            font-size: 30px;
+            color: #8b4513;
+            margin: 10px 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pricing-card ul li {
+            color: #191970;
+            margin: 10px 0;
+        }
+
+        .pricing-card button {
+            background: #d6a52b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pricing-card button:hover {
+            background: #8b4513;
+        }
+        .image-button1 {
+            position: fixed;
+            top: 5px;
+            left: 10px; /* Aligns the button to the left side */
+            background-color: transparent; /* Transparent background */
+            border: none;
+            border-radius: 50%;
+            padding: 0; /* No padding for image button */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-button1:hover {
+            transform: scale(1.1);
+        }
+
+        .image-icon1 {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2b2b28;
+            padding: 10px 20px;
+            position: sticky;
+            height: 80px;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            margin-left: 65px;
+        }
+        .back-button {
+            position: absolute;
+            top: 100px;
+            left: 20px;
+            background-color: transparent;
+            border: none;
+            color: #333;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 999;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #d6a52b;
+        }
+        .about-box {
+    background-color: #f9f9f9;
+    border: 2px solid #d6a52b;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto; /* Auto margin centers the box horizontally */
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block; /* Ensures it behaves like a block-level element */
+    text-align: left; /* Adjusts text alignment, optional */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="logo">
+        <h2>Ajivika</h2>
+    </div>
+    <button class="image-button1">
+        <img src="./image.png" alt="Image Button1" class="image-icon1">
+    </button>
+    <ul class="nav-links">
+        <li><a href="./index.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="./about.html"><i class="fas fa-address-card"></i> About Us</a></li>
+        <li><a href="./contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        <li><a href="./login.html"><i class="fas fa-sign-in-alt"></i>Begin Your Journey</a></li>
+        <li><a href="./register.html"><i class="fas fa-user-plus"></i> Register</a></li>
+        
+    </ul>
+    
+</nav>    
+<button class="back-button" onclick="window.history.back();">
+    <i class="fas fa-arrow-left"></i>
+</button>
+
+<!-- Pricing Section -->
+<section class="pricing-section">
+    <div class="about-box">
+    <h1 style="text-align: center;">Our Pricing Plans</h1>
+    <p style="text-align: center;">Choose a plan that suits your needs the best.</p>
+
+    <div class="pricing-cards">
+        <div class="pricing-card">
+            <h3>Basic Plan</h3>
+            <p class="price">$10/month</p>
+            <ul>
+                <li>Access to basic features</li>
+                <li>Email support</li>
+                <li>1 GB storage</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Standard Plan</h3>
+            <p class="price">$20/month</p>
+            <ul>
+                <li>Access to all features</li>
+                <li>Priority email support</li>
+                <li>10 GB storage</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Premium Plan</h3>
+            <p class="price">$30/month</p>
+            <ul>
+                <li>Access to premium features</li>
+                <li>24/7 support</li>
+                <li>Unlimited storage</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+    </div>
+    </div>
+</section>
+   <!-- Floating Image Button -->
+   <button class="image-button">
+    <img src="./image.png" alt="Image Button" class="image-icon">
+</button>
+
+    <!-- Footer -->
+    <footer>
+        <p style="color: #d6a52b;">&copy; 2024 Ajivika™. All rights reserved.</p>
+    </footer>
+</body>
+</html>

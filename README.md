@@ -151,7 +151,7 @@ We believe in the power of collaboration. If you have ideas to improve Ajivika, 
 <div align="center">
 <table>
 <tr>
-<td align="center"><a href="https://github.com/Ojas-Arora"><img src="https://github.com/Ojas-Arora/SCD-Profile-Score/Ojas3" width=150px height=150px /></a></br> <h4 style="color:cyan;">Ojas Arora</h4>
+<td align="center"><a href="https://github.com/Ojas-Arora"><img src="https://avatars.githubusercontent.com/u/127867874?s=400&u=28e5a15bed313ddb88b631ac071859a8fcb16326&v=4" width=150px height=150px /></a></br> <h4 style="color:cyan;">Ojas Arora</h4>
 <a href="https://www.linkedin.com/in/ojasarora14/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
  <a href="https://github.com/Ojas-Arora"><img src="https://img.icons8.com/fluency/2x/github.png" width="32px" height="32px"></img></a>
    </td>

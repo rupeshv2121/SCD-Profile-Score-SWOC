@@ -160,6 +160,17 @@ We believe in the power of collaboration. If you have ideas to improve Ajivika, 
 </table>
 </div>
 
+## 🤝 Contributors 
+  <p align="center">
+  <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" width="600" height="300">
+  </p>
+<div align="center">
+  <h3>🎉 Kudos to You Wonderful and Dedicated Contributors! 🌟</h3> <br>
+  <a href="https://github.com/Ojas-Arora/SCD-Profile-Score/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=Ojas-Arora/SCD-Profile-Score" />
+  </a>
+</div>
+
 ## 📬 Contact Details
 
 You can connect with me on various platforms:<br>

@@ -1,39 +1,147 @@
-# 🌐 Description
+
 ![image](https://github.com/user-attachments/assets/d64cac1d-3385-40da-920c-7105a10c525f)
 
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&background=FFF52500&width=435&lines=Ajivika%3A+Knowledge+without+boundary)](https://git.io/typing-svg)
 
-In order to address the lack of an intelligent and adaptive Job Recommendation Portal, the idea to create a website Ajivika (literal meaning: career) has been presented. This website covers all the features of a career portal, ranging from:
+<h3><p align="center">Welcome to Ajivika, where learning never stops</h3></p>
 
-**📄 Resume Making:** Create professional resumes effortlessly.
 
-**🔍 Smart Job Recommendations:** Get personalized job suggestions based on your profile.
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-cyan.svg?style=badge&color=cyan&logo=openai)
+![GitHub forks](https://img.shields.io/github/forks/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub Repo stars](https://img.shields.io/github/stars/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub contributors](https://img.shields.io/github/contributors/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub last commit](https://img.shields.io/github/last-commit/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub repo size](https://img.shields.io/github/repo-size/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![Github](https://img.shields.io/github/license/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub issues](https://img.shields.io/github/issues/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Ojas-Arora/SCD-Profile-Score?style=badge&color=cyan&logo=openai)
 
-**🎓 Best Suggestions for Courses:** Explore courses tailored to enhance your skills.
+<p align="center">
+  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="600" height="300">
+</p>
 
-**📝 Skill Assessments with Shareable Certificates:** Validate your expertise and share certifications.
+![Visitors](https://api.visitorbadge.io/api/visitors?path=Ojas-Arora/SCD-Profile-Score%20&style=badge&logo=openai)
 
-**💬 Chatbot for Job Queries:** Instant support for all your career-related questions.
+# 🌐 About Ajivika
 
-**📊 Real Job Trends Dashboard:** Analyze current trends in the job market with data-driven insights.
+Ajivika, meaning "career," is an intelligent and adaptive job recommendation portal designed to empower job seekers. It offers:
 
-**🎯 Personalized Progress Tracker:** Keep track of your learning and job application progress.
+**📄 Resume Making:** Create professional resumes easily.
 
-**🌍 Access to Jobs in Smaller Areas:** Unlike most portals, Ajivika focuses on uncovering opportunities in smaller towns and regions, bridging the gap between job seekers and recruiters.
+**🔍 Smart Job Recommendations:** Get personalized job suggestions tailored to your profile.
 
-**💡 Powered by AI/ML:**
+**🎓 Course Suggestions:** Find courses to boost your skills.
 
-**🧠 AI for Job and Course Recommendation:** Personalized suggestions that evolve with your preferences.
+**📝 Skill Assessments:** Validate your abilities with shareable certificates.
 
-**📈 Data-Driven Insights:** Leverage advanced data analysis to ensure smart decisions.
+**💬 Chatbot Support:** Get instant help for career-related queries.
 
-**🔒 Databases as the Backbone:**
+**📊 Job Trends Dashboard:** Analyze market trends through data insights.
 
-The most crucial component, enabling adaptive learning and performance improvements.
-Models are trained periodically on the latest collected data for enhanced accuracy.
+**🎯 Progress Tracker:** Monitor your learning and job application journey.
 
-✨ The website is inclusive, covering both tech and non-tech jobs, ensuring opportunities for everyone.
+**🌍 Jobs in Smaller Regions:** Discover opportunities in smaller towns and cities.
 
-✨ The website covers both tech and non-tech jobs. The models will be trained periodically on the latest collected data for better performance and accuracy.
+## 🔄 Tech Stack
+
+Proposed tech stack for project(although you are free to use any other stack outside of these):
+
+1. **Backend:**
+   - Node.js with Express.js for the server 💻
+   - MongoDB for the database (using Mongoose for object modeling) 📊
+   - Firebase Authentication for user authentication and authorization 🔐
+   - Firebase Cloud Functions for serverless backend logic ☁️
+
+2. **Frontend:**
+   - React.js for a dynamic and responsive user interface ⚛️
+   - HTML5, CSS3, JavaScript for elegant and modern design 🎨
+   - Firebase Hosting for fast and secure web hosting 🚀
+   - Firebase Realtime Database for real-time data synchronization 🔥
+
+3. **DevOps & Deployment:**
+   - Continuous Integration/Continuous Deployment (CI/CD): GitLab CI/CD for automated testing and deployment 🔄
+   - Containerization: Docker for efficient and scalable deployment 🐳
+   - Orchestration: Kubernetes for managing containerized applications ⚙️
+
+4. **Cloud Platform:**
+   - Hosting: AWS (Amazon Web Services) for reliable and scalable hosting ☁️
+   - Serverless Computing: AWS Lambda for cost-effective and scalable backend services 🚀
+   - Storage: AWS S3 for secure and scalable storage solutions 📦
+
+5. **Machine Learning & AI:**
+   - Frameworks: TensorFlow and PyTorch for advanced machine learning capabilities 🧠
+   - Libraries: scikit-learn, pandas, NumPy for data manipulation and analysis 📊
+   - Deployment: Docker containers for easy deployment of machine learning models 🐳
+
+6. **Database:**
+   - MongoDB for flexible and scalable NoSQL database solutions 📊
+
+7. **Other Tools and Technologies:**
+   - Websockets for real-time communication and collaboration features 🔄
+   - Security: JWT (JSON Web Tokens) for secure authentication and authorization 🔒
+   - Data Visualization: D3.js or Chart.js for interactive and visually appealing data representation 📊
+   - Testing: Jest for React.js unit testing, Selenium for end-to-end testing 🧪
+
+## ✔ Key Features
+
+- **Project Showcase:** Showcase your projects and discover what other students are working on.
+- **Collaborative Tools:** Work together seamlessly with integrated collaboration tools.
+- **Knowledge Sharing:** Share insights, tips, and tricks with a community passionate about learning.
+- **Career Opportunities:** Explore internship and job opportunities from our partner organizations.
+
+## 🚀 Get Started
+
+1. **Explore Projects:** Browse through projects and find ones that interest you.
+2. **Create Your Profile:** Showcase your skills, projects, and aspirations.
+3. **Start Collaborating:** Connect with like-minded individuals and start collaborating.
+
+## 👀 Vision
+
+#### Mission 📚
+
+To create a comprehensive platform that empowers individuals in their career journey by connecting them to opportunities, enhancing their skills, and providing personalized support for success.
+
+#### Core Objectives 👥
+
+1. **Smart Recommendations:** Deliver AI-driven job and course suggestions tailored to individual profiles.
+2. **Skill Enhancement:** Offer tools for resume building, skill assessments, and shareable certifications.
+3. **Access to Opportunities:** Bridge the gap between job seekers and recruiters, including in smaller towns and regions.
+4. **Data-Driven Insights:** Provide real-time job trends and market analytics.
+5. **Empowered Learning:** Enable users to track progress and achieve career goals.
+
+#### Long-Term Goals 🔄
+
+1. **Global Accessibility:** Expand services to job seekers across the globe.
+2. **Industry Collaboration:** Partner with organizations to offer exclusive opportunities.
+3. **Technological Advancements:** Continuously update AI/ML models for better accuracy.
+4. **Inclusive Growth:** Ensure opportunities for both tech and non-tech career paths.
+5. **User-Centric Platform:** Regularly improve based on user feedback and trends.
+
+### Success Metrics 📈
+
+1. **User Engagement:** Increase in platform activity and interaction rates.
+2. **Opportunity Connections:** Number of successful job placements and upskilling achievements.
+3. **Satisfaction Levels:** Positive feedback and user testimonials.
+4. **Platform Growth:** Growth in users, partnerships, and regions covered.
+5. **Impact Measurement:** Stories of career growth and success enabled by Ajivika.
+
+By aligning with these goals, Ajivika aspires to revolutionize career growth and create meaningful connections in the job market.
+
+## ⚠️ Caution 
+
+1. **Sync Your Fork**: Before making a pull request, ensure your fork is up-to-date with the latest changes from the main repository to avoid conflicts.
+2. **Data Privacy**: Ensure that sensitive information is protected and not shared without consent. Follow best practices for data security.
+3. **Intellectual Property**: Respect the intellectual property rights of all users. Do not upload or use copyrighted materials without proper authorization.
+4. **Quality Control**: Maintain high standards for project submissions. Ensure that projects are well-documented, functional, and original.
+5. **Respectful Collaboration**: Foster a respectful and inclusive environment. Discrimination, harassment, or any form of misconduct will not be tolerated.
+6. **Resource Management**: Use platform resources responsibly. Avoid activities that could harm the platform's integrity or availability for other users.
+7. **Compliance with Guidelines**: Adhere to all platform guidelines and policies. Regularly review updates to ensure continued compliance.
+
+
+
+
 
 
 

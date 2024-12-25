@@ -105,6 +105,10 @@ Proposed tech stack for project(although you are free to use any other stack out
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
 
+## 🛠️ Available Scripts
+
+All contributors should look for [LEARN](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/LEARN.md). This file provides detailed instructions on how to build the project locally and contains other essential information. Whether you're new to the project or a seasoned contributor, the [LEARN](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/LEARN.md) file is a valuable resource for understanding the project's structure and requirements. 
+
 ## 👀 Vision
 
 #### Mission 📚

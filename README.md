@@ -161,7 +161,7 @@ We believe in the power of collaboration. If you have ideas to improve Ajivika, 
 <div align="center">
 <table>
 <tr>
-<td align="center"><a href="https://github.com/Ojas-Arora"><img src="https://avatars.githubusercontent.com/u/127867874?s=400&u=28e5a15bed313ddb88b631ac071859a8fcb16326&v=4" width=150px height=150px /></a></br> <h4 style="color:cyan;">Ojas Arora</h4>
+<td align="center"><a href="https://github.com/Ojas-Arora"><img src="https://media.licdn.com/dms/image/v2/D5603AQF-0oeQKjHUGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731090529812?e=1740614400&v=beta&t=urY8EklFDUSFuxKUQtHCq6eK8inuueVUkFH1u9wypQM" width=150px height=150px /></a></br> <h4 style="color:cyan;">Ojas Arora</h4>
 <a href="https://www.linkedin.com/in/ojasarora14/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
  <a href="https://github.com/Ojas-Arora"><img src="https://img.icons8.com/fluency/2x/github.png" width="32px" height="32px"></img></a>
    </td>

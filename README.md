@@ -155,6 +155,11 @@ By aligning with these goals, Ajivika aspires to revolutionize career growth and
 
 By adhering to these cautions, Ajivika aims to create a safe, respectful, and productive environment for all users.
 
+## 🛡️ License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/LICENSE) file for details.
+
+
 
 ## 🌱 Contribute
 

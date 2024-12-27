@@ -307,6 +307,13 @@
     <button class="image-button1">
         <img src="./image.png" alt="Image Button1" class="image-icon1">
     </button>
+
+        <!-- hamburger menu -->
+    <button class="hamburger" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
         
         <ul class="nav-links">
             <li><a href="./index.html"><i class="fas fa-home"></i>Home</a></li>
@@ -469,6 +476,13 @@
             dots[slideIndex - 1].className += " active";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
+
+        // hamburger menu js
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
     </script>
 </body>
 </html>

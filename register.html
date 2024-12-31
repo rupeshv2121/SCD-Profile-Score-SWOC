@@ -229,30 +229,64 @@
         <form id="registerForm">
             <div class="input-group">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Username" id="username" name="username" required>
+                <input type="text" placeholder="Username" id="username" name="username">
+                <span id="errorelem" ></span>
             </div>
             <div class="input-group">
                 <i class="fas fa-envelope icon"></i>
-                <input type="email" placeholder="Email" id="email" name="email" required>
+                <input type="email" placeholder="Email" id="email" name="email" >
+                <span id="errorelemEmail" ></span>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock icon"></i>
-                <input type="password" placeholder="Password" id="password" name="password" required>
+                <input type="password" placeholder="Password" id="password" name="password">
                 <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                <span id="errorelemPass" ></span>
             </div>
             <button type="submit" class="register-btn">Register</button>
             <a href="login.html" class="login-link">Already have an account? Login here</a>
         </form>
         <div class="social-media">
-            <a href="https://www.facebook.com" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.google.com" class="social-icon" aria-label="Google"><i class="fab fa-google"></i></a>
-            <a href="https://www.linkedin.com" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <button class="social-icon" id="google" aria-label="Google" >
+                <i class="fab fa-google"></i>
+            </button>
+            <button class="social-icon" id="github" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </button>
+            <button class="social-icon" id="facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+            <button class="social-icon" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </button>
+            <button class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </button>
         </div>
+
     </div>
 
-    <script>
+    <!-- script for firebase email pass auth -->
+    <script type="module">
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
+            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
+            projectId: "sdcprofile-8b7e8",
+            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
+            messagingSenderId: "868479552814",
+            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
+            measurementId: "G-0LE04MEMNY"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        const auth = getAuth(app);
+    
+        console.log("Firebase initialized");
+    
         // Toggle password visibility
         document.getElementById('togglePassword').addEventListener('click', function() {
             const passwordField = document.getElementById('password');
@@ -261,16 +295,195 @@
             this.classList.toggle('fa-eye-slash');
         });
 
-        // Handle form submission
+
+        //getting the error elems
+        const erreelement = document.getElementById("errorelem");
+        const erreelementEmail = document.getElementById("errorelemEmail")
+        const erreelementPass = document.getElementById("errorelemPass")
+            
+            
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
+            
+            const form = event.target;
+            const email = form.email.value; // Get the value of the email field
+            const password = form.password.value; // Get the value of the password field
+            const username = form.username.value; // Get the value of the username field
+            
+            // Clear previous error message
+            erreelement.innerHTML = "";
+            erreelementEmail.innerHTML=""
+            erreelementPass.innerHTML=""
 
-            // Add your validation logic here if needed
-            // For demonstration, we'll assume the registration is always successful
 
+    // Validation 
+    if (!email || !password || !username) {
+        erreelement.innerHTML = "<span style='color: red;'>Please fill in all fields.</span>";
+        return;
+    }
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(email)) {
+        erreelementEmail.innerHTML = "<span style='color: red;'>Please enter a valid email address.</span>";
+        return;
+    }
+    //pass valdation
+    if (password.length < 6) {
+        erreelementPass.innerHTML = "<span style='color: red;'>Password must be at least 6 characters long.</span>";
+        return;
+    }
+
+    console.log(email, password, username);
+
+    // Create a new user with Firebase Authentication
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Successfully signed up
+            const user = userCredential.user;
+            console.log("User created:", user);
             // Redirect to index2.html after successful registration
-            window.location.href = 'index2.html';
+            window.location.href = '/index2.html';
+        })
+        .catch((error) => {
+            // Handle errors from Firebase
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error(`Error: ${errorCode} - ${errorMessage}`);
+
+            // Display error message in the errorelem container
+            erreelement.innerHTML = `<span style='color: red;'>${errorMessage}</span>`;
         });
+    });
+
     </script>
+    <!-- script for google and github authentication -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+        import {GithubAuthProvider} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
+        const fbConfig = {
+            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
+            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
+            projectId: "sdcprofile-8b7e8",
+            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
+            messagingSenderId: "868479552814",
+            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
+            measurementId: "G-0LE04MEMNY"
+        };
+
+
+        const fauth = getAuth();
+        const provider = new GoogleAuthProvider();
+
+        // Monitor the authentication state
+        onAuthStateChanged(fauth, (user) => {
+            if (user) {
+                console.log("User is signed in:", user);
+                window.location.href="/index2.html"
+            } else {
+                console.log("No user signed in");
+            }
+        });
+
+        const googleBtn = document.getElementById("google");
+        //for google 
+        googleBtn.addEventListener("click", () => {
+            signInWithPopup(fauth, provider)
+                .then((result) => {
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    const user = result.user;
+                    console.log("User signed in:", user);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.customData.email;
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                    console.error("Error signing in:", errorCode, errorMessage);
+                });
+        });
+
+        //for github
+        const githubBtn = document.getElementById("github")
+        githubBtn.addEventListener("click",()=>{
+            signInWithPopup(fauth, new GithubAuthProvider())
+            .then((result) => {
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    const user = result.user;
+                    console.log("User signed in:", user);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    const email = error.customData.email;
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                    console.error("Error signing in:", errorCode, errorMessage);
+                });
+        }) 
+    
+        
+    </script>
+
+    <!-- for facebook auth -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import {FacebookAuthProvider,getAuth, signInWithPopup, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
+        const FBConfig = {
+            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
+            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
+            projectId: "sdcprofile-8b7e8",
+            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
+            messagingSenderId: "868479552814",
+            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
+            measurementId: "G-0LE04MEMNY"
+        };
+
+
+        const FBauth = getAuth();
+
+        // Monitor the authentication state
+        onAuthStateChanged(FBauth, (user) => {
+            if (user) {
+                console.log("User is signed in:", user);
+                window.location.href="/index2.html"
+            } else {
+                console.log("No user signed in");
+            }
+        });
+
+        const FBbutton = document.getElementById("facebook")
+        FBbutton.addEventListener("click",()=>{
+            signInWithPopup(FBauth, new FacebookAuthProvider())
+            .then((result) => {
+                // The signed-in user info.
+                const user = result.user;
+    
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                const credential = FacebookAuthProvider.credentialFromResult(result);
+                const accessToken = credential.accessToken;
+    
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+                window.location.href = "/index2.html1"
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = FacebookAuthProvider.credentialFromError(error);
+    
+                // ...
+            });
+
+        })
+  
+    </script>
+    
 </body>
 </html>

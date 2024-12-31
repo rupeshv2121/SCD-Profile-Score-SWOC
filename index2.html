@@ -301,6 +301,33 @@
         }
     </script>
     
+    <!-- script for checking if user is logged in or not -->
+     <script type="module" >
+        import { getAuth,  onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+
+        const fbConfig = {
+            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
+            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
+            projectId: "sdcprofile-8b7e8",
+            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
+            messagingSenderId: "868479552814",
+            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
+            measurementId: "G-0LE04MEMNY"
+        };
+
+        const app = initializeApp(fbConfig)
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log("User is signed in:", user);
+            } else {
+                console.log("No user signed in");
+                window.location.href="/login.html"
+            }
+        });
+     </script>
     
 </body>
 </html>

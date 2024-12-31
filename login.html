@@ -265,34 +265,30 @@
         </div>
     </div>
 
+
+    <!-- added supabase auth -->
     <script type="module">
-        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
     
-        // Initialize Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
-            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
-            projectId: "sdcprofile-8b7e8",
-            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
-            messagingSenderId: "868479552814",
-            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
-            measurementId: "G-0LE04MEMNY"
-        };
+        // Supabase configuration
+        const supabaseUrl = "https://bcacdgnguwazukrwggtn.supabase.co"; // Replace with your Supabase URL
+        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjYWNkZ25ndXdhenVrcndnZ3RuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2MzQxNzQsImV4cCI6MjA1MTIxMDE3NH0.IrKTh109PlnSYqpLU6z8m5RH-YnU9XuAuzFe1od8f-E"; // Replace with your Supabase anon key
+        const supabase = createClient(supabaseUrl, supabaseKey);
     
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
+        console.log("Supabase initialized");
+    
+        // Check if a user is already logged in
+        supabase.auth.getUser().then(({ data: { user }, error }) => {
+            if (error) {
+                console.error("Error fetching user:", error);
+            } else if (user) {
                 console.log("User is signed in:", user);
-                window.location.href="/index2.html"
+                window.location.href = "/index2.html";
             } else {
                 console.log("No user signed in");
             }
         });
-
-
+    
         // Toggle password visibility
         document.getElementById('togglePassword').addEventListener('click', function () {
             const passwordField = document.getElementById('password');
@@ -300,9 +296,9 @@
             passwordField.setAttribute('type', type);
             this.classList.toggle('fa-eye-slash');
         });
-        // const errorElement = document.getElementById("errorElement")
+    
         // Handle form submission
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
             event.preventDefault(); // Prevent the default form submission
     
             const email = document.getElementById('email').value;
@@ -318,28 +314,31 @@
                 return;
             }
     
-            // Firebase Sign-In Function
-            signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    // Sign-in successful
-                    const user = userCredential.user;
-                    console.log("User signed in:", user);
-                    // Redirect to another page
-                    window.location.href = 'index2.html';
-                })
-                .catch((error) => {
-                    // Handle Errors
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.error(`Error signing in: ${errorCode} - ${errorMessage}`);
-                    errorElement.textContent = errorMessage;
-                    errorElement.style.color = "red";
+            try {
+                // Supabase Sign-In Function
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email,
+                    password,
                 });
+    
+                if (error) {
+                    throw error;
+                }
+    
+                console.log("User signed in:", data.user);
+                // Redirect to another page
+                window.location.href = 'index2.html';
+            } catch (error) {
+                console.error("Error signing in:", error.message);
+                errorElement.textContent = error.message;
+                errorElement.style.color = "red";
+            }
         });
     </script>
     
+    <!-- for now only google authentication works. have to add app id , url in github and facebook to make it work . so total 3auth works google,github,facebook -->
     <!-- for google and github auth -->
-    <script type="module">
+    <!-- <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
         import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
         import {GithubAuthProvider} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
@@ -406,10 +405,10 @@
         }) 
     
         
-    </script>
+    </script> -->
 
         <!-- for facebook auth -->
-    <script type="module">
+    <!-- <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
         import {FacebookAuthProvider,getAuth, signInWithPopup, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
         const FBConfig = {
@@ -464,7 +463,7 @@
 
         })
     
-    </script>
+    </script> -->
 
 </body>
 </html>

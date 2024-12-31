@@ -266,99 +266,100 @@
 
     </div>
 
-    <!-- script for firebase email pass auth -->
+    <!-- script for supabase email pass auth -->
     <script type="module">
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
-            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
-            projectId: "sdcprofile-8b7e8",
-            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
-            messagingSenderId: "868479552814",
-            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
-            measurementId: "G-0LE04MEMNY"
-        };
-
-        const app = initializeApp(firebaseConfig);
-
-        const auth = getAuth(app);
+        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
     
-        console.log("Firebase initialized");
+        // Supabase configuration
+        const supabaseUrl = "https://bcacdgnguwazukrwggtn.supabase.co"; // Replace with your Supabase URL
+        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjYWNkZ25ndXdhenVrcndnZ3RuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2MzQxNzQsImV4cCI6MjA1MTIxMDE3NH0.IrKTh109PlnSYqpLU6z8m5RH-YnU9XuAuzFe1od8f-E"; // Replace with your Supabase anon key
+        const supabase = createClient(supabaseUrl, supabaseKey);
+    
+        console.log("Supabase initialized");
     
         // Toggle password visibility
-        document.getElementById('togglePassword').addEventListener('click', function() {
+        document.getElementById('togglePassword').addEventListener('click', function () {
             const passwordField = document.getElementById('password');
             const type = passwordField.type === 'password' ? 'text' : 'password';
             passwordField.type = type;
             this.classList.toggle('fa-eye-slash');
         });
-
-
-        //getting the error elems
+    
+        // Getting the error elements
         const erreelement = document.getElementById("errorelem");
-        const erreelementEmail = document.getElementById("errorelemEmail")
-        const erreelementPass = document.getElementById("errorelemPass")
-            
-            
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
+        const erreelementEmail = document.getElementById("errorelemEmail");
+        const erreelementPass = document.getElementById("errorelemPass");
+    
+        document.getElementById('registerForm').addEventListener('submit', async function (event) {
             event.preventDefault(); // Prevent the default form submission
-            
+    
             const form = event.target;
             const email = form.email.value; // Get the value of the email field
             const password = form.password.value; // Get the value of the password field
             const username = form.username.value; // Get the value of the username field
-            
+    
             // Clear previous error message
             erreelement.innerHTML = "";
-            erreelementEmail.innerHTML=""
-            erreelementPass.innerHTML=""
-
-
-    // Validation 
-    if (!email || !password || !username) {
-        erreelement.innerHTML = "<span style='color: red;'>Please fill in all fields.</span>";
-        return;
-    }
-
-    // Email validation
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailPattern.test(email)) {
-        erreelementEmail.innerHTML = "<span style='color: red;'>Please enter a valid email address.</span>";
-        return;
-    }
-    //pass valdation
-    if (password.length < 6) {
-        erreelementPass.innerHTML = "<span style='color: red;'>Password must be at least 6 characters long.</span>";
-        return;
-    }
-
-    console.log(email, password, username);
-
-    // Create a new user with Firebase Authentication
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Successfully signed up
-            const user = userCredential.user;
-            console.log("User created:", user);
-            // Redirect to index2.html after successful registration
-            window.location.href = '/index2.html';
-        })
-        .catch((error) => {
-            // Handle errors from Firebase
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.error(`Error: ${errorCode} - ${errorMessage}`);
-
-            // Display error message in the errorelem container
-            erreelement.innerHTML = `<span style='color: red;'>${errorMessage}</span>`;
+            erreelementEmail.innerHTML = "";
+            erreelementPass.innerHTML = "";
+    
+            // Validation
+            if (!email || !password || !username) {
+                erreelement.innerHTML = "<span style='color: red;'>Please fill in all fields.</span>";
+                return;
+            }
+    
+            // Email validation
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                erreelementEmail.innerHTML = "<span style='color: red;'>Please enter a valid email address.</span>";
+                return;
+            }
+    
+            // Password validation
+            if (password.length < 6) {
+                erreelementPass.innerHTML = "<span style='color: red;'>Password must be at least 6 characters long.</span>";
+                return;
+            }
+    
+            console.log(email, password, username);
+    
+            // Create a new user with Supabase Authentication
+            try {
+                const { data, error } = await supabase.auth.signUp({
+                    email,
+                    password,
+                    options: {
+                        data: { username }, // Custom user metadata
+                    },
+                });
+    
+                if (error) {
+                    throw error;
+                }
+    
+                console.log("User created:", data);
+    
+                // Check if the user needs to confirm their email
+                if (data.user && !data.session) {
+                    // If email confirmation is required
+                    erreelement.innerHTML = "<span style='color: green;'>Registration successful! Please check your email to confirm your account.</span>";
+                } else if (data.session) {
+                    // If the user is already signed in
+                    console.log("User session created:", data.session);
+                    window.location.href = '/index2.html'; // Redirect to the main page
+                }
+            } catch (error) {
+                console.error("Error:", error.message);
+                // Display error message in the errorelem container
+                erreelement.innerHTML = `<span style='color: red;'>${error.message}</span>`;
+            }
         });
-    });
-
     </script>
+    
+    
     <!-- script for google and github authentication -->
-    <script type="module">
+    <!-- <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
         import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
         import {GithubAuthProvider} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
@@ -425,10 +426,10 @@
         }) 
     
         
-    </script>
+    </script> -->
 
     <!-- for facebook auth -->
-    <script type="module">
+    <!-- <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
         import {FacebookAuthProvider,getAuth, signInWithPopup, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
         const FBConfig = {
@@ -483,7 +484,7 @@
 
         })
   
-    </script>
+    </script> -->
     
 </body>
 </html>

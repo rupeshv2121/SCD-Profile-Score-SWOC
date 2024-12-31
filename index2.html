@@ -302,32 +302,35 @@
     </script>
     
     <!-- script for checking if user is logged in or not -->
-     <script type="module" >
-        import { getAuth,  onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-
-        const fbConfig = {
-            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
-            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
-            projectId: "sdcprofile-8b7e8",
-            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
-            messagingSenderId: "868479552814",
-            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
-            measurementId: "G-0LE04MEMNY"
-        };
-
-        const app = initializeApp(fbConfig)
-        const auth = getAuth(app);
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                console.log("User is signed in:", user);
-            } else {
-                console.log("No user signed in");
-                window.location.href="/login.html"
+    <script type="module">
+        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+    
+        // Supabase configuration
+        const supabaseUrl = "https://bcacdgnguwazukrwggtn.supabase.co"; // Replace with your Supabase URL
+        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjYWNkZ25ndXdhenVrcndnZ3RuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2MzQxNzQsImV4cCI6MjA1MTIxMDE3NH0.IrKTh109PlnSYqpLU6z8m5RH-YnU9XuAuzFe1od8f-E"; // Replace with your Supabase anon key
+        const supabase = createClient(supabaseUrl, supabaseKey);
+    
+        // Check authentication state
+        async function checkAuthState() {
+            const { data: { session }, error } = await supabase.auth.getSession();
+    
+            if (error) {
+                console.error("Error fetching session:", error);
+                return;
             }
-        });
-     </script>
+    
+            if (session && session.user) {
+                console.log("User is signed in:", session.user);
+            } else {
+                console.log("No user signed in. Redirecting to login page...");
+                window.location.href = "/login.html"; // Redirect to login page
+            }
+        }
+    
+        // Run the auth state check on page load
+        checkAuthState();
+    </script>
+    
     
 </body>
 </html>

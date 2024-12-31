@@ -254,57 +254,57 @@
             transition: color 0.3s ease;
         }
 
-        .back-button:hover {
+        /* .back-button:hover {
             color: #d6a52b;
-        }
+        } */
         .section1{
             margin-top: 50px;
             border: 2px solid #d6a52b;
         }
         /* Navbar Container */
-.navbar {
-  display: flex;
-  align-items: center;
-  width: 100%; /* Full width of the page */
-  justify-content: space-between;
-  position: fixed; /* Navbar ko screen ke top pe fix kar de */
-  top: 0; /* Top space bilkul zero */
-  left: 0;
-  height: 80px;
-  padding: 10px 20px;
-  background-color: #333; /* Aap apna background color yahan set kar sakte hain */
-  z-index: 1000; /* Ensures it stays above other elements */
-}
+        .navbar {
+            display: flex;
+            align-items: center;
+            width: 100%; /* Full width of the page */
+            justify-content: space-between;
+            position: fixed; /* Navbar ko screen ke top pe fix kar de */
+            top: 0; /* Top space bilkul zero */
+            left: 0;
+            height: 80px;
+            padding: 10px 20px;
+            background-color: #333; /* Aap apna background color yahan set kar sakte hain */
+            z-index: 1000; /* Ensures it stays above other elements */
+        }
 
-/* Navbar items */
-.navbar ul {
-  list-style: none;
-  margin: 0; /* Removes any default margin */
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
+        /* Navbar items */
+        .navbar ul {
+            list-style: none;
+            margin: 0; /* Removes any default margin */
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
 
-.navbar ul li {
-  display: inline-block;
-  margin-right: 10px; /* 10px gap between links */
-}
+        .navbar ul li {
+            display: inline-block;
+            margin-right: 10px; /* 10px gap between links */
+        }
 
-.navbar ul li:last-child {
-  margin-right: 0; /* Last link ke liye margin remove karna */
-}
+        .navbar ul li:last-child {
+            margin-right: 0; /* Last link ke liye margin remove karna */
+        }
 
 
-.navbar ul li a {
-  color: white; /* Text color */
-  text-decoration: none;
-  padding: 5px 15px; /* Adjust padding for a balanced look */
-  display: block;
-}
+        .navbar ul li a {
+            color: white; /* Text color */
+            text-decoration: none;
+            padding: 5px 15px; /* Adjust padding for a balanced look */
+            display: block;
+        }
 
-.navbar ul li a:hover {
-  background-color: #b08c1a; /* Hover effect */
-}
+        .navbar ul li a:hover {
+            transform: scale(1.1);
+        }
 
         .image-button {
             position: fixed;
@@ -318,10 +318,11 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
             z-index: 1000;
+            right: 42%;
         }
 
         .image-button:hover {
-            transform: scale(1.1);
+            transform: scale(0.1);
         }
 
         .image-icon {
@@ -342,9 +343,6 @@
             max-width: 600px;
             margin: auto;
             transition: transform 0.3s ease;
-        }
-        .resume-box:hover {
-            transform: scale(1.02);
         }
 
         h2 {
@@ -374,9 +372,6 @@
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
-        }
-        button:hover {
-            background-color: #dcb456;
         }
         fieldset {
             background-color: #fff;
@@ -455,10 +450,13 @@
         .navbar .logo {
             margin-left: 65px;
         }
+        .navbar h2{
+            margin-left: 56%;
+        }
         .image-button1 {
             position: fixed;
             top: 5px;
-            right: 720px; /* Aligns the button to the left side */
+            right: 44%; /* Aligns the button to the left side */
             background-color: transparent; /* Transparent background */
             border: none;
             border-radius: 50%;

@@ -359,132 +359,94 @@
     
     
     <!-- script for google and github authentication -->
-    <!-- <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-        import {GithubAuthProvider} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
-        const fbConfig = {
-            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
-            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
-            projectId: "sdcprofile-8b7e8",
-            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
-            messagingSenderId: "868479552814",
-            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
-            measurementId: "G-0LE04MEMNY"
-        };
-
-
-        const fauth = getAuth();
-        const provider = new GoogleAuthProvider();
-
+    <script type="module">
+        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+    
+        // Supabase configuration
+        const supabaseUrl2 = "https://bcacdgnguwazukrwggtn.supabase.co"; // Replace with your Supabase URL
+        const supabaseKey2 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjYWNkZ25ndXdhenVrcndnZ3RuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2MzQxNzQsImV4cCI6MjA1MTIxMDE3NH0.IrKTh109PlnSYqpLU6z8m5RH-YnU9XuAuzFe1od8f-E"; // Replace with your Supabase anon key
+    
+        const supabase2 = createClient(supabaseUrl2, supabaseKey2);
+    
         // Monitor the authentication state
-        onAuthStateChanged(fauth, (user) => {
-            if (user) {
-                console.log("User is signed in:", user);
-                window.location.href="/index2.html"
+        supabase2.auth.onAuthStateChange((event, session) => {
+            if (session) {
+                console.log("User is signed in:", session.user);
+                window.location.href = "/index2.html";
             } else {
                 console.log("No user signed in");
             }
         });
-
+    
+        // For Google sign-in
         const googleBtn = document.getElementById("google");
-        //for google 
-        googleBtn.addEventListener("click", () => {
-            signInWithPopup(fauth, provider)
-                .then((result) => {
-                    const credential = GoogleAuthProvider.credentialFromResult(result);
-                    const token = credential.accessToken;
-                    const user = result.user;
-                    console.log("User signed in:", user);
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    const email = error.customData.email;
-                    const credential = GoogleAuthProvider.credentialFromError(error);
-                    console.error("Error signing in:", errorCode, errorMessage);
+        googleBtn.addEventListener("click", async () => {
+            try {
+                const { data, error } = await supabase2.auth.signInWithOAuth({
+                    provider: "google",
                 });
-        });
-
-        //for github
-        const githubBtn = document.getElementById("github")
-        githubBtn.addEventListener("click",()=>{
-            signInWithPopup(fauth, new GithubAuthProvider())
-            .then((result) => {
-                    const credential = GoogleAuthProvider.credentialFromResult(result);
-                    const token = credential.accessToken;
-                    const user = result.user;
-                    console.log("User signed in:", user);
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    const email = error.customData.email;
-                    const credential = GoogleAuthProvider.credentialFromError(error);
-                    console.error("Error signing in:", errorCode, errorMessage);
-                });
-        }) 
-    
-        
-    </script> -->
-
-    <!-- for facebook auth -->
-    <!-- <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import {FacebookAuthProvider,getAuth, signInWithPopup, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"
-        const FBConfig = {
-            apiKey: "AIzaSyAfc1HOijgOlE7qRv8G3xcJ56OLM8EFk5M",
-            authDomain: "sdcprofile-8b7e8.firebaseapp.com",
-            projectId: "sdcprofile-8b7e8",
-            storageBucket: "sdcprofile-8b7e8.firebasestorage.app",
-            messagingSenderId: "868479552814",
-            appId: "1:868479552814:web:e5ab7e4b09c0c3aaba7ebf",
-            measurementId: "G-0LE04MEMNY"
-        };
-
-
-        const FBauth = getAuth();
-
-        // Monitor the authentication state
-        onAuthStateChanged(FBauth, (user) => {
-            if (user) {
-                console.log("User is signed in:", user);
-                window.location.href="/index2.html"
-            } else {
-                console.log("No user signed in");
+                if (error) throw error;
+                console.log("User signed in with Google:", data);
+            } catch (error) {
+                console.error("Error signing in with Google:", error.message);
             }
         });
+    
+        // For GitHub sign-in
+        const githubBtn = document.getElementById("github");
+        githubBtn.addEventListener("click", async () => {
+            try {
+                const { data, error } = await supabase2.auth.signInWithOAuth({
+                    provider: "github",
+                });
+                if (error) throw error;
+                console.log("User signed in with GitHub:", data);
+            } catch (error) {
+                console.error("Error signing in with GitHub:", error.message);
+            }
+        });
+    </script>
 
-        const FBbutton = document.getElementById("facebook")
-        FBbutton.addEventListener("click",()=>{
-            signInWithPopup(FBauth, new FacebookAuthProvider())
-            .then((result) => {
-                // The signed-in user info.
-                const user = result.user;
+    <!-- for facebook auth have to add client id-->
+    <script type="module">
+        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
     
-                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-                const credential = FacebookAuthProvider.credentialFromResult(result);
-                const accessToken = credential.accessToken;
+        // Supabase configuration
+        const supabaseUrl3 = "https://your-supabase-instance.supabase.co"; // Replace with your Supabase project URL
+        const supabaseKey3 = "your-supabase-anon-key"; // Replace with your Supabase anon key
+        const supabase3 = createClient(supabaseUrl3, supabaseKey3);
     
-                // IdP data available using getAdditionalUserInfo(result)
-                // ...
-                window.location.href = "/index2.html1"
-            })
-            .catch((error) => {
-                // Handle Errors here.
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // The email of the user's account used.
-                const email = error.customData.email;
-                // The AuthCredential type that was used.
-                const credential = FacebookAuthProvider.credentialFromError(error);
+        console.log("Supabase initialized");
     
-                // ...
-            });
-
-        })
-  
-    </script> -->
+        // Facebook button event listener
+        const FBbutton = document.getElementById("facebook");
+    
+        FBbutton.addEventListener("click", async () => {
+            try {
+                const { data, error } = await supabase3.auth.signInWithOAuth({
+                    provider: "facebook", // Specify the provider
+                    options: {
+                        redirectTo: "https://your-domain.com/index2.html" // Replace with your redirect URI
+                    }
+                });
+    
+                if (error) throw error;
+    
+                console.log("Redirecting to Facebook sign-in page:", data);
+            } catch (error) {
+                console.error("Facebook sign-in error:", error.message);
+            }
+        });
+    
+        // Check authentication state
+        const session = await supabase3.auth.getSession();
+        if (session.data.session) {
+            console.log("User is signed in:", session.data.session.user);
+            window.location.href = "/index2.html";
+        } else {
+            console.log("No user signed in");
+        }
+    </script>
     
 </body>
 </html>

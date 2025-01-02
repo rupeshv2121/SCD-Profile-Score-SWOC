@@ -532,7 +532,13 @@
         </div>
             <!-- Floating Image Button -->
     
-        
+        <!-- hamburger menu -->
+    <button class="hamburger" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <!-- Navigation Links -->
         <ul class="nav-links">
             <li><a href="./index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
             <li><a href="./about.html"><i class="fas fa-address-card"></i> <span>About Us</span></a></li>
@@ -569,6 +575,13 @@
 
     <!-- Home Page Content -->
     
+    <script>
+        // hamburger menu js
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 
     <!-- Google Translate Script -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

@@ -11,14 +11,6 @@
 <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="styles.css">
     <style>
-        :root{
-            --primary-color: #d6a52b;
-            --secondary-color: #2b2b28;
-            --tertiary-color: #FFD465;
-            --nav-color: #fff;
-            --nav-bg: rgb(8, 7, 6);
-            --nav-hover: #000;
-        }
         * {
             box-sizing: border-box;
         }
@@ -61,7 +53,7 @@
             max-width: 100%;
             margin: auto;
             overflow: hidden;
-            color: var(--tertiary-color);
+            color: #FFD465;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -137,8 +129,8 @@
             height: 15px;
             width: 15px;
             margin: 0 2px;
-            background-color:var(--tertiary-color);;
-            color: var(--tertiary-color);;
+            background-color:#FFD465;
+            color: #FFD465;
             border-radius: 50%;
             display: inline-block;
             transition: background-color 0.6s ease;
@@ -193,7 +185,7 @@
             color: #333;
         }
         .options-container:hover{
-            color: var(--tertiary-color);;
+            color: #FFD465;
         }
         .option:hover {
             transform: translateY(-10px);
@@ -205,7 +197,7 @@
 
 
         .orange {
-            color: var(--primary-color);
+            color: #d6a52b;
         }
 
         section h2 {
@@ -220,7 +212,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color:var(--primary-color);
+            background-color:#d6a52b;
             color: white;
             border: none;
             border-radius: 50%;
@@ -552,6 +544,7 @@
             <li><a href="./about.html"><i class="fas fa-address-card"></i> <span>About Us</span></a></li>
             <li><a href="./contact.html"><i class="fas fa-envelope"></i> <span>Contact Us</span></a></li>
             <li><a href="./pricing.html"><i class="fas fa-comments"></i><span>Go Pro</span></a></li>
+            <li><a href="./login.html"><i class="fas fa-sign-in-alt"></i><span>Log In</span></a></li>
             <li><a href="./register.html"><i class="fas fa-user-plus"></i> <span>Register</span></a></li>
             <li><button class="translate-button" onclick="toggleTranslate()">🌐</button>
                 <div id="google_translate_element"></div></li>
@@ -634,7 +627,7 @@
           }
         </script>
  
-        <h1 style="color: var(--primary-color);">Welcome to Ajivika</h1>
+        <h1 style="color: #d6a52b;">Welcome to Ajivika</h1>
         <p>Your one-stop destination for career growth and learning.</p>
         <div class="slideshow-container">
             <!-- Slide 1 -->
@@ -670,25 +663,25 @@
             </h2>
             <p>Prepare for the next step in your career with the following options.</p>
             <div class="options-container" style="display: flex; gap: 20px;">
-                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='var(--tertiary-color);'" onmouseout="this.style.backgroundColor='white'">
+                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#FFD465'" onmouseout="this.style.backgroundColor='white'">
                     <a href="./resume.html" style="text-decoration: none; color: black;">
                         <img src="./resume.png" alt="Resume" style="width: 100px; height: 100px;">
                         <p>Resume</p>
                     </a>
                 </div>
-                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='var(--tertiary-color);'" onmouseout="this.style.backgroundColor='white'">
+                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#FFD465'" onmouseout="this.style.backgroundColor='white'">
                     <a href="./index2.html" style="text-decoration: none; color: black;">
                         <img src="./job.webp" alt="Apply for Jobs" style="width: 100px; height: 100px;">
                         <p>Apply for Jobs</p>
                     </a>
                 </div>
-                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='var(--tertiary-color);'" onmouseout="this.style.backgroundColor='white'">
+                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#FFD465'" onmouseout="this.style.backgroundColor='white'">
                     <a href="https://vwfds2rwkfwfree87eappta.streamlit.app/" style="text-decoration: none; color: black;">
                         <img src="./courses.png" alt="Courses" style="width: 100px; height: 100px;">
                         <p>Courses</p>
                     </a>
                 </div>
-                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='var(--tertiary-color);'" onmouseout="this.style.backgroundColor='white'">
+                <div class="option" style="text-align: center; padding: 20px; border: 1px solid #ccc; transition: background-color 0.3s ease; cursor: pointer;" onmouseover="this.style.backgroundColor='#FFD465'" onmouseout="this.style.backgroundColor='white'">
                     <a href="https://public.tableau.com/app/profile/ojas.arora/viz/JobTrendAnalysis_17349777011460/HighestPayingJobs2" style="text-decoration: none; color: black;">
                         <img src="./dashboard.jpg" alt="Dashboard" style="width: 100px; height: 100px;">
                         <p>Dashboard</p>
@@ -701,7 +694,7 @@
 
     <!-- Footer -->
     <footer>
-        <p style="color: var(--primary-color);">&copy; 2024 Ajivika™. All rights reserved.</p>
+        <p style="color: #d6a52b;">&copy; 2024 Ajivika™. All rights reserved.</p>
     </footer>
 
     <!-- Floating Chat Button -->

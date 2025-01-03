@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(43, 43, 40);
+    background-color: var(--secondary-color);
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -36,7 +36,7 @@ body {
 }
 
 .nav-links a {
-    color: #fff;
+    color: var(--nav-color);
     text-decoration: double;
     font-size: 18px;
     display: flex;
@@ -44,7 +44,7 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 5px 10px;
     border-radius: 50px; /* Rounded edges */
-    background-color: rgb(8, 7, 6); /* Slightly darker than navbar */
+    background-color: var(--nav-bg);
 }
 
 .nav-links a i {
@@ -55,8 +55,8 @@ body {
 }
 
 .nav-links a:hover {
-    color: #000;
-    background-color: #efb106; /* A bit lighter on hover */
+    color: var(--nav-hover);
+    background-color: var(--primary-color); /* A bit lighter on hover */
 }
 
 /* Sections */
@@ -67,7 +67,7 @@ body {
 }
 
 .home-section {
-    background-color: #ffffff;
+    background-color: var(--nav-color);
     text-align: center;
 }
 
@@ -98,7 +98,7 @@ body {
 .hamburger span {
     height: 3px;
     width: 100%;
-    background: #fff;
+    background: var(--nav-color);
     display: block;
     border-radius: 10px;
     margin: 8px 0;
@@ -128,7 +128,7 @@ p {
 
 footer {
     background-color: rgb(45, 43, 42);
-    color: #fff;
+    color: var(--nav-color);
     text-align: center;
     padding: 20px 0;
     position: relative;

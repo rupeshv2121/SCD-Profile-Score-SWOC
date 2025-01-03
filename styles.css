@@ -75,6 +75,16 @@ body {
     background-color: #f47200;
 }
 
+.resume-section h1{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.resume-section p{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;

@@ -62,7 +62,7 @@ body {
 /* Sections */
 .section {
     padding: 60px 20px;
-    max-width: 1200px;
+    max-width: 80%;
     margin: auto;
 }
 
@@ -73,6 +73,37 @@ body {
 
 .resume-section {
     background-color: #f47200;
+}
+
+.resume-section h1{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.resume-section p{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    display: block;
+    border-radius: 10px;
+    margin: 8px 0;
+    width: 45px;
+    height: 6px;
 }
 
 /* Headings */
@@ -103,4 +134,44 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+@media (max-width: 956px) {
+    .nav-links a {
+        font-size: 15px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10%;
+        background-color: rgb(43, 43, 40);
+        width: 50%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active li {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .nav-links.active a {
+        padding: 10px 20px;
+        border-radius: 0;
+    }
+    
 }

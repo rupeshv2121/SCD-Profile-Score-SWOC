@@ -183,17 +183,20 @@
 
       .options-container {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap: wrap;
         gap: 20px;
+        width: 100%;
+        margin-top: 4rem;
       }
 
       .option {
+        width: 19%;
         text-align: center;
         background-color: #f7f7f7;
         border-radius: 8px;
         padding: 20px;
-        width: 150px;
+
         transition: transform 0.3s ease;
       }
 
@@ -206,13 +209,14 @@
       .option p {
         font-size: 16px;
         color: #333;
+        font-weight: 700;
       }
       .options-container:hover {
         color: #ffd465;
       }
       .option:hover {
         transform: translateY(-10px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 2px rgba(0, 0, 0, 0.885);
       }
       .option a {
         text-decoration: none;
@@ -364,8 +368,8 @@
       .theme-switch {
         --toggle-size: 15px;
         /* the size is adjusted using font-size,
-     this is not transform scale,
-     so you can choose any size */
+      this is not transform scale,
+      so you can choose any size */
         --container-width: 5.625em;
         --container-height: 2.5em;
         --container-radius: 6.25em;
@@ -664,7 +668,7 @@
       /*  FAQ */
       .faq-section {
         max-width: 800px;
-        margin-top: 150px;
+        margin-top: 70px;
         padding: 20px;
       }
 
@@ -910,7 +914,7 @@
             style="
               text-align: center;
               padding: 20px;
-              border: 1px solid #ccc;
+              border: 2px solid #ccc;
               transition: background-color 0.3s ease;
               cursor: pointer;
             "

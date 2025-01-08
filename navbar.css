@@ -354,6 +354,11 @@ body {
     .hamburger {
         display: flex;
     }
+    .hamburger span {
+      width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    }
     .navbar li:hover span{
         opacity: 1;
         display:inline;

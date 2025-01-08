@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
   <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   <style>
     .toggle-password {
       cursor: pointer;
@@ -21,6 +23,77 @@
       font-size: 0.8rem;
     }
   </style>
+<style>
+  .social-login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .social-btn i {
+    line-height: 1;
+    padding: 0;
+    margin-right: 0px;
+  }
+
+  .social-btn.google {
+    background-color: #db4437;
+  }
+
+  .social-btn.google:hover {
+    background-color: #c23321;
+  }
+
+  .social-btn.github {
+    background-color: #333;
+  }
+
+  .social-btn.github:hover {
+    background-color: #1b1b1b;
+  }
+
+  .social-btn.facebook {
+    background-color: #3b5998;
+  }
+
+  .social-btn.facebook:hover {
+    background-color: #2d4373;
+  }
+
+  .social-btn.twitter {
+    background-color: #1da1f2;
+  }
+
+  .social-btn.twitter:hover {
+    background-color: #0c85d0;
+  }
+
+  .social-btn.linkedin {
+    background-color: #0077b5;
+  }
+
+  .social-btn.linkedin:hover {
+    background-color: #005582;
+  }
+</style>
+
+
+  
 </head>
 <body>
   <div class="container">
@@ -61,83 +134,175 @@
         </p>
       </form>
       <div class="social-login">
-        <button class="social-btn">
-          <i class="fab fa-facebook-f"></i> Log in with Facebook
+        <button class="social-btn google" aria-label="Log in with Google">
+          <i class="fab fa-google"></i>
+        </button>
+        <button class="social-btn github" aria-label="Log in with GitHub">
+          <i class="fab fa-github"></i>
+        </button>
+        <button class="social-btn facebook" aria-label="Log in with Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button class="social-btn twitter" aria-label="Log in with Twitter">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button class="social-btn linkedin" aria-label="Log in with LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
         </button>
       </div>
+      
+      
     </div>
   </div>
-  <script type="module">
-    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-  
-    // Supabase configuration
-    const supabaseUrl = "https://SUPABSE_LINK.supabase.co";
-    const supabaseKey = "SUPABASE_KEY";
-    const supabase = createClient(supabaseUrl, supabaseKey, {
-      auth: {
-        persistSession: true,
-        Storage:localStorage
-      },
-    });
-  
-    console.log("Supabase initialized");
-  
-    // Check for an existing session
-    (async () => {
-  const { data: { session }, error } = await supabase.auth.getSession();
-  
-  if (error) {
-    console.error("Error fetching session:", error.message);
-  } else if (session) {
-    console.log("User is signed in:", session.user);
-    window.location.href = "/index2.html"; // Redirect to the main page
-  } else {
-    console.log("No user signed in");
-  }
-})();
+<script type="module">
+  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-  
-    // Handle login form submission
-    document.getElementById("login-form").addEventListener("submit", async (event) => {
-      event.preventDefault();
-  
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const emailError = document.getElementById("email-error");
-      const passwordError = document.getElementById("password-error");
-  
-      // Clear previous error messages
-      emailError.textContent = "";
-      passwordError.textContent = "";
-  
-      if (!email || !password) {
-        if (!email) emailError.textContent = "Email is required.";
-        if (!password) passwordError.textContent = "Password is required.";
-        return;
-      }
-  
-      try {
-        const { data, error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
-  
-        if (error) {
-          throw error;
-        }
-  
-        console.log("User signed in:", data.user);
-        window.location.href = "/index2.html";
-      } catch (error) {
+  // Supabase configuration
+  const supabaseUrl = "https://bcacdgnguwazukrwggtn.supabase.co";
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjYWNkZ25ndXdhenVrcndnZ3RuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2MzQxNzQsImV4cCI6MjA1MTIxMDE3NH0.IrKTh109PlnSYqpLU6z8m5RH-YnU9XuAuzFe1od8f-E";
+  const supabase = createClient(supabaseUrl, supabaseKey, {
+    auth: {
+      persistSession: true,
+      storage: localStorage,
+    },
+  });
+
+  console.log("Supabase initialized");
+
+  // Check for an existing session
+  (async () => {
+    const { data: { session }, error } = await supabase.auth.getSession();
+    if (error) {
+      console.error("Error fetching session:", error.message);
+    } else if (session) {
+      console.log("User is signed in:", session.user);
+      window.location.href = "/index2.html"; // Redirect if already signed in
+    } else {
+      console.log("No user signed in");
+    }
+  })();
+
+  // Handle login form submission
+  document.getElementById("login-form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const emailError = document.getElementById("email-error");
+    const passwordError = document.getElementById("password-error");
+
+    // Clear previous error messages
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+    console.log("Email:", email);
+    console.log("Password:", password);
+
+    if (!email || !password) {
+      if (!email) emailError.textContent = "Email is required.";
+      if (!password) passwordError.textContent = "Password is required.";
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
         console.error("Login error:", error.message);
         if (error.message.includes("Invalid login credentials")) {
           emailError.textContent = "Invalid email or password.";
         } else {
           emailError.textContent = error.message;
         }
+      } else {
+        console.log("User signed in:", data.user);
+        window.location.href = "/index2.html"; // Redirect after successful login
       }
+    } catch (error) {
+      console.error("Login error:", error.message);
+      emailError.textContent = "An unexpected error occurred. Please try again.";
+    }
+  });
+
+  // Social login functions for each button
+  async function loginWithGoogle() {
+    const { user, session, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
     });
-  </script>
+
+    if (error) {
+      console.error("Error logging in with Google:", error.message);
+    } else {
+      console.log("Logged in with Google:", user);
+      window.location.href = "/index2.html"; // Redirect after successful login
+    }
+  }
+
+  async function loginWithGitHub() {
+    const { user, session, error } = await supabase.auth.signInWithOAuth({
+      provider: "github",
+    });
+
+    if (error) {
+      console.error("Error logging in with GitHub:", error.message);
+    } else {
+      console.log("Logged in with GitHub:", user);
+      window.location.href = "/index2.html"; // Redirect after successful login
+    }
+  }
+
+  async function loginWithFacebook() {
+    const { user, session, error } = await supabase.auth.signInWithOAuth({
+      provider: "facebook",
+    });
+
+    if (error) {
+      console.error("Error logging in with Facebook:", error.message);
+    } else {
+      console.log("Logged in with Facebook:", user);
+      window.location.href = "/index2.html"; // Redirect after successful login
+    }
+  }
+
+  async function loginWithTwitter() {
+    const { user, session, error } = await supabase.auth.signInWithOAuth({
+      provider: "twitter",
+    });
+
+    if (error) {
+      console.error("Error logging in with Twitter:", error.message);
+    } else {
+      console.log("Logged in with Twitter:", user);
+      window.location.href = "/index2.html"; // Redirect after successful login
+    }
+  }
+
+  async function loginWithLinkedIn() {
+    const { user, session, error } = await supabase.auth.signInWithOAuth({
+      provider: "linkedin",
+    });
+
+    if (error) {
+      console.error("Error logging in with LinkedIn:", error.message);
+    } else {
+      console.log("Logged in with LinkedIn:", user);
+      window.location.href = "/index2.html"; // Redirect after successful login
+    }
+  }
+
+  // Attach event listeners for social login buttons
+  document.querySelector(".social-btn.google").addEventListener("click", loginWithGoogle);
+  document.querySelector(".social-btn.github").addEventListener("click", loginWithGitHub);
+  document.querySelector(".social-btn.facebook").addEventListener("click", loginWithFacebook);
+  document.querySelector(".social-btn.twitter").addEventListener("click", loginWithTwitter);
+  document.querySelector(".social-btn.linkedin").addEventListener("click", loginWithLinkedIn);
+</script>
+
+  
+  
   
 </body>
 </html>

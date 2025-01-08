@@ -71,7 +71,9 @@
 
         <form id="ContactForm">
             <label for="name"><i class="fas fa-user icon"></i> Name:</label>
-            <input type="text" id="name" name="name" required>
+            <!-- <input type="text" name="name" pattern="[A-Za-z\s\-']+" title="Name must only contain letters, spaces, hyphens, or apostrophes" required> -->
+            <input type="text" name="name" pattern="[A-Za-z\s\-']+" title="Name must only contain letters,spaces,hyphens or apostrophes" required>
+
 
             <label for="email"><i class="fas fa-envelope icon"></i> Email:</label>
             <input type="email" id="email" name="email" required>

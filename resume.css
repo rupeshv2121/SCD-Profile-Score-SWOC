@@ -6,7 +6,33 @@ body {
     font-family: Arial, sans-serif;
   }
   .section1 {
-    border: 2px solid #d6a52b;
+    border: 2px solid var(--border-color);
+  }
+
+  :root {
+    --body-bg: antiquewhite;
+    --primary-color: white;
+    --tertiary-color: #191970;
+    --para-text: black;
+    --resume-color: rgb(202, 98, 12);
+    --resume-box: white;
+    --h2-color: #000;
+    --label-color: black;
+    --text-color: black;
+    --text-border-color: black;
+}
+
+html .dark {
+    --body-bg: black;
+    --primary-color: rgb(41, 40, 40);
+    --tertiary-color: #37fcff;
+    --para-text: aqua;
+    --resume-color: yellow;
+    --resume-box: #044464;
+    --h2-color: rgb(242, 242, 78);
+    --label-color: #ffd465;
+    --text-color: white;
+    --text-border-color: #ccc;
 }
 
     #google_translate_element {
@@ -76,6 +102,14 @@ body {
     user-select: none;
   }
 
+  label{
+    color: var(--label-color);
+  }
+
+  input{
+    background-color: var(--resume-box);
+  }
+
   .banner-image {
     width: 100%;
     height: 300px;
@@ -120,7 +154,6 @@ body {
   }
 
   .options-section h2 {
-    color: #4a4a4a;
     font-size: 28px;
     margin-bottom: 10px;
   }
@@ -173,7 +206,7 @@ body {
   }
 
   section h2 {
-    color: #000;
+    color: var(--h2-color);
     font-size: 30px;
     margin-bottom: 20px;
     margin-top: 0;
@@ -236,7 +269,7 @@ body {
     color: #d6a52b;
   }
   .section1 {
-    background-color: antiquewhite;
+    background-color: var(--body-bg);
     width: 100%;
     display: flex;
   }
@@ -255,7 +288,7 @@ body {
     position: relative;
   }
   .resume-box {
-    background-color: #fff;
+    background-color: var(--resume-box);
     padding: 20px;
     border: 2px solid #d6a52b;
     border-radius: 5px;
@@ -303,8 +336,17 @@ body {
     cursor: pointer;
     width: 100%;
   }
+
+  input[type="text"] {
+    color: var(--text-color);
+  }
+
+  input[type="number"] {
+    border: 1px solid var(--text-border-color);
+  }
+
   fieldset {
-    background-color: #fff;
+    background-color: var(--resume-box);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -421,7 +463,7 @@ body {
   }
 
   .resume-section{
-    background-color: #fff;
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -437,6 +479,7 @@ body {
     }
 
     .resume-section p{
+        color: var(--para-text);
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -447,7 +490,7 @@ body {
     h1 {
         margin-bottom: 20px;
         font-size: 2.5em;
-        color: rgb(202, 98, 12);
+        color: var(--resume-color);
     }
 
 @media (max-width: 956px) {

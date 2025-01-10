@@ -30,14 +30,6 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="navbar.css" />
     <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-      }
-
       #google_translate_element {
         z-index: 1000;
         display: none;
@@ -127,7 +119,7 @@
         height: 15px;
         width: 15px;
         margin: 0 2px;
-        background-color: #ffd465;
+        background-color: var(--heading-color);
         color: #ffd465;
         border-radius: 50%;
         display: inline-block;
@@ -151,7 +143,7 @@
       }
 
       .options-section p {
-        color: #6f6f6f;
+        color: var(--options-p);
         font-size: 18px;
         margin-bottom: 20px;
       }
@@ -165,7 +157,7 @@
 
       .option {
         text-align: center;
-        background-color: #f7f7f7;
+        background-color: var(--card-bg);
         border-radius: 8px;
         padding: 20px;
         width: 150px;
@@ -180,7 +172,6 @@
 
       .option p {
         font-size: 16px;
-        color: #333;
       }
       .options-container:hover {
         color: #ffd465;
@@ -194,7 +185,7 @@
       }
 
       .orange {
-        color: #d6a52b;
+        color: rgb(229, 229, 61);
       }
 
       section h2 {
@@ -209,7 +200,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #d6a52b;
+        background-color: rgb(229, 229, 61);
         color: white;
         border: none;
         border-radius: 50%;
@@ -231,7 +222,7 @@
         bottom: 80px; /* Place closer to the bottom */
         right: 30px; /* Place closer to the right */
         display: none; /* Initially hidden */
-        background-color: #d6a52b;
+        background-color: rgb(229, 229, 61);
         color: white;
         border: none;
         border-radius: 50%;
@@ -298,343 +289,7 @@
         z-index: 2;
         position: relative;
       }
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #2b2b28;
-        text-align: center;
-        padding: 10px 20px;
-        position: sticky;
-        height: 80px;
-        top: 0;
-        z-index: 1000;
-      }
-      .navbar .logo {
-        gap: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .navbar .logo h2 {
-        margin-top: 10px;
-      }
-
-      .navbar li span {
-        display: none;
-        opacity: 0;
-        transition: opacity 1.2s ease-in-out;
-      }
-      .navbar li {
-        display: flex;
-      }
-      .nav-links li a i {
-        color: #000;
-      }
-      .navbar li:hover span {
-        opacity: 1;
-        display: inline;
-      }
-      .theme-switch {
-        --toggle-size: 15px;
-        /* the size is adjusted using font-size,
-     this is not transform scale,
-     so you can choose any size */
-        --container-width: 5.625em;
-        --container-height: 2.5em;
-        --container-radius: 6.25em;
-        /* radius 0 - minecraft mode :) */
-        --container-light-bg: #3d7eae;
-        --container-night-bg: #1d1f2c;
-        --circle-container-diameter: 3.375em;
-        --sun-moon-diameter: 2.125em;
-        --sun-bg: #ecca2f;
-        --moon-bg: #c4c9d1;
-        --spot-color: #959db1;
-        --circle-container-offset: calc(
-          (var(--circle-container-diameter) - var(--container-height)) / 2 * -1
-        );
-        --stars-color: #fff;
-        --clouds-color: #f3fdff;
-        --back-clouds-color: #aacadf;
-        --transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
-        --circle-transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
-      }
-
-      .theme-switch,
-      .theme-switch *,
-      .theme-switch *::before,
-      .theme-switch *::after {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-size: var(--toggle-size);
-      }
-
-      .theme-switch__container {
-        width: var(--container-width);
-        height: var(--container-height);
-        background-color: var(--container-light-bg);
-        border-radius: var(--container-radius);
-        overflow: hidden;
-        cursor: pointer;
-        -webkit-box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25),
-          0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
-        box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25),
-          0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
-        -webkit-transition: var(--transition);
-        -o-transition: var(--transition);
-        transition: var(--transition);
-        position: relative;
-      }
-
-      .theme-switch__container::before {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        inset: 0;
-        -webkit-box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset,
-          0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
-        box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset,
-          0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
-        border-radius: var(--container-radius);
-      }
-
-      .theme-switch__checkbox {
-        display: none;
-      }
-
-      .theme-switch__circle-container {
-        width: var(--circle-container-diameter);
-        height: var(--circle-container-diameter);
-        background-color: rgba(255, 255, 255, 0.1);
-        position: absolute;
-        left: var(--circle-container-offset);
-        top: var(--circle-container-offset);
-        border-radius: var(--container-radius);
-        -webkit-box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
-          inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
-          0 0 0 0.625em rgba(255, 255, 255, 0.1),
-          0 0 0 1.25em rgba(255, 255, 255, 0.1);
-        box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
-          inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
-          0 0 0 0.625em rgba(255, 255, 255, 0.1),
-          0 0 0 1.25em rgba(255, 255, 255, 0.1);
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-transition: var(--circle-transition);
-        -o-transition: var(--circle-transition);
-        transition: var(--circle-transition);
-        pointer-events: none;
-      }
-
-      .theme-switch__sun-moon-container {
-        pointer-events: auto;
-        position: relative;
-        z-index: 2;
-        width: var(--sun-moon-diameter);
-        height: var(--sun-moon-diameter);
-        margin: auto;
-        border-radius: var(--container-radius);
-        background-color: var(--sun-bg);
-        -webkit-box-shadow: 0.062em 0.062em 0.062em 0em
-            rgba(254, 255, 239, 0.61) inset,
-          0em -0.062em 0.062em 0em #a1872a inset;
-        box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
-          0em -0.062em 0.062em 0em #a1872a inset;
-        -webkit-filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25))
-          drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
-        filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25))
-          drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
-        overflow: hidden;
-        -webkit-transition: var(--transition);
-        -o-transition: var(--transition);
-        transition: var(--transition);
-      }
-
-      .theme-switch__moon {
-        -webkit-transform: translateX(100%);
-        -ms-transform: translateX(100%);
-        transform: translateX(100%);
-        width: 100%;
-        height: 100%;
-        background-color: var(--moon-bg);
-        border-radius: inherit;
-        -webkit-box-shadow: 0.062em 0.062em 0.062em 0em
-            rgba(254, 255, 239, 0.61) inset,
-          0em -0.062em 0.062em 0em #969696 inset;
-        box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
-          0em -0.062em 0.062em 0em #969696 inset;
-        -webkit-transition: var(--transition);
-        -o-transition: var(--transition);
-        transition: var(--transition);
-        position: relative;
-      }
-
-      .theme-switch__spot {
-        position: absolute;
-        top: 0.75em;
-        left: 0.312em;
-        width: 0.75em;
-        height: 0.75em;
-        border-radius: var(--container-radius);
-        background-color: var(--spot-color);
-        -webkit-box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
-        box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
-      }
-
-      .theme-switch__spot:nth-of-type(2) {
-        width: 0.375em;
-        height: 0.375em;
-        top: 0.937em;
-        left: 1.375em;
-      }
-
-      .theme-switch__spot:nth-last-of-type(3) {
-        width: 0.25em;
-        height: 0.25em;
-        top: 0.312em;
-        left: 0.812em;
-      }
-
-      .theme-switch__clouds {
-        width: 1.25em;
-        height: 1.25em;
-        background-color: var(--clouds-color);
-        border-radius: var(--container-radius);
-        position: absolute;
-        bottom: -0.625em;
-        left: 0.312em;
-        -webkit-box-shadow: 0.937em 0.312em var(--clouds-color),
-          -0.312em -0.312em var(--back-clouds-color),
-          1.437em 0.375em var(--clouds-color),
-          0.5em -0.125em var(--back-clouds-color), 2.187em 0 var(--clouds-color),
-          1.25em -0.062em var(--back-clouds-color),
-          2.937em 0.312em var(--clouds-color),
-          2em -0.312em var(--back-clouds-color),
-          3.625em -0.062em var(--clouds-color),
-          2.625em 0em var(--back-clouds-color),
-          4.5em -0.312em var(--clouds-color),
-          3.375em -0.437em var(--back-clouds-color),
-          4.625em -1.75em 0 0.437em var(--clouds-color),
-          4em -0.625em var(--back-clouds-color),
-          4.125em -2.125em 0 0.437em var(--back-clouds-color);
-        box-shadow: 0.937em 0.312em var(--clouds-color),
-          -0.312em -0.312em var(--back-clouds-color),
-          1.437em 0.375em var(--clouds-color),
-          0.5em -0.125em var(--back-clouds-color), 2.187em 0 var(--clouds-color),
-          1.25em -0.062em var(--back-clouds-color),
-          2.937em 0.312em var(--clouds-color),
-          2em -0.312em var(--back-clouds-color),
-          3.625em -0.062em var(--clouds-color),
-          2.625em 0em var(--back-clouds-color),
-          4.5em -0.312em var(--clouds-color),
-          3.375em -0.437em var(--back-clouds-color),
-          4.625em -1.75em 0 0.437em var(--clouds-color),
-          4em -0.625em var(--back-clouds-color),
-          4.125em -2.125em 0 0.437em var(--back-clouds-color);
-        -webkit-transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
-        -o-transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
-        transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
-      }
-
-      .theme-switch__stars-container {
-        position: absolute;
-        color: var(--stars-color);
-        top: -100%;
-        left: 0.312em;
-        width: 2.75em;
-        height: auto;
-        -webkit-transition: var(--transition);
-        -o-transition: var(--transition);
-        transition: var(--transition);
-      }
-
-      /* actions */
-
-      .theme-switch__checkbox:checked + .theme-switch__container {
-        background-color: var(--container-night-bg);
-      }
-
-      .theme-switch__checkbox:checked
-        + .theme-switch__container
-        .theme-switch__circle-container {
-        left: calc(
-          100% - var(--circle-container-offset) -
-            var(--circle-container-diameter)
-        );
-      }
-
-      .theme-switch__checkbox:checked
-        + .theme-switch__container
-        .theme-switch__circle-container:hover {
-        left: calc(
-          100% - var(--circle-container-offset) -
-            var(--circle-container-diameter) - 0.187em
-        );
-      }
-
-      .theme-switch__circle-container:hover {
-        left: calc(var(--circle-container-offset) + 0.187em);
-      }
-
-      .theme-switch__checkbox:checked
-        + .theme-switch__container
-        .theme-switch__moon {
-        -webkit-transform: translate(0);
-        -ms-transform: translate(0);
-        transform: translate(0);
-      }
-
-      .theme-switch__checkbox:checked
-        + .theme-switch__container
-        .theme-switch__clouds {
-        bottom: -4.062em;
-      }
-
-      .theme-switch__checkbox:checked
-        + .theme-switch__container
-        .theme-switch__stars-container {
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-      }
-
-      .quick-link ul li:hover,
-      .resources ul li:hover {
-        text-decoration: underline;
-      }
-
-      .social-icons div a {
-        transition: all 0.3s ease;
-      }
-
-      .social-icons div a:hover {
-        scale: 1.3;
-        rotate: 15deg;
-      }
-      .social-icons div a i.fa-facebook-f:hover {
-        color: rgb(51, 51, 199);
-      }
-      .social-icons div a i.fa-twitter:hover {
-        color: rgb(51, 98, 199);
-      }
-      .social-icons div a i.fa-linkedin-in:hover {
-        color: rgb(51, 132, 199);
-      }
-      .social-icons div a i.fa-instagram:hover {
-        color: rgb(199, 51, 167);
-      }
-      .subscribe-section form input[type="email"] {
-        padding-left: 8px;
-        border-radius: 4px;
-        height: 4vh;
-        border: none;
-      }
+      
     </style>
   </head>
   <body>
@@ -788,8 +443,8 @@
         }
       </script>
 
-      <h1 style="color: #d6a52b">Welcome to Ajivika</h1>
-      <p>Your one-stop destination for career growth and learning.</p>
+      <h1 style="color: var(--heading-color)">Welcome to Ajivika</h1>
+      <p style="color: var(--para-color);">Your one-stop destination for career growth and learning.</p>
       <div class="slideshow-container">
         <!-- Slide 1 -->
         <div class="mySlides fade">
@@ -827,7 +482,7 @@
       </div>
 
       <section class="section options-section">
-        <h2 style="color: black">
+        <h2 style="color: var(--para-color)">
           What are
           <span class="orange">you looking for?</span>
         </h2>
@@ -845,11 +500,11 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
-            <a href="./resume.html" style="text-decoration: none; color: black">
+            <a href="./resume.html" style="text-decoration: none; color: var(--card-text)">
               <img
-                src="./resume.png"
+                src="./resume2.jpg"
                 alt="Resume"
                 style="width: 100px; height: 100px"
               />
@@ -866,9 +521,9 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
-            <a href="./index2.html" style="text-decoration: none; color: black">
+            <a href="./index2.html" style="text-decoration: none; color: var(--card-text)">
               <img
                 src="./job.webp"
                 alt="Apply for Jobs"
@@ -887,11 +542,11 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
             <a
               href="https://vwfds2rwkfwfree87eappta.streamlit.app/"
-              style="text-decoration: none; color: black"
+              style="text-decoration: none; color: var(--card-bg)"
             >
               <img
                 src="./courses.png"
@@ -911,11 +566,11 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
             <a
               href="https://public.tableau.com/app/profile/ojas.arora/viz/JobTrendAnalysis_17349777011460/HighestPayingJobs2"
-              style="text-decoration: none; color: black"
+              style="text-decoration: none; color: var(--card-text)"
             >
               <img
                 src="./dashboard.jpg"
@@ -944,7 +599,7 @@
       >
         <!-- About Section -->
         <div class="footer-section" style="flex: 1; min-width: 200px">
-          <h3 style="color: #d6a52b">About Ajivika</h3>
+          <h3 style="color: rgb(229, 229, 61)">About Ajivika</h3>
           <p style="font-size: 14px; line-height: 1.6">
             Ajivika is your one-stop destination for career growth and learning.
             From creating professional resumes to applying for top jobs, we
@@ -957,7 +612,7 @@
           class="footer-section quick-link"
           style="flex: 1; min-width: 200px"
         >
-          <h3 style="color: #d6a52b">Quick Links</h3>
+          <h3 style="color: rgb(229, 229, 61)">Quick Links</h3>
           <ul
             style="
               list-style: none;
@@ -995,7 +650,7 @@
 
         <!-- Resources -->
         <div class="footer-section resources" style="flex: 1; min-width: 200px">
-          <h3 style="color: #d6a52b">Resources</h3>
+          <h3 style="color: rgb(229, 229, 61)">Resources</h3>
           <ul
             style="
               list-style: none;
@@ -1034,7 +689,7 @@
           class="footer-section social-icons"
           style="flex: 1; min-width: 200px"
         >
-          <h3 style="color: #d6a52b">Follow Us</h3>
+          <h3 style="color: rgb(229, 229, 61)">Follow Us</h3>
           <div
             style="
               display: flex;
@@ -1079,7 +734,7 @@
           class="footer-section subscribe-section"
           style="flex: 1; min-width: 200px"
         >
-          <h3 style="color: #d6a52b">Subscribe to Our Newsletter</h3>
+          <h3 style="color: rgb(229, 229, 61)">Subscribe to Our Newsletter</h3>
           <form
             action="#"
             method="POST"
@@ -1097,7 +752,7 @@
                 padding: 10px;
                 border: none;
                 border-radius: 5px;
-                background-color: #d6a52b;
+                background-color: rgb(229, 229, 61);
                 color: #222;
                 cursor: pointer;
               "
@@ -1161,29 +816,31 @@
       }
     </script>
 
-    <script>
-      // Get the button element
-      const scrollBtn = document.getElementById("scrollBtn");
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('.theme-switch__checkbox');
+        const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'dark') {
+              document.body.classList.add('dark');
+              document.body.classList.remove('light');
+              themeToggle.checked = true;
+          } else {
+              document.body.classList.add('light');
+              document.body.classList.remove('dark');
+          }
 
-      // Show the button when the user scrolls down 100px from the top
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollBtn.style.display = "block";
+      themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            document.body.classList.add('dark');
+            document.body.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
         } else {
-          scrollBtn.style.display = "none";
+            document.body.classList.remove('dark');
+            document.body.classList.add('light');
+            localStorage.setItem('theme', 'light');
         }
-      };
-
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      };
+          });
+      });
     </script>
   </body>
 </html>

@@ -7,10 +7,31 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background-color: antiquewhite;
+    background-color: var(--body-bg);
     color: #333;
 }
-  
+
+:root {
+    --body-bg: antiquewhite;
+    --primary-color: #fff;
+    --heading-color: #d6a52b;
+    --tertiary-color: #FFD465;
+    --options-p: #4a4a4a;
+    --card-text: #333;
+    --card-bg: #f7f7f7;
+}
+
+html .dark {
+    --body-bg: black;
+    --primary-color: #262525;
+    --heading-color: rgb(229, 229, 61);
+    --tertiary-color: #09c9fe;
+    --para-color: #fff;
+    --options-p: aqua;
+    --card-text: aqua;
+    --card-bg: #134b68;
+}
+
 .navbar .logo h2{
   margin-top: 10px;
 }  
@@ -22,7 +43,7 @@ body {
 }
 
 .home-section {
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     text-align: center;
 }
 

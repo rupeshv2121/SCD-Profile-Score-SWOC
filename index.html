@@ -29,11 +29,6 @@
     ></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="navbar.css" />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles.css" />
     <style>
       * {
         box-sizing: border-box;
@@ -42,22 +37,6 @@
       body {
         font-family: Arial, sans-serif;
       }
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .translate-button {
-        background-color: transparent;
-        border: none;
-        border-radius: 50%;
-
-        font-size: 30px;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      .translate-button:hover {
-        background-color: #0056b3;
-      }
 
       #google_translate_element {
         z-index: 1000;
@@ -65,10 +44,6 @@
 
         padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      .nav-links {
-        align-items: center;
       }
 
       .slideshow-container {
@@ -183,20 +158,17 @@
 
       .options-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         gap: 20px;
-        width: 100%;
-        margin-top: 4rem;
       }
 
       .option {
-        width: 19%;
         text-align: center;
         background-color: #f7f7f7;
         border-radius: 8px;
         padding: 20px;
-
+        width: 150px;
         transition: transform 0.3s ease;
       }
 
@@ -209,7 +181,6 @@
       .option p {
         font-size: 16px;
         color: #333;
-        font-weight: 700;
       }
       .options-container:hover {
         color: #ffd465;
@@ -257,7 +228,11 @@
       /* CSS for Scroll to Top Button */
       #scrollBtn {
         position: fixed;
+
         bottom: 93px; /* Place closer to the bottom */
+
+        bottom: 88px; /* Place closer to the bottom */
+
         right: 30px; /* Place closer to the right */
         display: none; /* Initially hidden */
         background-color: #d6a52b;
@@ -296,8 +271,8 @@
       }
 
       .image-icon {
-        width: 120px;
-        height: 120px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         border: 3px solid white;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -337,7 +312,7 @@
         position: sticky;
         height: 80px;
         top: 0;
-        z-index: 1000;
+        z-index: 1;
       }
       .navbar .logo {
         gap: 13px;
@@ -368,8 +343,8 @@
       .theme-switch {
         --toggle-size: 15px;
         /* the size is adjusted using font-size,
-      this is not transform scale,
-      so you can choose any size */
+     this is not transform scale,
+     so you can choose any size */
         --container-width: 5.625em;
         --container-height: 2.5em;
         --container-radius: 6.25em;
@@ -659,59 +634,58 @@
         color: rgb(199, 51, 167);
       }
       .subscribe-section form input[type="email"] {
-        padding-left: 8px;
         border-radius: 4px;
         height: 4vh;
         border: none;
+        padding: 10px;
       }
-
-      /*  FAQ */
-      .faq-section {
-        max-width: 800px;
-        margin-top: 70px;
-        padding: 20px;
-      }
-
-      .faq-section h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #333;
-      }
-
-      .faq-item {
-        margin-bottom: 10px;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .faq-question {
-        padding: 15px;
+      .subscribe-button {
+        padding: 10px 62px;
+        border: none;
+        border-radius: 5px;
+        background-color: #d6a52b;
+        color: #222;
+        font-weight: 600;
         cursor: pointer;
-        background-color: #f4f4f4;
-        color: #333;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 4px;
       }
 
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        background-color: #fafafa;
-        padding: 0 15px;
+      .subscribe-button:hover {
+        background-color: #d7b96b;
       }
 
-      .faq-answer p {
-        margin: 10px 0;
-        color: #555;
+      .goog-te-gadget-simple {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
       }
 
-      .faq-item.open .faq-answer {
-        max-height: 100px;
+      @media (max-width: 768px) {
+        .subscribe-section form input[type="email"] {
+          height: 5vh;
+          width: 69%;
+        }
+        .subscribe-button {
+          width: 69%;
+        }
+      }
+
+      @media (max-width: 426px) {
+        .subscribe-section form input[type="email"] {
+          text-align: center;
+          padding: 16px 42px;
+        }
+        .subscribe-button {
+          padding: 10px 90px;
+        }
+
+        .option {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
+    <div id="cursor"></div>
     <!-- Navigation -->
     <nav class="navbar">
       <div class="logo">
@@ -807,7 +781,7 @@
     </script>
 
     <!-- Google Translate Script -->
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 
     <script>
       // Initialize Google Translate
@@ -914,7 +888,7 @@
             style="
               text-align: center;
               padding: 20px;
-              border: 2px solid #ccc;
+              border: 1px solid #ccc;
               transition: background-color 0.3s ease;
               cursor: pointer;
             "
@@ -1000,90 +974,6 @@
             </a>
           </div>
         </div>
-
-        <section class="faq-section">
-          <h2>Frequently Asked Questions</h2>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              What is Ajivika, and how can it help me?
-            </div>
-            <div class="faq-answer">
-              <p>
-                Ajivika is a smart job recommendation portal designed to help
-                job seekers. It lets you create professional resumes, get
-                personalized job suggestions, find skill-boosting courses, and
-                track your career progress easily.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">How does Ajivika recommend jobs?</div>
-            <div class="faq-answer">
-              <p>
-                Ajivika analyzes your profile, skills, and preferences to
-                suggest jobs that match your qualifications and interests. It
-                ensures you get relevant and personalized job recommendations.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              Can Ajivika help me improve my skills?
-            </div>
-            <div class="faq-answer">
-              <p>
-                Yes! Ajivika suggests courses based on your goals and job
-                interests. You can also take skill assessments to validate your
-                abilities and earn certificates.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              Is there support if I have career-related questions?
-            </div>
-            <div class="faq-answer">
-              <p>
-                Absolutely! Ajivika has a chatbot to provide instant help for
-                any career-related queries, making your journey smoother.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              Does Ajivika only focus on big cities for job opportunities?
-            </div>
-            <div class="faq-answer">
-              <p>
-                No! Ajivika also highlights jobs in smaller towns and regions,
-                ensuring job seekers from all areas can find opportunities close
-                to home.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <script>
-          const faqItems = document.querySelectorAll(".faq-item");
-
-          faqItems.forEach((item) => {
-            item
-              .querySelector(".faq-question")
-              .addEventListener("click", () => {
-                item.classList.toggle("open");
-                faqItems.forEach((otherItem) => {
-                  if (otherItem !== item) {
-                    otherItem.classList.remove("open");
-                  }
-                });
-              });
-          });
-        </script>
       </section>
     </section>
 
@@ -1241,34 +1131,27 @@
           <form
             action="#"
             method="POST"
-            style="display: flex; flex-direction: column; gap: 10px"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              align-items: center;
+            "
           >
             <input
+              id="email"
               type="email"
               name="email"
               placeholder="Enter your email"
-              style="padding: 10px; border: none; border-radius: 5px"
             />
-            <button
-              type="submit"
-              style="
-                padding: 10px;
-                border: none;
-                border-radius: 5px;
-                background-color: #d6a52b;
-                color: #222;
-                cursor: pointer;
-              "
-            >
-              Subscribe
-            </button>
+            <button type="submit" class="subscribe-button">Subscribe</button>
           </form>
         </div>
       </div>
 
       <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444" />
       <div style="text-align: center; font-size: 14px; color: #aaa">
-        <p>&copy; 2025 Ajivika™. All rights reserved.</p>
+        <p>&copy; 2024 Ajivika™. All rights reserved.</p>
         <p>Designed and developed with ❤️ by the Ajivika Team.</p>
       </div>
     </footer>
@@ -1287,6 +1170,14 @@
     <button class="image-button">
       <img src="./image.png" alt="Image Button" class="image-icon" />
     </button>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="index.js"></script>
 
     <script>
       let slideIndex = 0;

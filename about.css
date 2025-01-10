@@ -297,6 +297,7 @@
 
   .feature-card:hover {
     transform: translateY(-10px);
+    cursor: pointer;
   }
 
   .feature-card i {
@@ -334,4 +335,40 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     position: relative;
+  }
+
+  
+  footer {
+    padding: 10px;
+    background-color: #f0cd9e66;
+    text-align: center;
+    border: 4px solid #faebd7;
+  }
+
+  @media(max-width:768px) {
+    .image-icon1{
+      width: 50px;
+      height: 50px;
+      top: 10px;
+    }
+
+    .navbar .logo h2 {
+      font-size: 1.7em;
+      margin-left: 117%;
+  }
+
+  .image-icon{
+    width: 78px;
+    height: 78px;
+  }
+  }
+
+  @media(max-width:425px) {
+    .about-box h1{
+      font-size: 2rem;
+    }
+
+    .back-button {
+      left: 8px;
+    }
   }

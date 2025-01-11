@@ -14,6 +14,14 @@ tl.from(".nav-links li", {
     y: -30
 })
 
+gsap.from(".feature-card", {
+    scale: 0,
+    duration: 1,
+    rotate: 1440,
+    ease: "steps.out"
+})
+
+
 const cursor = document.querySelector("#cursor");
 const body = document.querySelector("body")
 body.addEventListener("mousemove", function (e) {

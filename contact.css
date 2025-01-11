@@ -1,6 +1,28 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: antiquewhite;
+    background-color: var(--body-bg);
+}
+
+:root {
+    --body-bg: antiquewhite;
+    --primary-color: white;
+    --icon-color: #d6a52b;
+    --card-text: #333;
+    --card-bg: #f7f7f7;
+    --heading-color: #8b4513;
+    --text-area: white;
+    --textarea-text: black;
+}
+
+html .dark {
+    --body-bg: black;
+    --primary-color: rgb(41, 40, 40);
+    --icon-color: aqua;
+    --card-text: yellow;
+    --card-bg: #044464;
+    --heading-color: rgb(255, 187, 52);
+    --text-area: gray;
+    --textarea-text: white;
 }
 
 .slideshow-container {
@@ -141,7 +163,7 @@ body {
 
 .option p {
     font-size: 16px;
-    color: #333;
+    color: var(--card-text);
 }
 .options-container:hover{
     color: #FFD465;
@@ -234,7 +256,7 @@ text-align: left; /* Adjusts text alignment, optional */
     left: 20px;
     background-color: transparent;
     border: none;
-    color: #333;
+    color: var(--card-text);
     font-size: 24px;
     cursor: pointer;
     z-index: 999;
@@ -279,7 +301,7 @@ text-align: left; /* Adjusts text alignment, optional */
 .contact-section {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: var(--primary-color);
     padding: 30px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -293,14 +315,14 @@ text-align: left; /* Adjusts text alignment, optional */
 
 .contact-section h1 {
     text-align: center;
-    color: #333;
-    font-size: 30px;
+    color: var(--heading-color);
+    font-size: 35px;
     margin-bottom: 20px;
 }
 
 .contact-section p {
     text-align: center;
-    color: #666;
+    color: var(--card-text);
     font-size: 15px;
     margin-bottom: 30px;
 }
@@ -312,7 +334,7 @@ text-align: left; /* Adjusts text alignment, optional */
 
 .contact-section label {
     margin-bottom: 5px;
-    color: #333;
+    color: var(--card-text);
     font-size: 16px;
 }
 
@@ -320,9 +342,12 @@ text-align: left; /* Adjusts text alignment, optional */
 .contact-section textarea {
     padding: 12px;
     border: 1px solid #ddd;
+    background-color: var(--text-area);
+    color: var(--textarea-text);
     border-radius: 5px;
     margin-bottom: 20px;
     font-size: 16px;
+    font-weight: 400;
     width: 100%;
     box-sizing: border-box;
     transition: all 0.3s ease;
@@ -356,7 +381,7 @@ text-align: left; /* Adjusts text alignment, optional */
     width: 20px;
     text-align: center;
     margin-right: 10px;
-    color: #d6a52b;
+    color: var(--icon-color);
 }
 .image-button1 {
     position: fixed;

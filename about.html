@@ -176,9 +176,9 @@
     <section class="about-section">
       <div class="about-box">
         <h1>
-          <i class="fas fa-info-circle" style="color: #cf00a3" ></i> About Us
+          <i class="fas fa-info-circle" style="color: var(--pink-bg)" ></i> About Us
         </h1>
-        <div class="about-section">
+        <div class="about-container">
           <p>
             In order to address the lack of an intelligent and adaptive Job
             Recommendation Portal, the idea to create a website Ajivika (literal
@@ -250,7 +250,34 @@
           const navLinks = document.querySelector('.nav-links');
           navLinks.classList.toggle('active');
       }
-  </script>
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('.theme-switch__checkbox');
+        const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'dark') {
+              document.body.classList.add('dark');
+              document.body.classList.remove('light');
+              themeToggle.checked = true;
+          } else {
+              document.body.classList.add('light');
+              document.body.classList.remove('dark');
+          }
+
+      themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            document.body.classList.add('dark');
+            document.body.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark');
+            document.body.classList.add('light');
+            localStorage.setItem('theme', 'light');
+        }
+          });
+      });
+    </script>
 
     <footer>&copy; 2024 Ajivika. All rights reserved.</footer>
   </body>

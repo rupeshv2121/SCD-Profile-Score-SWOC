@@ -150,6 +150,7 @@
 
 .navbar .logo h2 {
     color: aliceblue;
+    margin-top: 10px;
 }
 
 .nav-links {
@@ -480,6 +481,7 @@
 
         background-image: url('../img/New\ Background.jpeg'); /* Replace with your image file */
         background-size: cover;
+        background-color: #FAEBD7;
         background-position: center;
         background-repeat: no-repeat;
         margin: 0;

@@ -24,6 +24,7 @@ body {
 }
 .navbar .logo h2{
     font-size: 2em;
+    margin-top: 10px;
 }
 .nav-links{
     align-items: center;

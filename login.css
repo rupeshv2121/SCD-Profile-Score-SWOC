@@ -11,7 +11,6 @@
     align-items: center;
     min-height: 100vh;
     /* background: #f8f9fa; */
-<<<<<<< HEAD
     background-color: var(--body-bg);
   }
 
@@ -53,9 +52,6 @@
   margin-bottom: 1%;
   background-color: var(--body-bg);
   color: var(--body-bg) ;
-=======
-    background-color: antiquewhite;
->>>>>>> 8beeb211e82b3b2cc3b4989773bf71c95e6157fa
   }
   
   .container {
@@ -72,21 +68,13 @@
   .left-section {
     flex: 1;
     /* background: linear-gradient(to bottom right, #ffb347, #ffcc33); */
-<<<<<<< HEAD
     background: linear-gradient(to bottom right,  var(--left-section), var(--left-gradient));
-=======
-    background: linear-gradient(to bottom right, antiquewhite, white );
->>>>>>> 8beeb211e82b3b2cc3b4989773bf71c95e6157fa
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* color: #fff; */
-<<<<<<< HEAD
     color: var(--section-color);
-=======
-    color: black;
->>>>>>> 8beeb211e82b3b2cc3b4989773bf71c95e6157fa
     text-align: center;
     padding: 40px;
     animation: slideInLeft 1s ease-in-out;
@@ -109,10 +97,7 @@
   }
   
   .right-section {
-<<<<<<< HEAD
     background-color: var(--right-section);
-=======
->>>>>>> 8beeb211e82b3b2cc3b4989773bf71c95e6157fa
     flex: 1;
     padding: 40px;
     display: flex;
@@ -124,20 +109,12 @@
   .right-section h1 {
     font-size: 28px;
     margin-bottom: 10px;
-<<<<<<< HEAD
     color: var(--section-color);
-=======
-    color: #333;
->>>>>>> 8beeb211e82b3b2cc3b4989773bf71c95e6157fa
   }
   
   .subtitle {
     font-size: 16px;
-<<<<<<< HEAD
     color: var(--subtitle-color);
-=======
-    color: #666;
->>>>>>> 8beeb211e82b3b2cc3b4989773bf71c95e6157fa
     margin-bottom: 20px;
   }
   
@@ -149,15 +126,11 @@
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-<<<<<<< HEAD
     color: var(--label-color);
   }
 
   .checkbox-group label, .register-link{
     color: var(--label-color);
-=======
-    color: #555;
->>>>>>> 8beeb211e82b3b2cc3b4989773bf71c95e6157fa
   }
   
   .login-form .input-group input {

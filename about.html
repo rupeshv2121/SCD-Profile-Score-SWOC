@@ -13,11 +13,11 @@
     <link rel="manifest" href="/site.webmanifest" />
     <title>About Us - Ajivika</title>
     <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="about.css" />
   </head>
   <body>
-     <!-- Navigation -->
-     <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="navbar">
       <div class="logo">
         <button class="image-button1">
           <img src="./image.png" alt="Image Button1" class="image-icon1" />
@@ -176,6 +176,7 @@
     <section class="about-section">
       <div class="about-box">
         <h1>
+          <i class="fas fa-info-circle" style="color: #cf00a3"></i> About Us
           <i class="fas fa-info-circle" style="color: var(--pink-bg)" ></i> About Us
         </h1>
         <div class="about-container">
@@ -247,11 +248,18 @@
     <script>
       // hamburger menu js
       function toggleMenu() {
-          const navLinks = document.querySelector('.nav-links');
-          navLinks.classList.toggle('active');
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
       }
     </script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="index.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const themeToggle = document.querySelector('.theme-switch__checkbox');
@@ -278,7 +286,6 @@
           });
       });
     </script>
-
     <footer>&copy; 2024 Ajivika. All rights reserved.</footer>
   </body>
 </html>

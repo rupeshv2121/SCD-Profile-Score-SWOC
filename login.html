@@ -1,432 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - CareerSite</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: antiquewhite;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            flex-direction: column;
-            overflow: hidden; /* Hide scrollbar for the falling snowflakes */
-            position: relative;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        /* Back button styling */
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: transparent;
-            border: none;
-            color: #333;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 999;
-            transition: color 0.3s ease;
-        }
+  <style>
+    .toggle-password {
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .input-group {
+      position: relative;
+    }
+    .error {
+      color: red;
+      font-size: 0.8rem;
+    }
+    .social-login {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+    }
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .social-btn i {
+      line-height: 1;
+      padding: 0;
+      margin-right: 0px;
+    }
+    .social-btn.google {
+      background-color: #db4437;
+    }
+    .social-btn.google:hover {
+      background-color: #c23321;
+    }
+    .social-btn.github {
+      background-color: #333;
+    }
+    .social-btn.github:hover {
+      background-color: #1b1b1b;
+    }
+    .social-btn.facebook {
+      background-color: #3b5998;
+    }
+    .social-btn.facebook:hover {
+      background-color: #2d4373;
+    }
+  </style>
 
-        .back-button:hover {
-            color: #d6a52b;
-        }
 
-        /* Snowflakes animation */
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            color: #fff;
-            font-size: 1em;
-            pointer-events: none;
-            user-select: none;
-            animation: fall linear;
-            z-index: 1000;
-        }
+<style>
+  .social-btn.twitter {
+    background-color: #1DA1F2;
+  }
+  .social-btn.twitter:hover {
+    background-color: #0d8acb;
+  }
+  .social-btn.linkedin {
+    background-color: #0077b5;
+  }
+  .social-btn.linkedin:hover {
+    background-color: #005582;
+  }
+</style>
 
-        @keyframes fall {
-            to {
-                transform: translateY(100vh);
-            }
-        }
-
-        /* Adjust the size and speed of the snowflakes */
-        .snowflake:nth-child(1) { left: 5%; font-size: 1.5em; animation-duration: 8s; }
-        .snowflake:nth-child(2) { left: 15%; font-size: 1.2em; animation-duration: 10s; }
-        .snowflake:nth-child(3) { left: 25%; font-size: 2em; animation-duration: 12s; }
-        .snowflake:nth-child(4) { left: 35%; font-size: 1.8em; animation-duration: 9s; }
-        .snowflake:nth-child(5) { left: 45%; font-size: 1.6em; animation-duration: 11s; }
-        .snowflake:nth-child(6) { left: 55%; font-size: 1.7em; animation-duration: 13s; }
-        .snowflake:nth-child(7) { left: 65%; font-size: 1.4em; animation-duration: 14s; }
-        .snowflake:nth-child(8) { left: 75%; font-size: 1.3em; animation-duration: 10s; }
-        .snowflake:nth-child(9) { left: 85%; font-size: 1.5em; animation-duration: 12s; }
-        .snowflake:nth-child(10) { left: 95%; font-size: 2em; animation-duration: 15s; }
-
-        /* Image styling (just above the box) */
-        .login-image {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: -50px; /* Adjust this to overlap the image with the box */
-            z-index: 2;
-            position: relative;
-        }
-
-        .login-container {
-            width: 550px;
-            padding: 40px;
-            border: 2px solid #d6a52b;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 10px 10px 20px rgb(137,79,31);
-            position: relative;
-            z-index: 1;
-            animation: fadeIn 0.8s ease-in-out;
-            
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Border animation */
-        .login-container::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: white;
-            background-size: 600% 600%;
-            border-radius: 12px;
-            z-index: -1;
-            animation: borderAnimation 3s ease infinite;
-        }
-
-  
-
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-            font-size: 24px;
-        }
-
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 10px 40px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-
-        .input-group .icon {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #888;
-        }
-
-        .input-group .toggle-password {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #888;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #d6a52b;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        .login-btn:hover {
-            background-color: #d6a52b;
-        }
-
-        .register-link {
-            text-align: center;
-            display: block;
-            margin-top: 15px;
-            color: black; /* Blue color for visibility */
-            font-size: 16px; /* Increase font size */
-            text-decoration: none; /* Remove underline */
-            line-height: 1.5; /* Adjust line height */
-            transition: color 0.3s; /* Smooth transition for color change */
-        }
-
-        .register-link:hover {
-            color: #0056b3; /* Darker blue on hover */
-            text-decoration: underline; /* Underline on hover */
-        }
-
-        /* Social Media Icons */
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            background: #333;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-        }
-
-        .social-icon:hover {
-            background: #555;
-        }
-
-        .social-icon i {
-            font-size: 20px;
-        }
-
-        /* Hover animation */
-        .login-btn:hover, .input-group input:focus {
-            box-shadow: 0 0 5px rgba(0, 150, 0, 0.5);
-        }
-    </style>
 </head>
 <body>
-
-
-    <!-- Back button -->
-    <button class="back-button" onclick="window.history.back();">
-        <i class="fas fa-arrow-left"></i>
-    </button>
-
-    <!-- Add the image outside the login-container -->
-    <img src="./image.png" alt="Logo" class="login-image">
-    
-    <div class="login-container">
-        <h2><i class="fas fa-lock"></i> Ajivika Access</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <i class="fas fa-user icon"></i>
-                <input type="text" id="email" placeholder="Email" name="email" required>
-                <span id="errorMessage"></span>
+  <div class="container">
+    <div class="theme-converter">
+      <li><label class="theme-switch">
+          <input type="checkbox" class="theme-switch__checkbox">
+          <div class="theme-switch__container">
+            <div class="theme-switch__clouds"></div>
+            <div class="theme-switch__stars-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M135.831 3.00688C135.055 3.85027 134.111 4.29946 133 4.35447C134.111 4.40947 135.055 4.85867 135.831 5.71123C136.607 6.55462 136.996 7.56303 136.996 8.72727C136.996 7.95722 137.172 7.25134 137.525 6.59129C137.886 5.93124 138.372 5.39954 138.98 5.00535C139.598 4.60199 140.268 4.39114 141 4.35447C139.88 4.2903 138.936 3.85027 138.16 3.00688C137.384 2.16348 136.996 1.16425 136.996 0C136.996 1.16425 136.607 2.16348 135.831 3.00688ZM31 23.3545C32.1114 23.2995 33.0551 22.8503 33.8313 22.0069C34.6075 21.1635 34.9956 20.1642 34.9956 19C34.9956 20.1642 35.3837 21.1635 36.1599 22.0069C36.9361 22.8503 37.8798 23.2903 39 23.3545C38.2679 23.3911 37.5976 23.602 36.9802 24.0053C36.3716 24.3995 35.8864 24.9312 35.5248 25.5913C35.172 26.2513 34.9956 26.9572 34.9956 27.7273C34.9956 26.563 34.6075 25.5546 33.8313 24.7112C33.0551 23.8587 32.1114 23.4095 31 23.3545ZM0 36.3545C1.11136 36.2995 2.05513 35.8503 2.83131 35.0069C3.6075 34.1635 3.99559 33.1642 3.99559 32C3.99559 33.1642 4.38368 34.1635 5.15987 35.0069C5.93605 35.8503 6.87982 36.2903 8 36.3545C7.26792 36.3911 6.59757 36.602 5.98015 37.0053C5.37155 37.3995 4.88644 37.9312 4.52481 38.5913C4.172 39.2513 3.99559 39.9572 3.99559 40.7273C3.99559 39.563 3.6075 38.5546 2.83131 37.7112C2.05513 36.8587 1.11136 36.4095 0 36.3545ZM56.8313 24.0069C56.0551 24.8503 55.1114 25.2995 54 25.3545C55.1114 25.4095 56.0551 25.8587 56.8313 26.7112C57.6075 27.5546 57.9956 28.563 57.9956 29.7273C57.9956 28.9572 58.172 28.2513 58.5248 27.5913C58.8864 26.9312 59.3716 26.3995 59.9802 26.0053C60.5976 25.602 61.2679 25.3911 62 25.3545C60.8798 25.2903 59.9361 24.8503 59.1599 24.0069C58.3837 23.1635 57.9956 22.1642 57.9956 21C57.9956 22.1642 57.6075 23.1635 56.8313 24.0069ZM81 25.3545C82.1114 25.2995 83.0551 24.8503 83.8313 24.0069C84.6075 23.1635 84.9956 22.1642 84.9956 21C84.9956 22.1642 85.3837 23.1635 86.1599 24.0069C86.9361 24.8503 87.8798 25.2903 89 25.3545C88.2679 25.3911 87.5976 25.602 86.9802 26.0053C86.3716 26.3995 85.8864 26.9312 85.5248 27.5913C85.172 28.2513 84.9956 28.9572 84.9956 29.7273C84.9956 28.563 84.6075 27.5546 83.8313 26.7112C83.0551 25.8587 82.1114 25.4095 81 25.3545ZM136 36.3545C137.111 36.2995 138.055 35.8503 138.831 35.0069C139.607 34.1635 139.996 33.1642 139.996 32C139.996 33.1642 140.384 34.1635 141.16 35.0069C141.936 35.8503 142.88 36.2903 144 36.3545C143.268 36.3911 142.598 36.602 141.98 37.0053C141.372 37.3995 140.886 37.9312 140.525 38.5913C140.172 39.2513 139.996 39.9572 139.996 40.7273C139.996 39.563 139.607 38.5546 138.831 37.7112C138.055 36.8587 137.111 36.4095 136 36.3545ZM101.831 49.0069C101.055 49.8503 100.111 50.2995 99 50.3545C100.111 50.4095 101.055 50.8587 101.831 51.7112C102.607 52.5546 102.996 53.563 102.996 54.7273C102.996 53.9572 103.172 53.2513 103.525 52.5913C103.886 51.9312 104.372 51.3995 104.98 51.0053C105.598 50.602 106.268 50.3911 107 50.3545C105.88 50.2903 104.936 49.8503 104.16 49.0069C103.384 48.1635 102.996 47.1642 102.996 46C102.996 47.1642 102.607 48.1635 101.831 49.0069Z" fill="currentColor"></path>
+              </svg>
             </div>
-            <div class="input-group">
-                <i class="fas fa-lock icon"></i>
-                <input type="password" id="password" placeholder="Password" name="password" required>
-                <i class="fas fa-eye toggle-password" id="togglePassword"></i>
-                <span id="errorMessage"></span>
+            <div class="theme-switch__circle-container">
+              <div class="theme-switch__sun-moon-container">
+                <div class="theme-switch__moon">
+                  <div class="theme-switch__spot"></div>
+                  <div class="theme-switch__spot"></div>
+                  <div class="theme-switch__spot"></div>
+                </div>
+              </div>
             </div>
-            <button type="submit" class="login-btn">Login</button>
-            <a href="register.html" class="register-link">Don’t have an account? Register here</a>
-        </form>
-        <div class="social-media">
-            <button class="social-icon" id="google" aria-label="Google" >
-                <i class="fab fa-google"></i>
-            </button>
-            <button class="social-icon" id="github" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </button>
-            <button class="social-icon" id="facebook" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </button>
-            <button class="social-icon" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-            </button>
-            <button class="social-icon" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </button>
-        </div>
+          </div>
+        </label></li>
+      <!-- Add the image outside the register-container -->
+  </div>
+    <div class="left-section">
+      <div class="logo" style="border-radius: 100px;">
+        <img src="/image.png" alt="Company Logo" style="border-radius: 100px;">
+        <h2>Ajivika</h2>
+        <p>Learn, grow, and achieve!</p>
+      </div>
     </div>
+    <div class="right-section">
+      <h1>Members Log in</h1>
+      <p class="subtitle">Login to start your journey...</p>
+      <form id="loginForm" class="login-form">
+        <div class="input-group">
+          <label for="email">
+            <i class="fas fa-envelope"></i> Email
+          </label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <p class="error" id="errorMessage"></p>
+        </div>
+        <div class="input-group">
+          <label for="password">
+            <i class="fas fa-lock"></i> Password
+          </label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+          <span class="toggle-password" id="togglePassword"><i class="fas fa-eye"></i></span>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="remember-me">
+          <label for="remember-me">Remember Me</label>
+        </div>
+        <button type="submit" class="login-btn">Log In</button>
+        <p class="register-link">
+          Don't have an account? <a href="/register.html" id="register-link">Register here</a>
+        </p>
+      </form>
+      <div class="social-login">
+        <button class="social-btn google" id="google" aria-label="Log in with Google">
+          <i class="fab fa-google"></i>
+        </button>
+        <button class="social-btn github" id="github" aria-label="Log in with GitHub">
+          <i class="fab fa-github"></i>
+        </button>
+        <button class="social-btn facebook" id="facebook" aria-label="Log in with Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button class="social-btn twitter" id="twitter" aria-label="Log in with Twitter">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button class="social-btn linkedin" id="linkedin" aria-label="Log in with LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </button>
+      </div>
+      
+    </div>
+  </div>  
 
+  <script type="module">
+    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+  
+    // Supabase configuration
+    const supabaseUrl = "https://gomhoxkucvpajjvkkeda.supabase.co";
+    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvbWhveGt1Y3ZwYWpqdmtrZWRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYwNzU1OTUsImV4cCI6MjA1MTY1MTU5NX0.FdcK0Vmws-kxuL4fxXYNBTBBjDFaK44lY4b-jGcA6FE"; // Replace with your Supabase anon key
+    const supabase = createClient(supabaseUrl, supabaseKey);
+  
+    // Monitor authentication state changes
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+      console.log("Auth event:", event, "Session:", session);
+  
+      if (event === "SIGNED_IN") {
+        console.log("User signed in!");
+        window.location.href = "./index2.html";
+      } else if (event === "SIGNED_OUT") {
+        console.log("User signed out!");
+        window.location.href = "./login.html";
+      } else if (event === "PASSWORD_RECOVERY") {
+        console.log("Password recovery initiated!");
+      } else if (event === "TOKEN_REFRESHED") {
+        console.log("Token refreshed!");
+      } else if (event === "USER_UPDATED") {
+        console.log("User information updated!");
+      } else if (event === "INITIAL_SESSION") {
+        console.log("Initial session detected!");
+      }
+    });
+  
+    // Unsubscribe when necessary
+    window.addEventListener("beforeunload", () => {
+      data.subscription.unsubscribe();
+    });
+  
+    // Toggle password visibility
+    document.getElementById('togglePassword').addEventListener('click', function () {
+      const passwordField = document.getElementById('password');
+      const type = passwordField.type === 'password' ? 'text' : 'password';
+      passwordField.type = type;
+      this.classList.toggle('fa-eye-slash');
+    });
+  
+    // Form submission for email and password
+    document.getElementById('loginForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+  
+      try {
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        console.log("Login successful!");
+      } catch (err) {
+        document.getElementById('errorMessage').textContent = err.message;
+      }
+    });
+  
+    // Google OAuth
+    document.getElementById("google").addEventListener("click", async () => {
+      await supabase.auth.signInWithOAuth({ provider: "google" });
+    });
+  
+    // GitHub OAuth
+    document.getElementById("github").addEventListener("click", async () => {
+      await supabase.auth.signInWithOAuth({ provider: "github" });
+    });
+  
+    // Facebook OAuth
+    document.getElementById("facebook").addEventListener("click", async () => {
+      await supabase.auth.signInWithOAuth({
+        provider: "facebook",
+        options: { redirectTo: "https://your-domain.com/index2.html" }
+      });
+    });
 
-    <!-- added supabase auth -->
-    <script type="module">
-        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-    
-        // Supabase configuration
-        const supabaseUrl = "https://gomhoxkucvpajjvkkeda.supabase.co"; // Replace with your Supabase URL
-        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvbWhveGt1Y3ZwYWpqdmtrZWRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYwNzU1OTUsImV4cCI6MjA1MTY1MTU5NX0.FdcK0Vmws-kxuL4fxXYNBTBBjDFaK44lY4b-jGcA6FE"; // Replace with your Supabase anon key
-        const supabase = createClient(supabaseUrl, supabaseKey);
-    
-        console.log("Supabase initialized");
-    
-        // Check if a user is already logged in
-        supabase.auth.getUser().then(({ data: { user }, error }) => {
-            if (error) {
-                console.error("Error fetching user:", error);
-            } else if (user) {
-                console.log("User is signed in:", user);
-                window.location.href = "/index2.html";
-            } else {
-                console.log("No user signed in");
-            }
-        });
-    
-        // Toggle password visibility
-        document.getElementById('togglePassword').addEventListener('click', function () {
-            const passwordField = document.getElementById('password');
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-            this.classList.toggle('fa-eye-slash');
-        });
-    
-        // Handle form submission
-        document.getElementById('loginForm').addEventListener('submit', async function (event) {
-            event.preventDefault(); // Prevent the default form submission
-    
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorElement = document.getElementById('errorMessage');
-    
-            // Clear previous error message
-            errorElement.textContent = "";
-    
-            if (!email || !password) {
-                errorElement.textContent = "Please fill in all fields.";
-                errorElement.style.color = "red";
-                return;
-            }
-    
-            try {
-                // Supabase Sign-In Function
-                const { data, error } = await supabase.auth.signInWithPassword({
-                    email,
-                    password,
-                });
-    
-                if (error) {
-                    throw error;
-                }
-    
-                console.log("User signed in:", data.user);
-                // Redirect to another page
-                window.location.href = './index2.html';
-            } catch (error) {
-                console.error("Error signing in:", error.message);
-                errorElement.textContent = error.message;
-                errorElement.style.color = "red";
-            }
-        });
-    </script>
-    
-    <!-- for now only google authentication works. have to add app id , url in github and facebook to make it work . so total 3auth works google,github,facebook -->
-    <!-- for google and github auth -->
-    <script type="module">
-        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-    
-        // Supabase configuration
-        const supabaseUrl2 = "https://gomhoxkucvpajjvkkeda.supabase.co"; // Replace with your Supabase URL
-        const supabaseKey2 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvbWhveGt1Y3ZwYWpqdmtrZWRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYwNzU1OTUsImV4cCI6MjA1MTY1MTU5NX0.FdcK0Vmws-kxuL4fxXYNBTBBjDFaK44lY4b-jGcA6FE"; // Replace with your Supabase anon key
-    
-        const supabase2 = createClient(supabaseUrl2, supabaseKey2);
-    
-        // Monitor the authentication state
-        supabase2.auth.onAuthStateChange((event, session) => {
-            if (session) {
-                console.log("User is signed in:", session.user);
-                window.location.href = "/index2.html";
-            } else {
-                console.log("No user signed in");
-            }
-        });
-    
-        // For Google sign-in
-        const googleBtn = document.getElementById("google");
-        googleBtn.addEventListener("click", async () => {
-            try {
-                const { data, error } = await supabase2.auth.signInWithOAuth({
-                    provider: "google",
-                });
-                if (error) throw error;
-                console.log("User signed in with Google:", data);
-            } catch (error) {
-                console.error("Error signing in with Google:", error.message);
-            }
-        });
-    
-        // For GitHub sign-in
-        const githubBtn = document.getElementById("github");
-        githubBtn.addEventListener("click", async () => {
-            try {
-                const { data, error } = await supabase2.auth.signInWithOAuth({
-                    provider: "github",
-                });
-                if (error) throw error;
-                console.log("User signed in with GitHub:", data);
-            } catch (error) {
-                console.error("Error signing in with GitHub:", error.message);
-            }
-        });
-    </script>
-    
+    // Twitter OAuth
+document.getElementById("twitter").addEventListener("click", async () => {
+  await supabase.auth.signInWithOAuth({
+    provider: "twitter",
+    options: { redirectTo: "https://your-domain.com/index2.html" }
+  });
+});
 
-        <!-- for facebook auth -->
-        <script type="module">
-            import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-        
-            // Supabase configuration
-            const supabaseUrl3 = "https://gomhoxkucvpajjvkkeda.supabase.co"; // Replace with your Supabase project URL
-            const supabaseKey3 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvbWhveGt1Y3ZwYWpqdmtrZWRhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYwNzU1OTUsImV4cCI6MjA1MTY1MTU5NX0.FdcK0Vmws-kxuL4fxXYNBTBBjDFaK44lY4b-jGcA6FE"; // Replace with your Supabase anon key
-            const supabase3 = createClient(supabaseUrl3, supabaseKey3);
-        
-            console.log("Supabase initialized");
-        
-            // Facebook button event listener
-            const FBbutton = document.getElementById("facebook");
-        
-            FBbutton.addEventListener("click", async () => {
-                try {
-                    const { data, error } = await supabase3.auth.signInWithOAuth({
-                        provider: "facebook", // Specify the provider
-                        options: {
-                            redirectTo: "https://your-domain.com/index2.html" // Replace with your redirect URI
-                        }
-                    });
-        
-                    if (error) throw error;
-        
-                    console.log("Redirecting to Facebook sign-in page:", data);
-                } catch (error) {
-                    console.error("Facebook sign-in error:", error.message);
-                }
-            });
-        
-            // Check authentication state
-            const session = await supabase3.auth.getSession();
-            if (session.data.session) {
-                console.log("User is signed in:", session.data.session.user);
-                window.location.href = "/index2.html";
-            } else {
-                console.log("No user signed in");
-            }
-        </script>
-        
+// LinkedIn OAuth
+document.getElementById("linkedin").addEventListener("click", async () => {
+  await supabase.auth.signInWithOAuth({
+    provider: "linkedin",
+    options: { redirectTo: "https://your-domain.com/index2.html" }
+  });
+});
+
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.querySelector('.theme-switch__checkbox');
+  const currentTheme = localStorage.getItem('theme');
+  if (currentTheme === 'dark') {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+      themeToggle.checked = true;
+  } else {
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
+  }
+
+themeToggle.addEventListener('change', () => {
+  if (themeToggle.checked) {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+  } else {
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+      localStorage.setItem('theme', 'light');
+  }
+  });
+});
+</script>
+  
 </body>
 </html>

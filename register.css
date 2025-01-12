@@ -56,6 +56,17 @@ min-height: 100vh;
 background-color: var(--body-bg);
 }
 
+.back-button{
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  margin-right: 90%;
+  margin-bottom: 40%;
+  color: var(--login-link-color);
+  cursor: pointer;
+}
+
 .theme-converter{
 margin-left: 83%;
 margin-top: -2%;

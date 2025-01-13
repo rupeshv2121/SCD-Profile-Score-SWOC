@@ -30,14 +30,6 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="navbar.css" />
     <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-      }
-
       #google_translate_element {
         z-index: 1000;
         display: none;
@@ -47,32 +39,68 @@
       }
 
       .slideshow-container {
-        position: relative;
-        max-width: 100%;
-        margin: auto;
-        overflow: hidden;
-        color: #ffd465;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+    }
 
-      .mySlides {
-        display: none;
-        position: relative;
-      }
+    .mySlides {
+      display: none;
+    }
 
-      .fade {
-        animation-name: fade;
-        animation-duration: 1.5s;
-      }
+    .banner-image {
+      width: 100%;
+      height: auto;
+    }
 
-      @keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      user-select: none;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .dot.active {
+      background-color: #717171;
+    }
 
       .text {
         color: #fff;
@@ -83,60 +111,6 @@
         width: 100%;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-      }
-
-      .banner-image {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-      }
-
-      .prev {
-        left: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-
-      .dot {
-        cursor: pointer;
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        background-color: #ffd465;
-        color: #ffd465;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
-      }
-
-      .active,
-      .dot:hover {
-        background-color: #717171;
       }
 
       .options-section {
@@ -151,7 +125,7 @@
       }
 
       .options-section p {
-        color: #6f6f6f;
+        color: var(--options-p);
         font-size: 18px;
         margin-bottom: 20px;
       }
@@ -165,7 +139,7 @@
 
       .option {
         text-align: center;
-        background-color: #f7f7f7;
+        background-color: var(--card-bg);
         border-radius: 8px;
         padding: 20px;
         width: 150px;
@@ -180,7 +154,6 @@
 
       .option p {
         font-size: 16px;
-        color: #333;
       }
       .options-container:hover {
         color: #ffd465;
@@ -191,10 +164,6 @@
       }
       .option a {
         text-decoration: none;
-      }
-
-      .orange {
-        color: #d6a52b;
       }
 
       section h2 {
@@ -209,7 +178,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #d6a52b;
+        background-color: var(--heading-color);
         color: white;
         border: none;
         border-radius: 50%;
@@ -235,7 +204,7 @@
 
         right: 30px; /* Place closer to the right */
         display: none; /* Initially hidden */
-        background-color: #d6a52b;
+        background-color: rgb(229, 229, 61);
         color: white;
         border: none;
         border-radius: 50%;
@@ -271,8 +240,8 @@
       }
 
       .image-icon {
-        width: 80px;
-        height: 80px;
+        width: 110px;
+        height: 110px;
         border-radius: 50%;
         border: 3px solid white;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -724,6 +693,11 @@
             ><i class="fas fa-comments"></i><span>Go Pro</span></a
           >
         </li>
+        <li>
+          <a href="./contributors/contributor.html"
+            ><i class="fas fa-users"></i><span>Contributors</span></a
+          >
+        </li>
         <!-- <li><a href="./login.html"><i class="fas fa-sign-in-alt"></i><span>Log In</span></a></li> -->
         <li>
           <a href="./register.html"
@@ -814,68 +788,39 @@
     </script>
 
     <section class="section home-section">
-      <div id="google_element"></div>
-      <script
-        type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"
-        onerror="handleError(this)"
-      ></script>
-      <script type="text/javascript">
-        function loadGoogleTranslate() {
-          new google.translate.TranslateElement(
-            {
-              pageLanguage: "en",
-              includedLanguages: "en,hi,pa,sa,mr,ur,bn,es,fr,de,it",
-              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            },
-            "google_element"
-          );
-        }
-        function handleError(e) {
-          console.error("Error loading Google Translate script:", e);
-        }
-      </script>
-
-      <h1 style="color: #d6a52b">Welcome to Ajivika</h1>
-      <p>Your one-stop destination for career growth and learning.</p>
+      <!-- Banner -->
+      <h1 style="color: var(--heading-color)">Welcome to Ajivika</h1>
+      <p style="color: var(--para-color);">Your one-stop destination for career growth and learning.</p>
       <div class="slideshow-container">
         <!-- Slide 1 -->
-        <div class="mySlides fade">
+        <div class="mySlides">
           <img src="./upskill-banner.jpg" alt="Upskill" class="banner-image" />
         </div>
-
+    
         <!-- Slide 2 -->
-        <div class="mySlides fade">
-          <img
-            src="./apply-jobs-banner.jpg"
-            alt="Apply for the best jobs"
-            class="banner-image"
-          />
+        <div class="mySlides">
+          <img src="./apply-jobs-banner.jpg" alt="Apply for the best jobs" class="banner-image" />
         </div>
-
+    
         <!-- Slide 3 -->
-        <div class="mySlides fade">
-          <img
-            src="./resume-banner.jpg"
-            alt="Get your resume made"
-            class="banner-image"
-          />
+        <div class="mySlides">
+          <img src="./resume-banner.jpg" alt="Get your resume made" class="banner-image" />
         </div>
-
+    
         <!-- Navigation buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
-      <br />
+    
       <!-- Dots -->
-      <div style="text-align: center">
+      <div class="dot-container">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
       </div>
 
       <section class="section options-section">
-        <h2 style="color: black">
+        <h2 style="color: var(--para-color)">
           What are
           <span class="orange">you looking for?</span>
         </h2>
@@ -893,11 +838,11 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
-            <a href="./resume.html" style="text-decoration: none; color: black">
+            <a href="./resume.html" style="text-decoration: none; color: var(--card-text)">
               <img
-                src="./resume.png"
+                src="./resume2.jpg"
                 alt="Resume"
                 style="width: 100px; height: 100px"
               />
@@ -914,9 +859,9 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
-            <a href="./index2.html" style="text-decoration: none; color: black">
+            <a href="./index2.html" style="text-decoration: none; color: var(--card-text)">
               <img
                 src="./job.webp"
                 alt="Apply for Jobs"
@@ -935,11 +880,11 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
             <a
               href="https://vwfds2rwkfwfree87eappta.streamlit.app/"
-              style="text-decoration: none; color: black"
+              style="text-decoration: none; color: var(--card-bg)"
             >
               <img
                 src="./courses.png"
@@ -959,11 +904,11 @@
               cursor: pointer;
             "
             onmouseover="this.style.backgroundColor='#FFD465'"
-            onmouseout="this.style.backgroundColor='white'"
+            onmouseout="this.style.backgroundColor='var(--card-bg)'"
           >
             <a
               href="https://public.tableau.com/app/profile/ojas.arora/viz/JobTrendAnalysis_17349777011460/HighestPayingJobs2"
-              style="text-decoration: none; color: black"
+              style="text-decoration: none; color: var(--card-text)"
             >
               <img
                 src="./dashboard.jpg"
@@ -992,7 +937,7 @@
       >
         <!-- About Section -->
         <div class="footer-section" style="flex: 1; min-width: 200px">
-          <h3 style="color: #d6a52b">About Ajivika</h3>
+          <h3>About Ajivika</h3>
           <p style="font-size: 14px; line-height: 1.6">
             Ajivika is your one-stop destination for career growth and learning.
             From creating professional resumes to applying for top jobs, we
@@ -1005,7 +950,7 @@
           class="footer-section quick-link"
           style="flex: 1; min-width: 200px"
         >
-          <h3 style="color: #d6a52b">Quick Links</h3>
+          <h3>Quick Links</h3>
           <ul
             style="
               list-style: none;
@@ -1043,7 +988,7 @@
 
         <!-- Resources -->
         <div class="footer-section resources" style="flex: 1; min-width: 200px">
-          <h3 style="color: #d6a52b">Resources</h3>
+          <h3>Resources</h3>
           <ul
             style="
               list-style: none;
@@ -1082,7 +1027,7 @@
           class="footer-section social-icons"
           style="flex: 1; min-width: 200px"
         >
-          <h3 style="color: #d6a52b">Follow Us</h3>
+          <h3>Follow Us</h3>
           <div
             style="
               display: flex;
@@ -1127,7 +1072,7 @@
           class="footer-section subscribe-section"
           style="flex: 1; min-width: 200px"
         >
-          <h3 style="color: #d6a52b">Subscribe to Our Newsletter</h3>
+          <h3>Subscribe to Our Newsletter</h3>
           <form
             action="#"
             method="POST"
@@ -1144,6 +1089,7 @@
               name="email"
               placeholder="Enter your email"
             />
+            </button>
             <button type="submit" class="subscribe-button">Subscribe</button>
           </form>
         </div>
@@ -1180,51 +1126,88 @@
     <script src="index.js"></script>
 
     <script>
-      let slideIndex = 0;
-      showSlides();
+      let slideIndex = 1;
+    showSlides(slideIndex);
 
-      function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        for (let i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
       }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+    // Auto-play functionality
+    setInterval(() => {
+      plusSlides(1);
+    }, 3000); // Change image every 3 seconds
     </script>
 
-    <script>
-      // Get the button element
-      const scrollBtn = document.getElementById("scrollBtn");
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('.theme-switch__checkbox');
+        const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'dark') {
+              document.body.classList.add('dark');
+              document.body.classList.remove('light');
+              themeToggle.checked = true;
+          } else {
+              document.body.classList.add('light');
+              document.body.classList.remove('dark');
+          }
 
-      // Show the button when the user scrolls down 100px from the top
-      window.onscroll = function () {
-        if (
-          document.body.scrollTop > 100 ||
-          document.documentElement.scrollTop > 100
-        ) {
-          scrollBtn.style.display = "block";
+      themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            document.body.classList.add('dark');
+            document.body.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
         } else {
-          scrollBtn.style.display = "none";
+            document.body.classList.remove('dark');
+            document.body.classList.add('light');
+            localStorage.setItem('theme', 'light');
         }
-      };
+          });
+      });
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,es,fr,de,it,ja,zh-CN',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          'google_translate_element'
+        );
+      }
 
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      };
+      function toggleTranslate() {
+        const translateElement = document.getElementById('google_translate_element');
+        if (translateElement.style.display === 'none' || translateElement.style.display === '') {
+          translateElement.style.display = 'block';
+        } else {
+          translateElement.style.display = 'none';
+        }
+      }
     </script>
   </body>
 </html>

@@ -32,7 +32,7 @@
             <button class="image-button1">
                 <img src="image.png" alt="Image Button1" class="image-icon1">
             </button>
-            <h2 style="margin-top: 10px;">Ajivika</h2>
+            <h2 style="margin-top: -10px;">Ajivika</h2>
         </div>
             <!-- Floating Image Button -->
 
@@ -102,30 +102,7 @@
         }
     </script>
 
-    <script>
-        // Initialize Google Translate
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-                {
-                    pageLanguage: 'en',
-                    includedLanguages: 'en,hi,es,fr,de,it,ja,zh-CN',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false
-                },
-                'google_translate_element'
-            );
-        }
-
-        // Show or hide the Google Translate options
-        function toggleTranslate() {
-            const translateElement = document.getElementById('google_translate_element');
-            if (translateElement.style.display === 'none' || translateElement.style.display === '') {
-                translateElement.style.display = 'block';
-            } else {
-                translateElement.style.display = 'none';
-            }
-        }
-    </script>
+    
 
     <section class="section home-section">
         <div id="google_element"></div>
@@ -280,6 +257,29 @@
     };
 
   </script>
+   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   <script>
+     function googleTranslateElementInit() {
+       new google.translate.TranslateElement(
+         {
+           pageLanguage: 'en',
+           includedLanguages: 'en,hi,es,fr,de,it,ja,zh-CN',
+           layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+           autoDisplay: false,
+         },
+         'google_translate_element'
+       );
+     }
+
+     function toggleTranslate() {
+       const translateElement = document.getElementById('google_translate_element');
+       if (translateElement.style.display === 'none' || translateElement.style.display === '') {
+         translateElement.style.display = 'block';
+       } else {
+         translateElement.style.display = 'none';
+       }
+     }
+   </script>
    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    <script>
      function googleTranslateElementInit() {

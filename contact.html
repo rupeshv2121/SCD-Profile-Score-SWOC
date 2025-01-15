@@ -19,7 +19,7 @@
         <button class="image-button1">
           <img src="./image.png" alt="Image Button1" class="image-icon1" />
         </button>
-        <h2 style="margin-top: -10px; margin-left: 70px;">Ajivika</h2>
+        <h2 style="margin-top: -10px; margin-left: 70px">Ajivika</h2>
       </div>
       <!-- Floating Image Button -->
 
@@ -104,28 +104,39 @@
     <!-- Contact Form Section -->
 
     <div class="container">
-        <div class="illustration-section">
-            <img src="image copy.png" alt="Contact Illustration">
+      <div class="illustration-section">
+        <img src="image copy.png" alt="Contact Illustration" />
+      </div>
+      <div class="form-section">
+        <h1>CONTACT US</h1>
+        <p>We would love to hear from you</p>
+        <form>
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://linkedin.com" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
         </div>
-        <div class="form-section">
-            <h1>CONTACT US</h1>
-            <p>We would love to hear from you</p>
-            <form>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
+      </div>
     </div>
-
-  
 
     <!-- Floating Image Button -->
     <button class="image-button">
@@ -211,6 +222,34 @@
           }
         });
       });
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,hi,es,fr,de,it,ja,zh-CN",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+
+      function toggleTranslate() {
+        const translateElement = document.getElementById(
+          "google_translate_element"
+        );
+        if (
+          translateElement.style.display === "none" ||
+          translateElement.style.display === ""
+        ) {
+          translateElement.style.display = "block";
+        } else {
+          translateElement.style.display = "none";
+        }
+      }
     </script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"

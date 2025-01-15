@@ -3,14 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - CareerSite</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="pricing.css" />
+    <title>Privacy-Policy - Ajivika</title>
   </head>
+  <style>
+    body.dark {
+            background-color: black;
+            color: white;
+        }
+
+        body.dark h3, 
+        body.dark ul, 
+        body.dark ul li {
+            color: aqua; /* Aqua text in dark mode */
+        }
+  </style>
   <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -18,7 +30,7 @@
         <button class="image-button1">
           <img src="./image.png" alt="Image Button1" class="image-icon1" />
         </button>
-        <h2 style="margin-top: -10px; margin-left: 70px;">Ajivika</h2>
+        <h2 style="margin-top: -10px;margin-left: 5px;">Ajivika</h2>
       </div>
       <!-- Floating Image Button -->
 
@@ -95,73 +107,7 @@
         </li>
       </ul>
     </nav>
-
-    <button class="back-button" onclick="window.history.back();">
-      <i class="fas fa-arrow-left"></i>
-    </button>
-
-    <!-- Contact Form Section -->
-
-    <div class="container">
-        <div class="illustration-section">
-            <img src="image copy.png" alt="Contact Illustration">
-        </div>
-        <div class="form-section">
-            <h1>CONTACT US</h1>
-            <p>We would love to hear from you</p>
-            <form>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </div>
-
-  
-
-    <!-- Floating Image Button -->
-    <button class="image-button">
-      <img src="./image.png" alt="Image Button" class="image-icon" />
-    </button>
-
-    <script>
-      let slideIndex = 0;
-      showSlides();
-
-      function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        for (let i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-      }
-    </script>
-
-    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444" />
-    <footer style="background-color: #222; color: #fff; padding: 20px 10px">
-      <div style="text-align: center; font-size: 14px; color: #aaa">
-        <p>&copy; 2024 Ajivika™. All rights reserved.</p> <br>
-        <p>Designed and developed with ❤️ by the Ajivika Team.</p>
-      </div>
-    </footer>
-    
+    <!-- Home Page Content -->
 
     <script>
       // hamburger menu js
@@ -171,25 +117,180 @@
       }
     </script>
 
-    <script>
-      // Simple JavaScript for form validation
-      document
-        .getElementById("ContactForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const message = document.getElementById("message").value.trim();
+    <!-- Google Translate Script -->
+    <!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 
-          if (!name || !email || !message) {
-            alert("Please fill out all fields.");
-          } else {
-            alert("Thank you for your message! We will get back to you soon.");
-            document.getElementById("ContactForm").reset();
-          }
-        });
+    <script>
+      // Initialize Google Translate
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,hi,es,fr,de,it,ja,zh-CN",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+
+      // Show or hide the Google Translate options
+      function toggleTranslate() {
+        const translateElement = document.getElementById(
+          "google_translate_element"
+        );
+        if (
+          translateElement.style.display === "none" ||
+          translateElement.style.display === ""
+        ) {
+          translateElement.style.display = "block";
+        } else {
+          translateElement.style.display = "none";
+        }
+      }
     </script>
 
+    <section class="section home-section">
+      <div id="google_element"></div>
+      <script
+        type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"
+        onerror="handleError(this)"
+      ></script>
+      <script type="text/javascript">
+        function loadGoogleTranslate() {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+              includedLanguages: "en,hi,pa,sa,mr,ur,bn,es,fr,de,it",
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            },
+            "google_element"
+          );
+        }
+        function handleError(e) {
+          console.error("Error loading Google Translate script:", e);
+        }
+      </script>
+    <button class="back-button" onclick="window.history.back();">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <!-- Privacy Section -->
+<!-- Privacy Section -->
+<!-- Privacy Policy Section -->
+<section class="privacy-section light">
+    <div class="about-box">
+      <h1>
+        <i class="fas fa-shield-alt"></i> Privacy Policy
+      </h1>
+      <p style="text-align: center;">
+        Your trust is vital to us. Discover how we handle, protect, and respect your personal information.
+      </p>
+      <br>
+  
+      <div class="privacy-content">
+        <p>
+          We are committed to safeguarding your privacy. This Privacy Policy explains what information we 
+          collect, why we collect it, and how we use it to enhance your experience with our platform. By 
+          using our services, you agree to the practices outlined below.
+        </p>
+  
+        <div class="privacy-card">
+          <h3>Information We Collect</h3>
+          <p>
+            To provide you with the best possible service, we collect the following types of information:
+          </p>
+          <ul>
+            <li><strong>Personal Information:</strong> Data such as your name, email address, contact details, and 
+            other identifiers provided during account registration or service use.</li>
+            <li><strong>Usage Data:</strong> Information about your interactions with our platform, including 
+            visited pages, time spent on services, and technical details like your IP address and browser type.</li>
+            <li><strong>Cookies and Tracking Technologies:</strong> We use cookies to improve functionality, 
+            personalize content, and analyze site traffic.</li>
+          </ul>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>How We Use Your Information</h3>
+          <p>
+            The information we collect is used to:
+          </p>
+          <ul>
+            <li>Provide seamless access to our services and enhance your user experience.</li>
+            <li>Develop new features, improve platform functionality, and fix technical issues.</li>
+            <li>Communicate important updates, offers, and service-related information.</li>
+            <li>Ensure the security and integrity of our systems and user accounts.</li>
+          </ul>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>How We Protect Your Data</h3>
+          <p>
+            We employ advanced security measures, including encryption, firewalls, and regular security 
+            audits, to protect your information from unauthorized access or misuse. Our team continuously 
+            monitors for potential threats and implements updates to keep your data safe.
+          </p>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>Third-Party Sharing</h3>
+          <p>
+            Your information is never sold or rented to third parties. We may share your data with trusted 
+            partners only when necessary to deliver services, such as payment processing or analytics, and 
+            always under strict confidentiality agreements.
+          </p>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>Your Rights</h3>
+          <p>
+            You have complete control over your personal information. You can:
+          </p>
+          <ul>
+            <li>Access your data at any time through your account settings.</li>
+            <li>Request corrections or updates to inaccurate or outdated information.</li>
+            <li>Delete your account and associated data upon request, subject to legal or regulatory 
+            obligations.</li>
+          </ul>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>Policy Updates</h3>
+          <p>
+            We may update this Privacy Policy periodically to reflect changes in our practices or for legal 
+            reasons. Any changes will be promptly communicated to you, and your continued use of the platform 
+            signifies your acceptance of the updated terms.
+          </p>
+        </div>
+  
+        <p>
+          For more details or questions, feel free to reach out to our support team at 
+          <a href="mailto:support@ajivika.com">support@ajivika.com</a>. We value your trust and are 
+          committed to ensuring your privacy.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  
+    <!-- Floating Image Button -->
+    <button class="image-button">
+      <img src="./image.png" alt="Image Button" class="image-icon" />
+    </button>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Ajivika™. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // hamburger menu js
+      function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const themeToggle = document.querySelector('.theme-switch__checkbox');
@@ -216,28 +317,24 @@
         });
     });
     </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: 'en',
-            includedLanguages: 'en,hi,es,fr,de,it,ja,zh-CN',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false,
-          },
-          'google_translate_element'
-        );
-      }
-
-      function toggleTranslate() {
-        const translateElement = document.getElementById('google_translate_element');
-        if (translateElement.style.display === 'none' || translateElement.style.display === '') {
-          translateElement.style.display = 'block';
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('.theme-switch__checkbox');
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.body.classList.remove('light');
+            themeToggle.checked = true;
         } else {
-          translateElement.style.display = 'none';
+            document.body.classList.add('light');
+            document.body.classList.remove('dark');
         }
-      }
-    </script>
+    });</script>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+}
+</script>
+    
 </body>
 </html>

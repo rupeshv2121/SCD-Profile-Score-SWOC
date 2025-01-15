@@ -427,7 +427,7 @@ text-align: left; /* Adjusts text alignment, optional */
     
 }
 
-.form-section {
+/* .form-section {
     flex: 1;
     max-width: 500px;
     padding: 20px;
@@ -491,5 +491,132 @@ text-align: left; /* Adjusts text alignment, optional */
 
 .social-links a:hover {
     color:  #d6a52b;
+} */
+
+
+
+/* General form section styling */
+.form-section {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Hover effect for form section */
+.form-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading and paragraph styling */
+.form-section h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Form styling */
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input and textarea styling */
+.form-section input,
+.form-section textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #ffebb7;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover effect for inputs and textarea */
+.form-section input:hover,
+.form-section textarea:hover {
+    border-color: #007BFF;
+    background: #f1f9ff;
+    box-shadow: 0 3px 8px rgba(0, 123, 255, 0.1);
+}
+
+/* Focus effect for inputs and textarea */
+.form-section input:focus,
+.form-section textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Placeholder styling */
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder hover effect */
+.form-section input:hover::placeholder,
+.form-section textarea:hover::placeholder {
+    color: #007BFF;
+}
+
+/* Button */
+.form-section button {
+    padding: 15px 20px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-section button:hover {
+    background: #0056b3;
+    box-shadow: 0 8px 15px rgba(0, 91, 179, 0.3);
+}
+
+/* Social links */
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 28px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #007BFF;
+    transform: scale(1.2);
+}

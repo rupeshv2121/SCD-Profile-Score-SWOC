@@ -9,8 +9,20 @@
     />
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="pricing.css" />
-    <title>Pricing - Ajivika</title>
+    <title>Privacy-Policy - Ajivika</title>
   </head>
+  <style>
+    body.dark {
+            background-color: black;
+            color: white;
+        }
+
+        body.dark h3, 
+        body.dark ul, 
+        body.dark ul li {
+            color: aqua; /* Aqua text in dark mode */
+        }
+  </style>
   <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -164,57 +176,104 @@
       <i class="fas fa-arrow-left"></i>
     </button>
 
-    <!-- Pricing Section -->
-    <section class="pricing-section light">
-      <div class="about-box">
-        <h1>
-          <i class="fas fa-dollar-sign"></i> Our Pricing Plans
-        </h1>
-          <p style="text-align: center;">Choose a plan that suits your needs the best.</p>
-          <br>
-
-          <div class="pricing-cards">
-              <div class="pricing-card">
-                  <h3>Basic Plan</h3>
-                  <p class="price">$10<span style="font-size: 1rem">/month</span></p>
-                  <ul>
-                      <li>Access to basic features</li>
-                      <li>Email support</li>
-                      <li>1 GB storage</li>
-                      <li>Community access</li>
-                  </ul>
-                  <button>Choose Plan</button>
-              </div>
-
-              <div class="pricing-card" style="border: 2px solid #d6a52b;">
-                  <h3>Standard Plan</h3>
-                  <p class="price">$20<span style="font-size: 1rem">/month</span></p>
-                  <ul>
-                      <li>Access to all features</li>
-                      <li>Priority email support</li>
-                      <li>10 GB storage</li>
-                      <li>Priority community access</li>
-                      <li>Monthly webinars</li>
-                  </ul>
-                  <button>Choose Plan</button>
-              </div>
-
-              <div class="pricing-card">
-                  <h3>Premium Plan</h3>
-                  <p class="price">$30<span style="font-size: 1rem">/month</span></p>
-                  <ul>
-                      <li>Access to premium features</li>
-                      <li>24/7 support</li>
-                      <li>Unlimited storage</li>
-                      <li>VIP community access</li>
-                      <li>Weekly webinars</li>
-                      <li>1-on-1 consultation</li>
-                  </ul>
-                  <button>Choose Plan</button>
-              </div>
-          </div>
+    <!-- Privacy Section -->
+<!-- Privacy Section -->
+<!-- Privacy Policy Section -->
+<section class="privacy-section light">
+    <div class="about-box">
+      <h1>
+        <i class="fas fa-shield-alt"></i> Privacy Policy
+      </h1>
+      <p style="text-align: center;">
+        Your trust is vital to us. Discover how we handle, protect, and respect your personal information.
+      </p>
+      <br>
+  
+      <div class="privacy-content">
+        <p>
+          We are committed to safeguarding your privacy. This Privacy Policy explains what information we 
+          collect, why we collect it, and how we use it to enhance your experience with our platform. By 
+          using our services, you agree to the practices outlined below.
+        </p>
+  
+        <div class="privacy-card">
+          <h3>Information We Collect</h3>
+          <p>
+            To provide you with the best possible service, we collect the following types of information:
+          </p>
+          <ul>
+            <li><strong>Personal Information:</strong> Data such as your name, email address, contact details, and 
+            other identifiers provided during account registration or service use.</li>
+            <li><strong>Usage Data:</strong> Information about your interactions with our platform, including 
+            visited pages, time spent on services, and technical details like your IP address and browser type.</li>
+            <li><strong>Cookies and Tracking Technologies:</strong> We use cookies to improve functionality, 
+            personalize content, and analyze site traffic.</li>
+          </ul>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>How We Use Your Information</h3>
+          <p>
+            The information we collect is used to:
+          </p>
+          <ul>
+            <li>Provide seamless access to our services and enhance your user experience.</li>
+            <li>Develop new features, improve platform functionality, and fix technical issues.</li>
+            <li>Communicate important updates, offers, and service-related information.</li>
+            <li>Ensure the security and integrity of our systems and user accounts.</li>
+          </ul>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>How We Protect Your Data</h3>
+          <p>
+            We employ advanced security measures, including encryption, firewalls, and regular security 
+            audits, to protect your information from unauthorized access or misuse. Our team continuously 
+            monitors for potential threats and implements updates to keep your data safe.
+          </p>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>Third-Party Sharing</h3>
+          <p>
+            Your information is never sold or rented to third parties. We may share your data with trusted 
+            partners only when necessary to deliver services, such as payment processing or analytics, and 
+            always under strict confidentiality agreements.
+          </p>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>Your Rights</h3>
+          <p>
+            You have complete control over your personal information. You can:
+          </p>
+          <ul>
+            <li>Access your data at any time through your account settings.</li>
+            <li>Request corrections or updates to inaccurate or outdated information.</li>
+            <li>Delete your account and associated data upon request, subject to legal or regulatory 
+            obligations.</li>
+          </ul>
+        </div>
+  
+        <div class="privacy-card">
+          <h3>Policy Updates</h3>
+          <p>
+            We may update this Privacy Policy periodically to reflect changes in our practices or for legal 
+            reasons. Any changes will be promptly communicated to you, and your continued use of the platform 
+            signifies your acceptance of the updated terms.
+          </p>
+        </div>
+  
+        <p>
+          For more details or questions, feel free to reach out to our support team at 
+          <a href="mailto:support@ajivika.com">support@ajivika.com</a>. We value your trust and are 
+          committed to ensuring your privacy.
+        </p>
       </div>
+    </div>
   </section>
+  
+  
     <!-- Floating Image Button -->
     <button class="image-button">
       <img src="./image.png" alt="Image Button" class="image-icon" />
@@ -258,6 +317,24 @@
         });
     });
     </script>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('.theme-switch__checkbox');
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.body.classList.remove('light');
+            themeToggle.checked = true;
+        } else {
+            document.body.classList.add('light');
+            document.body.classList.remove('dark');
+        }
+    });</script>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+}
+</script>
     
 </body>
 </html>

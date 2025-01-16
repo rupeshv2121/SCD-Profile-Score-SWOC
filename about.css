@@ -10,7 +10,7 @@ body {
 :root {
   --body-bg: antiquewhite;
   --primary-color: white;
-  --border-color: #d6a52b;
+  --border-color: #2bb1d6;
   --tertiary-color: #191970;
   --pink-bg: #cf00a3;
   --heading-color: #8b4513;
@@ -18,6 +18,8 @@ body {
   --footer-text: #4a4a4a;
   --card-text: #333;
   --card-bg: #fdf4dc;
+  --card-bg-hover: #f5f1b7;
+  --icon-hover: rgb(255, 77, 0);
   --back-button-color: #333;
 }
 
@@ -33,6 +35,8 @@ html .dark {
   --footer-text: white;
   --card-text: aqua;
   --card-bg: #044464;
+  --card-bg-hover: #1f3439;
+  --icon-hover: #2bd675;
   --back-button-color: #d6a52b;
 }
 
@@ -310,7 +314,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
   margin-top: 30px;
 }
 
@@ -319,21 +323,29 @@ h1 {
   border: 2px solid #ffd465;
   border-radius: 8px;
   padding: 20px;
-  width: 250px;
+  width: 300px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.05) !important;
   cursor: pointer;
+  background-color: var(--card-bg-hover);
+  transition: transform 0.3s ease;
 }
 
 .feature-card i {
   font-size: 40px;
   color: var(--icons-color);
   margin-bottom: 10px;
+}
+
+.feature-card:hover i {
+  color: var(--icon-hover);
+  transform: scale(1.4) rotate(20deg);
+  transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 .feature-card h3 {
@@ -372,6 +384,45 @@ footer {
   background-color: var(--primary-color);
   color: var(--footer-text);
   text-align: center;
+}
+
+.social-icons a:hover {
+  transform: scale(1.3);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:first-child:hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #1a4bb4 !important;
+}
+
+.social-icons a:first-child:hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #1a4bb4 !important;
+}
+
+.social-icons a:nth-child(2):hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #29d6d6 !important;
+}
+
+.social-icons a:nth-child(3):hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #3b6cd6 !important;
+}
+
+.social-icons a:nth-child(4):hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #c43bd6 !important;
+}
+
+footer h3{
+  color: #d6a52b;
 }
 
 @media(max-width:768px) {

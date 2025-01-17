@@ -1,4 +1,66 @@
-  * {
+/* General Dark Mode Styles */
+body.dark {
+  background-color: #121212;
+  background-image: none; /* Optional: Remove background image in dark mode */
+  color: #e0e0e0; /* Lighter text color for contrast */
+}
+
+/* Dark Mode for Title */
+body.dark .title {
+  background: linear-gradient(90deg, #4a4a4a, #ffffff); /* Dark gradient for text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff; /* Fallback text color */
+}
+
+/* Dark Mode for Contributors Grid */
+body.dark .contributors-grid {
+  background-color: transparent; /* Maintain layout in dark mode */
+}
+
+/* Dark Mode for Contributor Card */
+body.dark .contributor-card {
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e); /* Dark gradient */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Deeper shadow for dark mode */
+}
+
+body.dark .contributor-card:before {
+  background: rgba(255, 255, 255, 0.05); /* Subtle white overlay */
+}
+
+/* Dark Mode Hover Effects */
+body.dark .contributor-card:hover {
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a); /* Reverse gradient for hover */
+  box-shadow: 0 25px 60px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+}
+
+/* Dark Mode for Avatar */
+body.dark .contributor-card img {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2); /* Light shadow for avatar */
+}
+
+/* Dark Mode for Contributor Name */
+body.dark .contributor-card h3 {
+  color: #e0e0e0; /* Light text color for contrast */
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Subtle white shadow */
+}
+
+body.dark .contributor-card h3::after {
+  background: linear-gradient(145deg, #f1c40f, #e67e22); /* Adjusted yellow gradient */
+}
+
+body.dark .contributor-card h3:hover {
+  color: #f39c12;
+  text-shadow: 0 4px 20px rgba(243, 156, 18, 0.8); /* Brighter glow effect */
+}
+
+/* Dark Mode for Body Text */
+body.dark p {
+  color: #cccccc; /* Slightly muted text for readability */
+}
+
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -221,7 +283,7 @@
         width: 45px;
         height: 6px;
     }
-    /* toggle button ui styles */
+/* toggle button ui styles */
 .theme-switch {
     --toggle-size: 15px;
     /* the size is adjusted using font-size,

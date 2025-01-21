@@ -391,3 +391,8 @@ body {
     }
     
 }
+
+/* payments */
+.payments i:hover{
+  color:#d7b96b;
+  }

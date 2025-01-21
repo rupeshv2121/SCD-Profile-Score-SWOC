@@ -515,3 +515,8 @@ footer li:hover {
   opacity: 1;
   visibility: visible;
 }
+
+/* payments */
+.payments i:hover{
+  color:#d7b96b;
+  }

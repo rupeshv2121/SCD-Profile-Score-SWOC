@@ -46,7 +46,7 @@ async function fetchContributors() {
 
       // Generate Certificate Button
       const button = document.createElement("button");
-      button.textContent = "Certificate";
+      button.textContent = "CERTIFICATE";
       button.addEventListener("click", () => {
         generateCertificate(contributor.login, contributor.avatar_url);
       });

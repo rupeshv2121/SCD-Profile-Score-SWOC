@@ -9,6 +9,12 @@
     <title>Pricing - Ajivika</title>
   </head>
   <body>
+    <body>
+      <!-- Scroll to Top Button -->
+      <button class="scroll-btn" id="scrollToTopBtn">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="logo">
@@ -384,6 +390,25 @@
         });
     });
     </script>
-
+    <script>
+      const scrollBtn = document.getElementById('scrollToTopBtn');
+    
+      // Show the button when scrolling down
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.add('show');
+        } else {
+          scrollBtn.classList.remove('show');
+        }
+      });
+    
+      // Scroll to top functionality
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
 </body>
 </html>

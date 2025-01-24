@@ -40,6 +40,19 @@ html .dark {
   --back-button-color: #d6a52b;
 }
 
+#cursor{
+  height: 20px;
+  width:20px;
+  background-color: rgba(234, 169, 84, 0.845);
+  border-radius: 50%;
+  position: fixed;
+  font-size: 7px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
 .navbar .logo h2{
   margin-left: 150%;
 }

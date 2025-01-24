@@ -820,11 +820,7 @@ margin-bottom: 0.5rem;
   /* CSS for Scroll to Top Button */
   #scrollBtn {
     position: fixed;
-
-    bottom: 93px; /* Place closer to the bottom */
-
-    bottom: 88px; /* Place closer to the bottom */
-
+    bottom: 95px; /* Place closer to the bottom */
     right: 30px; /* Place closer to the right */
     display: none; /* Initially hidden */
     background-color: #d6a52b;
@@ -840,7 +836,7 @@ margin-bottom: 0.5rem;
   }
 
   #scrollBtn:hover {
-    background-color: #000; /* Change color on hover */
+    background-color: #FFD700; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge */
   }
   

@@ -406,8 +406,7 @@ body.dark {
 
 .image-button1 {
     position: fixed;
-    top: 5px;
-    left: 10px; /* Aligns the button to the left side */
+    left:-75px; /* Aligns the button to the left side */
     background-color: transparent; /* Transparent background */
     border: none;
     border-radius: 50%;

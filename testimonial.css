@@ -481,6 +481,26 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+/* Pulse effect */
+.pulse-effect {
+  animation: pulse-animation 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-animation {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
 .testimonial-card {
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

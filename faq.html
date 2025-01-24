@@ -8,8 +8,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
-    <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="navbar.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="navbar.css" />
     <style>
       :root {
         --body-bg: antiquewhite;
@@ -53,7 +54,7 @@
         background: var(--body-bg);
         min-height: 100vh;
         margin: 0;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         color: var(--text-color);
       }
 
@@ -76,13 +77,13 @@
         text-align: center;
         margin-bottom: 30px;
         color: var(--heading-color);
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         position: relative;
       }
 
       .faq-section h2::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 50%;
@@ -103,7 +104,7 @@
       }
 
       .faq-question {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         padding: 20px;
         cursor: pointer;
         background: var(--card-bg);
@@ -119,7 +120,7 @@
       }
 
       .faq-question::after {
-        content: '+';
+        content: "+";
         font-size: 24px;
         transition: transform 0.3s ease;
       }
@@ -193,9 +194,15 @@
       }
 
       @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       .image-icon {
@@ -569,7 +576,10 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="logo">
-        <button class="image-button1" onclick="window.location.href='./index.html'">
+        <button
+          class="image-button1"
+          onclick="window.location.href='./index.html'"
+        >
           <img src="./image.png" alt="Image Button1" class="image-icon1" />
         </button>
         <h2>Ajivika</h2>
@@ -731,34 +741,42 @@
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">How can I create a professional resume using Ajivika?</div>
+        <div class="faq-question">
+          How can I create a professional resume using Ajivika?
+        </div>
         <div class="faq-answer">
           <p>
-            Ajivika offers an intuitive resume builder with professional templates. Simply fill in your details, 
-            select a template, and our AI-powered system will help optimize your resume with industry-specific 
-            keywords and formatting.
+            Ajivika offers an intuitive resume builder with professional
+            templates. Simply fill in your details, select a template, and our
+            AI-powered system will help optimize your resume with
+            industry-specific keywords and formatting.
           </p>
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">What types of skill assessments are available?</div>
+        <div class="faq-question">
+          What types of skill assessments are available?
+        </div>
         <div class="faq-answer">
           <p>
-            We offer technical assessments for programming languages, soft skills evaluations, 
-            domain-specific tests for various industries, and personality assessments to help you 
-            find the perfect career fit.
+            We offer technical assessments for programming languages, soft
+            skills evaluations, domain-specific tests for various industries,
+            and personality assessments to help you find the perfect career fit.
           </p>
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">How does Ajivika ensure job recommendations are relevant?</div>
+        <div class="faq-question">
+          How does Ajivika ensure job recommendations are relevant?
+        </div>
         <div class="faq-answer">
           <p>
-            Our AI algorithm analyzes multiple factors including your skills, experience, location preferences, 
-            and career goals. We also consider market trends and employer requirements to provide the most 
-            relevant job matches.
+            Our AI algorithm analyzes multiple factors including your skills,
+            experience, location preferences, and career goals. We also consider
+            market trends and employer requirements to provide the most relevant
+            job matches.
           </p>
         </div>
       </div>
@@ -767,8 +785,10 @@
         <div class="faq-question">Are the courses on Ajivika free?</div>
         <div class="faq-answer">
           <p>
-            Ajivika offers both free and premium courses. While many basic courses are available for free, 
-            premium courses offer additional features like certificates, mentor support, and detailed assessments.
+            Ajivika offers both free and premium courses. While many basic
+            courses are available for free, premium courses offer additional
+            features like certificates, mentor support, and detailed
+            assessments.
           </p>
         </div>
       </div>
@@ -777,13 +797,20 @@
         <div class="faq-question">Can employers post jobs on Ajivika?</div>
         <div class="faq-answer">
           <p>
-            Yes! Employers can create accounts to post job openings, search for candidates, and use our 
-            AI-powered matching system to find the best talent for their organizations.
+            Yes! Employers can create accounts to post job openings, search for
+            candidates, and use our AI-powered matching system to find the best
+            talent for their organizations.
           </p>
         </div>
       </div>
     </section>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="index.js"></script>
     <script>
       const faqItems = document.querySelectorAll(".faq-item");
 
@@ -814,28 +841,28 @@
       });
 
       // Theme toggle
-      document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.querySelector('.theme-switch__checkbox');
-        const currentTheme = localStorage.getItem('theme');
-        
-        if (currentTheme === 'dark') {
-          document.body.classList.add('dark');
-          document.body.classList.remove('light');
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.querySelector(".theme-switch__checkbox");
+        const currentTheme = localStorage.getItem("theme");
+
+        if (currentTheme === "dark") {
+          document.body.classList.add("dark");
+          document.body.classList.remove("light");
           themeToggle.checked = true;
         } else {
-          document.body.classList.add('light');
-          document.body.classList.remove('dark');
+          document.body.classList.add("light");
+          document.body.classList.remove("dark");
         }
 
-        themeToggle.addEventListener('change', () => {
+        themeToggle.addEventListener("change", () => {
           if (themeToggle.checked) {
-            document.body.classList.add('dark');
-            document.body.classList.remove('light');
-            localStorage.setItem('theme', 'dark');
+            document.body.classList.add("dark");
+            document.body.classList.remove("light");
+            localStorage.setItem("theme", "dark");
           } else {
-            document.body.classList.remove('dark');
-            document.body.classList.add('light');
-            localStorage.setItem('theme', 'light');
+            document.body.classList.remove("dark");
+            document.body.classList.add("light");
+            localStorage.setItem("theme", "light");
           }
         });
       });
@@ -846,21 +873,26 @@
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           {
-            pageLanguage: 'en',
-            includedLanguages: 'en,hi,es,fr,de,it,ja,zh-CN',
+            pageLanguage: "en",
+            includedLanguages: "en,hi,es,fr,de,it,ja,zh-CN",
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
             autoDisplay: false,
           },
-          'google_translate_element'
+          "google_translate_element"
         );
       }
 
       function toggleTranslate() {
-        const translateElement = document.getElementById('google_translate_element');
-        if (translateElement.style.display === 'none' || translateElement.style.display === '') {
-          translateElement.style.display = 'block';
+        const translateElement = document.getElementById(
+          "google_translate_element"
+        );
+        if (
+          translateElement.style.display === "none" ||
+          translateElement.style.display === ""
+        ) {
+          translateElement.style.display = "block";
         } else {
-          translateElement.style.display = 'none';
+          translateElement.style.display = "none";
         }
       }
     </script>
@@ -872,25 +904,27 @@
 
     <script>
       // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
-  
+      const scrollBtn = document.getElementById("scrollBtn");
+
       // Show the button when the user scrolls down 100px from the top
       window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            scrollBtn.style.display = "block";
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollBtn.style.display = "block";
         } else {
-            scrollBtn.style.display = "none";
+          scrollBtn.style.display = "none";
         }
       };
-  
+
       // Scroll to the top of the page when the button is clicked
       scrollBtn.onclick = function () {
         window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+          top: 0,
+          behavior: "smooth",
         });
       };
-  
     </script>
   </body>
 </html>

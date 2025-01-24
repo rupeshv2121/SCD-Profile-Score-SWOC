@@ -508,7 +508,7 @@ footer li:hover {
   transition: all 0.3s ease;
 }
 .scroll-btn:hover {
-  background-color: black;
+  background-color: #ffd700;
   transform: scale(1.1);
 }
 .scroll-btn.show {

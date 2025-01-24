@@ -132,6 +132,14 @@ input #email {
     margin-bottom: 0.5rem;
     }
 
+    .payment-icons{
+        display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        
+    }
 #cursor{
     height: 20px;
     width:20px;

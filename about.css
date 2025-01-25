@@ -370,10 +370,8 @@ h1 {
   left: 0px; /* Aligns the button to the left side */
   background-color: transparent; /* Transparent background */
   border: none;
-  border-radius: 50%;
   padding: 0; /* No padding for image button */
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -384,9 +382,6 @@ h1 {
 .image-icon1 {
   width: 68px;
   height: 68px;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   z-index: 2;
   position: relative;
 }

@@ -38,19 +38,14 @@
 .image-button1 {
     background-color: transparent;
     border: none;
-    border-radius: 50%;
     padding: 0;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
 .image-icon1 {
     width: 68px;
     height: 68px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     position: relative;
     background-color: transparent;

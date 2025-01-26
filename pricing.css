@@ -442,7 +442,7 @@ body.dark {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
     backdrop-filter: blur(15px);
     padding: 10px 20px;
     position: sticky;

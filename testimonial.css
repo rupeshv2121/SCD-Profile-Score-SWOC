@@ -5,6 +5,17 @@ body {
     background-color: #f9fafb;
 }
 
+:root{
+    --quote-color: black;
+    --Tcard-bg: #fff;
+    --gradient-bg: linear-gradient(90deg, #44ff9a, #44b0ff, #8b44ff, #ff6644, #ebff70);
+}
+.dark{
+    --quote-color: white;
+    --Tcard-bg: #010035;
+    --gradient-bg: linear-gradient(90deg, #fafafa, yellow, aqua, pink);
+}
+
 .image-icon1 {
     width: 68px;
     height: 68px;
@@ -470,7 +481,7 @@ body {
     inset: -1rem;
     z-index: -1;
     filter: blur(16px);
-    background: linear-gradient(90deg, #44ff9a, #44b0ff, #8b44ff, #ff6644, #ebff70);
+    background: var(--gradient-bg)  no-repeat;
     opacity: 0.3;
     border-radius: 16px;
 }
@@ -482,7 +493,7 @@ body {
 }
 
 .testimonial-card {
-    background-color: #fff;
+    background-color: var(--Tcard-bg);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     padding: 1.5rem;
@@ -501,7 +512,7 @@ body {
 .quote {
     margin-top: 1rem;
     font-size: 1rem;
-    color: #111827;
+    color: var(--quote-color);
 }
 
 .profile {

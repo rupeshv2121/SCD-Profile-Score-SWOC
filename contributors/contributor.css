@@ -101,19 +101,16 @@ body.dark p {
   .image-icon {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    border-radius: 50%;
     position: relative;
   }
+  
   .image-button1 {
     background-color: transparent; /* Transparent background */
     border: none;
-    border-radius: 50%;
     padding: 0; /* No padding for image button */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
   }
 
@@ -124,9 +121,6 @@ body.dark p {
   .image-icon1 {
     width: 68px;
     height: 68px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     position: relative;
   }
@@ -218,7 +212,8 @@ body.dark p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(43, 43, 40);
+    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
+    backdrop-filter: blur(15px);
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -248,7 +243,7 @@ body.dark p {
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 5px 10px;
     border-radius: 50px; /* Rounded edges */
-    background-color: rgb(8, 7, 6); /* Slightly darker than navbar */
+    background-color: rgb(133 133 133 / 20%);
 }
 
 .nav-links a i {

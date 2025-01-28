@@ -6,14 +6,20 @@ body {
 }
 
 :root{
+    --heading-color: rgb(248, 204, 6);
+    --name-color: #111827;
+    --role-color: #4B5563;
     --quote-color: black;
     --Tcard-bg: #fff;
     --gradient-bg: linear-gradient(90deg, #44ff9a, #44b0ff, #8b44ff, #ff6644, #ebff70);
 }
 .dark{
+    --heading-color: #8b4513;
+    --name-color: aqua;
+    --role-color: yellow;
     --quote-color: white;
     --Tcard-bg: #010035;
-    --gradient-bg: linear-gradient(90deg, #fafafa, yellow, aqua, pink);
+    --gradient-bg: linear-gradient(90deg, white, #fafafa, rgb(255, 255, 148), aqua, pink);
 }
 
 .image-icon1 {
@@ -383,7 +389,7 @@ body {
 
 .main-heading {
     font-size: 2rem;
-    color: rgb(248, 204, 6);
+    color: var(--heading-color);
     font-weight: 700;
     margin-top: 1rem;
 }
@@ -548,12 +554,12 @@ body {
 .name {
     font-size: 1rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--name-color);
 }
 
 .role {
     font-size: 0.875rem;
-    color: #4B5563;
+    color: var(--role-color);
 }
 
 /* CSS for Scroll to Top Button */

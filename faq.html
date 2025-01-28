@@ -8,8 +8,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
-    <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="navbar.css" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="navbar.css" />
     <style>
       :root {
         --body-bg: antiquewhite;
@@ -53,7 +54,7 @@
         background: var(--body-bg);
         min-height: 100vh;
         margin: 0;
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         color: var(--text-color);
       }
 
@@ -76,13 +77,13 @@
         text-align: center;
         margin-bottom: 30px;
         color: var(--heading-color);
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         position: relative;
       }
 
       .faq-section h2::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -10px;
         left: 50%;
@@ -103,7 +104,7 @@
       }
 
       .faq-question {
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         padding: 20px;
         cursor: pointer;
         background: var(--card-bg);
@@ -119,7 +120,7 @@
       }
 
       .faq-question::after {
-        content: '+';
+        content: "+";
         font-size: 24px;
         transition: transform 0.3s ease;
       }
@@ -193,27 +194,28 @@
       }
 
       @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       .image-icon {
         width: 110px;
         height: 110px;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         z-index: 2;
         position: relative;
       }
       .image-button1 {
         background-color: transparent; /* Transparent background */
         border: none;
-        border-radius: 50%;
         padding: 0; /* No padding for image button */
         cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease;
       }
 
@@ -224,17 +226,156 @@
       .image-icon1 {
         width: 68px;
         height: 68px;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         z-index: 2;
         position: relative;
       }
+      footer {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--footer-text);
+  text-align: center;
+}
+.social-icons div a:hover {
+  scale: 1.3;
+  rotate: 15deg;
+}
+.social-icons div a i.fa-facebook-f:hover {
+  color: rgb(51, 51, 199);
+}
+.social-icons div a i.fa-twitter:hover {
+  color: rgb(51, 98, 199);
+}
+.social-icons div a i.fa-linkedin-in:hover {
+  color: rgb(51, 132, 199);
+}
+.social-icons div a i.fa-instagram:hover {
+  color: rgb(199, 51, 167);
+}
+.subscribe-section form input[type="email"] {
+  border-radius: 4px;
+  height: 4vh;
+  border: none;
+  padding: 10px;
+}
+.subscribe-button {
+  padding: 10px 62px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d6a52b;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+}
+.social-icons a:hover {
+  transform: scale(1.3);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:first-child:hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #1a4bb4 !important;
+}
+
+.social-icons a:first-child:hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #1a4bb4 !important;
+}
+
+.social-icons a:nth-child(2):hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #29d6d6 !important;
+}
+
+.social-icons a:nth-child(3):hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #3b6cd6 !important;
+}
+
+.social-icons a:nth-child(4):hover {
+  transform: scale(1.3) rotate(27deg);
+  transition: all 0.3s ease;
+  color: #c43bd6 !important;
+}
+
+footer h3{
+  color: #d6a52b;
+}
+
+footer li:hover {
+  transform: scale(1.1);
+}
+
+@media(max-width:768px) {
+  .image-icon1{
+    width: 50px;
+    height: 50px;
+    top: 10px;
+  }
+
+  .navbar .logo h2 {
+    font-size: 1.7em;
+    margin-left: 117%;
+}
+
+.image-icon{
+  width: 78px;
+  height: 78px;
+}
+}
+
+@media(max-width:425px) {
+  .about-box h1{
+    font-size: 2rem;
+  }
+
+  .back-button {
+    left: 8px;
+  }
+}
+
+.scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #d6a52b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.scroll-btn:hover {
+  background-color: #ffd700;
+  transform: scale(1.1);
+}
+.scroll-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* payments */
+.payments i:hover{
+  color:#d7b96b;
+  }
       .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #2b2b28;
+        background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
+        backdrop-filter: blur(15px);
         text-align: center;
         padding: 10px 20px;
         position: sticky;
@@ -569,10 +710,12 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="logo">
-        <button class="image-button1" onclick="window.location.href='./index.html'">
-          <img src="./image.png" alt="Image Button1" class="image-icon1" />
+        <button
+          class="image-button1"
+          onclick="window.location.href='./index.html'"
+        >
+          <img src="./AJIVIKA2.svg" alt="Image Button1" class="image-icon1" />
         </button>
-        <h2>Ajivika</h2>
       </div>
       <!-- Floating Image Button -->
 
@@ -731,34 +874,42 @@
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">How can I create a professional resume using Ajivika?</div>
+        <div class="faq-question">
+          How can I create a professional resume using Ajivika?
+        </div>
         <div class="faq-answer">
           <p>
-            Ajivika offers an intuitive resume builder with professional templates. Simply fill in your details, 
-            select a template, and our AI-powered system will help optimize your resume with industry-specific 
-            keywords and formatting.
+            Ajivika offers an intuitive resume builder with professional
+            templates. Simply fill in your details, select a template, and our
+            AI-powered system will help optimize your resume with
+            industry-specific keywords and formatting.
           </p>
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">What types of skill assessments are available?</div>
+        <div class="faq-question">
+          What types of skill assessments are available?
+        </div>
         <div class="faq-answer">
           <p>
-            We offer technical assessments for programming languages, soft skills evaluations, 
-            domain-specific tests for various industries, and personality assessments to help you 
-            find the perfect career fit.
+            We offer technical assessments for programming languages, soft
+            skills evaluations, domain-specific tests for various industries,
+            and personality assessments to help you find the perfect career fit.
           </p>
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">How does Ajivika ensure job recommendations are relevant?</div>
+        <div class="faq-question">
+          How does Ajivika ensure job recommendations are relevant?
+        </div>
         <div class="faq-answer">
           <p>
-            Our AI algorithm analyzes multiple factors including your skills, experience, location preferences, 
-            and career goals. We also consider market trends and employer requirements to provide the most 
-            relevant job matches.
+            Our AI algorithm analyzes multiple factors including your skills,
+            experience, location preferences, and career goals. We also consider
+            market trends and employer requirements to provide the most relevant
+            job matches.
           </p>
         </div>
       </div>
@@ -767,8 +918,10 @@
         <div class="faq-question">Are the courses on Ajivika free?</div>
         <div class="faq-answer">
           <p>
-            Ajivika offers both free and premium courses. While many basic courses are available for free, 
-            premium courses offer additional features like certificates, mentor support, and detailed assessments.
+            Ajivika offers both free and premium courses. While many basic
+            courses are available for free, premium courses offer additional
+            features like certificates, mentor support, and detailed
+            assessments.
           </p>
         </div>
       </div>
@@ -777,13 +930,249 @@
         <div class="faq-question">Can employers post jobs on Ajivika?</div>
         <div class="faq-answer">
           <p>
-            Yes! Employers can create accounts to post job openings, search for candidates, and use our 
-            AI-powered matching system to find the best talent for their organizations.
+            Yes! Employers can create accounts to post job openings, search for
+            candidates, and use our AI-powered matching system to find the best
+            talent for their organizations.
           </p>
         </div>
       </div>
     </section>
+    <!-- Footer -->
+    <footer style="background-color: #222; color: #fff; padding: 20px 10px">
+      <div
+      class="footer-container"
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 20px;
+          max-width: 1200px;
+          margin: auto;
+        "
+      >
+        <!-- About Section -->
+        <div class="footer-section" style="flex: 1; min-width: 200px">
+          <h3>
+            <i class="fa fa-user" style="color: #d6a52b; margin-right: 8px;"></i> 
+            About Ajivika
+          </h3>
+          
+          <p style="font-size: 14px; line-height: 1.6">
+            Ajivika is your one-stop destination for career growth and learning.
+            From creating professional resumes to applying for top jobs, we
+            provide tools and resources for every career stage.
+          </p>
+        </div>
 
+        <!-- Quick Links -->
+        <div
+          class="footer-section quick-link"
+          style="flex: 1; min-width: 200px"
+        >
+        <h3>
+          <i class="fa fa-link" style="color: #d6a52b; margin-right: 8px;"></i>
+          Quick Links
+        </h3>
+        
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              font-size: 14px;
+              line-height: 1.8;
+            "
+          >
+          <li>
+            <a href="./index.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-home" style="margin-right: 8px;"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="./about.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-info-circle" style="margin-right: 8px;"></i> About Us
+            </a>
+          </li>
+          <li>
+            <a href="./contact.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-envelope" style="margin-right: 8px;"></i> Contact
+            </a>
+          </li>
+          <li>
+            <a href="./pricing.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-dollar-sign" style="margin-right: 8px;"></i> Go Pro
+            </a>
+          </li>
+               
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-section resources" style="flex: 1; min-width: 200px">
+          <h3>
+            <i class="fa fa-book" style="color: #d6a52b; margin-right: 8px;"></i>
+            Resources
+          </h3>
+          
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              font-size: 14px;
+              line-height: 1.8;
+            "
+          >
+          <li>
+            <a href="./blog.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-pencil-alt" style="margin-right: 8px;"></i> Blog
+            </a>
+          </li>
+          <li>
+            <a href="./testimonial.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-comment-dots" style="margin-right: 8px;"></i> Testimonial
+            </a>
+          </li>
+          <li>
+            <a href="./faq.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-question-circle" style="margin-right: 8px;"></i> FAQs
+            </a>
+          </li>
+          <li>
+            <a href="./terms.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-file-contract" style="margin-right: 8px;"></i> Terms & Conditions
+            </a>
+          </li>
+          <li>
+            <a href="./privacy.html" style="color: #fff; text-decoration: none; transition: color 0.3s;" 
+               onmouseover="this.style.color='#d6a52b'" 
+               onmouseout="this.style.color='#fff'">
+              <i class="fa fa-user-secret" style="margin-right: 8px;"></i> Privacy Policy
+            </a>
+          </li>
+          
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div
+          class="footer-section social-icons"
+          style="flex: 1; min-width: 200px"
+        >
+        <h3>
+          <i class="fa fa-hashtag" style="color: #d6a52b; margin-right: 8px;"></i>
+          Follow Us
+        </h3>
+        
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+              font-size: 20px;
+            "
+          >
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              style="color: #fff; text-decoration: none"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              style="color: #fff; text-decoration: none"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              style="color: #fff; text-decoration: none"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              style="color: #fff; text-decoration: none"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <!--payment options-->
+          <div class="payments">
+            <h3>
+              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>We Accept</h3>
+            <a href="https://www.apple.com/apple-pay/" target="_blank" style="color:#fff;"><i class="fab fa-apple-pay" style="font-size: 40px;"></i></a>
+            <a href="https://pay.google.com/intl/en_in/about/" style="color:#fff;"><i class="fa-brands fa-google-pay" style="font-size: 40px;"></i></a>
+            <a href="https://redemption.mastercard.com/#/user/login?language=en-US" style="color:#fff;"><i class="fa-brands fa-cc-mastercard" style="font-size: 30px;"></i></a>
+            <a href="https://www.visa.com.au/en_au/account/login" style="color:#fff;"><i class="fa-brands fa-cc-visa" style="font-size: 30px;"></i></a>
+          </div>
+        </div>
+
+        <!-- Subscribe Section -->
+        <div
+          class="footer-section subscribe-section"
+          style="flex: 1; min-width: 200px"
+        >
+        <h3>
+          <i class="fa fa-bell" style="color: #d6a52b; margin-right: 8px;"></i>
+          Subscribe to Our Newsletter
+        </h3>
+       
+        
+          <form
+            action="#"
+            method="POST"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              align-items: center;
+            "
+          >
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+            />
+            </button>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444" />
+      <div style="text-align: center; font-size: 14px; color: #aaa">
+        <p>&copy; 2024 Ajivika™. All rights reserved.</p>
+        <p>Designed and developed with ❤️ by the Ajivika Team.</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="index.js"></script>
     <script>
       const faqItems = document.querySelectorAll(".faq-item");
 
@@ -814,28 +1203,28 @@
       });
 
       // Theme toggle
-      document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.querySelector('.theme-switch__checkbox');
-        const currentTheme = localStorage.getItem('theme');
-        
-        if (currentTheme === 'dark') {
-          document.body.classList.add('dark');
-          document.body.classList.remove('light');
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.querySelector(".theme-switch__checkbox");
+        const currentTheme = localStorage.getItem("theme");
+
+        if (currentTheme === "dark") {
+          document.body.classList.add("dark");
+          document.body.classList.remove("light");
           themeToggle.checked = true;
         } else {
-          document.body.classList.add('light');
-          document.body.classList.remove('dark');
+          document.body.classList.add("light");
+          document.body.classList.remove("dark");
         }
 
-        themeToggle.addEventListener('change', () => {
+        themeToggle.addEventListener("change", () => {
           if (themeToggle.checked) {
-            document.body.classList.add('dark');
-            document.body.classList.remove('light');
-            localStorage.setItem('theme', 'dark');
+            document.body.classList.add("dark");
+            document.body.classList.remove("light");
+            localStorage.setItem("theme", "dark");
           } else {
-            document.body.classList.remove('dark');
-            document.body.classList.add('light');
-            localStorage.setItem('theme', 'light');
+            document.body.classList.remove("dark");
+            document.body.classList.add("light");
+            localStorage.setItem("theme", "light");
           }
         });
       });
@@ -846,21 +1235,26 @@
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           {
-            pageLanguage: 'en',
-            includedLanguages: 'en,hi,es,fr,de,it,ja,zh-CN',
+            pageLanguage: "en",
+            includedLanguages: "en,hi,es,fr,de,it,ja,zh-CN",
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
             autoDisplay: false,
           },
-          'google_translate_element'
+          "google_translate_element"
         );
       }
 
       function toggleTranslate() {
-        const translateElement = document.getElementById('google_translate_element');
-        if (translateElement.style.display === 'none' || translateElement.style.display === '') {
-          translateElement.style.display = 'block';
+        const translateElement = document.getElementById(
+          "google_translate_element"
+        );
+        if (
+          translateElement.style.display === "none" ||
+          translateElement.style.display === ""
+        ) {
+          translateElement.style.display = "block";
         } else {
-          translateElement.style.display = 'none';
+          translateElement.style.display = "none";
         }
       }
     </script>
@@ -872,25 +1266,27 @@
 
     <script>
       // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
-  
+      const scrollBtn = document.getElementById("scrollBtn");
+
       // Show the button when the user scrolls down 100px from the top
       window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            scrollBtn.style.display = "block";
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollBtn.style.display = "block";
         } else {
-            scrollBtn.style.display = "none";
+          scrollBtn.style.display = "none";
         }
       };
-  
+
       // Scroll to the top of the page when the button is clicked
       scrollBtn.onclick = function () {
         window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+          top: 0,
+          behavior: "smooth",
         });
       };
-  
     </script>
   </body>
 </html>

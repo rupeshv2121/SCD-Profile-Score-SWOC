@@ -78,6 +78,21 @@ html .dark {
   position: relative;
 }
 
+#cursor{
+  height: 20px;
+  width:20px;
+  background-color: rgba(234, 169, 84, 0.845);
+  border-radius: 50%;
+  position: fixed;
+  font-size: 7px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -257,10 +272,8 @@ section h2 {
   left: 20px; /* Aligns the button to the left side */
   background-color: transparent; /* Transparent background */
   border: none;
-  border-radius: 50%;
   padding: 0; /* No padding for image button */
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   z-index: 9999;
 }
@@ -298,9 +311,6 @@ section h2 {
 .image-icon {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   z-index: 2;
   position: relative;
 }
@@ -454,10 +464,8 @@ label b {
   right: 720px; /* Aligns the button to the left side */
   background-color: transparent; /* Transparent background */
   border: none;
-  border-radius: 50%;
   padding: 0; /* No padding for image button */
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -472,9 +480,6 @@ form button {
 .image-icon1 {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   z-index: 2;
   position: relative;
 }

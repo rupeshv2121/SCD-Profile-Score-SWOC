@@ -411,7 +411,7 @@
     
         bottom: 88px; /* Place closer to the bottom */
     
-        right: 30px; /* Place closer to the right */
+        right: 26px; /* Place closer to the right */
         display: none; /* Initially hidden */
         background-color: #d6a52b;
         color: white;
@@ -426,7 +426,7 @@
       }
     
       #scrollBtn:hover {
-        background-color: #000; /* Change color on hover */
+        background-color: #ffd700; /* Change color on hover */
         transform: scale(1.2); /* Slightly enlarge */
       }
     
@@ -438,10 +438,8 @@
         left: 20px; /* Aligns the button to the left side */
         background-color: transparent; /* Transparent background */
         border: none;
-        border-radius: 50%;
         padding: 0; /* No padding for image button */
         cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease;
       }
 
@@ -452,19 +450,15 @@
       .image-icon {
         width: 110px;
         height: 110px;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         z-index: 2;
+        border-radius: 50%;
         position: relative;
       }
       .image-button1 {
         background-color: transparent; /* Transparent background */
         border: none;
-        border-radius: 50%;
         padding: 0; /* No padding for image button */
         cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease;
       }
 
@@ -475,9 +469,6 @@
       .image-icon1 {
         width: 68px;
         height: 68px;
-        border-radius: 50%;
-        border: 3px solid white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         z-index: 2;
         position: relative;
       }
@@ -485,7 +476,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #2b2b28;
+        background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
+        backdrop-filter: blur(15px);
         text-align: center;
         padding: 10px 20px;
         position: sticky;
@@ -813,7 +805,7 @@
       }
       .subscribe-section form input[type="email"] {
         border-radius: 4px;
-        height: 4vh;
+        height: 5vh;
         border: none;
         padding: 10px;
       }
@@ -853,11 +845,16 @@
           padding: 16px 42px;
         }
         .subscribe-button {
-          padding: 10px 90px;
+          padding: 10px 75px;
         }
 
         .option {
           width: 100%;
+        }
+
+        .image-icon{
+          width: 75px;
+    height: 75px;
         }
       }
 
@@ -989,9 +986,8 @@
     <nav class="navbar">
       <div class="logo">
         <button class="image-button1">
-          <img src="./image.png" alt="Image Button1" class="image-icon1" />
+          <img src="./AJIVIKA2.svg" alt="Image Button1" class="image-icon1" />
         </button>
-        <h2>Ajivika</h2>
       </div>
       <!-- Floating Image Button -->
 
@@ -1028,7 +1024,6 @@
             ><i class="fas fa-users"></i><span>Contributors</span></a
           >
         </li>
-        <!-- <li><a href="./login.html"><i class="fas fa-sign-in-alt"></i><span>Log In</span></a></li> -->
         <li>
           <a href="./register.html"
             ><i class="fas fa-user-plus"></i> <span>Register</span></a
@@ -1124,7 +1119,7 @@
     </h1>
     <p style="color: var(--para-color); padding: 0 20px; font-size: 1.2rem; line-height: 1.6; max-width: 800px; margin: 0 auto 1.5rem;">
       Your one-stop destination for career growth and learning.</p>
-      <div class="slideshow-container" style="width: 100%; max-width: 100%; margin: 20px 0; border-radius: 0;">
+      <div class="slideshow-container" style="width: 90%; max-width: 100%; border-radius: 13px;">
         <div class="slides-wrapper">
           <!-- Slide 1 -->
           <div class="mySlides fade">
@@ -1226,7 +1221,7 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background-color: #222; color: #fff; padding: 20px 0; width: 100vw; overflow-x: hidden;">
+    <footer style="background-color: #222; color: #fff; padding:42px 40px 0px 35px; width: 100vw; overflow-x: hidden;">
       <div class="footer-container" style="
         display: flex;
         flex-wrap: wrap;
@@ -1265,7 +1260,7 @@
               list-style: none;
               padding: 0;
               font-size: 14px;
-              line-height: 1.8;
+              line-height:2;
             "
           >
           <li>
@@ -1312,7 +1307,7 @@
               list-style: none;
               padding: 0;
               font-size: 14px;
-              line-height: 1.8;
+              line-height:2;
             "
           >
           <li>
@@ -1368,7 +1363,7 @@
             style="
               display: flex;
               justify-content: center;
-              gap: 10px;
+              gap: 20px;
               font-size: 20px;
             "
           >
@@ -1384,7 +1379,7 @@
               target="_blank"
               style="color: #fff; text-decoration: none"
             >
-              <i class="fab fa-twitter"></i>
+            <i class="fab fa-twitter"></i>
             </a>
             <a
               href="https://linkedin.com"
@@ -1404,11 +1399,13 @@
           <!--payment options-->
           <div class="payments">
             <h3>
-              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>we accept</h3>
+              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>We Accept</h3>
+              <div class="payment-icons">
             <a href="https://www.apple.com/apple-pay/" target="_blank" style="color:#fff;"><i class="fab fa-apple-pay" style="font-size: 40px;"></i></a>
             <a href="https://pay.google.com/intl/en_in/about/" style="color:#fff;"><i class="fa-brands fa-google-pay" style="font-size: 40px;"></i></a>
             <a href="https://redemption.mastercard.com/#/user/login?language=en-US" style="color:#fff;"><i class="fa-brands fa-cc-mastercard" style="font-size: 30px;"></i></a>
             <a href="https://www.visa.com.au/en_au/account/login" style="color:#fff;"><i class="fa-brands fa-cc-visa" style="font-size: 30px;"></i></a>
+          </div>
           </div>
         </div>
 
@@ -1446,9 +1443,12 @@
       </div>
 
       <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444" />
-      <div style="text-align: center; font-size: 14px; color: #aaa">
-        <p>&copy; 2024 Ajivika™. All rights reserved.</p>
-        <p>Designed and developed with ❤️ by the Ajivika Team.</p>
+      <div class="imf">
+        <img src="./AJIVIKA2.svg" alt="" height="58px">
+        <div style="text-align: center; font-size: 14px; color: #aaa">
+          <p>&copy; 2024 Ajivika™. All rights reserved.</p>
+          <p>Designed and developed with ❤️ by the Ajivika Team.</p>
+        </div>
       </div>
     </footer>
 

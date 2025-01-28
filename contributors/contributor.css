@@ -66,9 +66,23 @@ body.dark p {
     padding: 0;
     box-sizing: border-box;
 }
+#cursor{
+  height: 20px;
+  width:20px;
+  background-color: rgba(234, 169, 84, 0.845);
+  border-radius: 50%;
+  position: fixed;
+  font-size: 7px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
 
 .image-button {
     position: fixed;
+    z-index: 1;
     bottom: 20px;
     left: 20px; /* Aligns the button to the left side */
     background-color: transparent; /* Transparent background */
@@ -87,19 +101,16 @@ body.dark p {
   .image-icon {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    border-radius: 50%;
     position: relative;
   }
+  
   .image-button1 {
     background-color: transparent; /* Transparent background */
     border: none;
-    border-radius: 50%;
     padding: 0; /* No padding for image button */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
   }
 
@@ -110,9 +121,6 @@ body.dark p {
   .image-icon1 {
     width: 68px;
     height: 68px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     position: relative;
   }
@@ -204,7 +212,8 @@ body.dark p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(43, 43, 40);
+    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
+    backdrop-filter: blur(15px);
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -234,7 +243,7 @@ body.dark p {
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 5px 10px;
     border-radius: 50px; /* Rounded edges */
-    background-color: rgb(8, 7, 6); /* Slightly darker than navbar */
+    background-color: rgb(133 133 133 / 20%);
 }
 
 .nav-links a i {
@@ -539,8 +548,6 @@ body.dark p {
         border-radius: 0;
     }
  }
-
-
  body {
 
   background-image: url('../img/New\ Background.jpeg'); /* Replace with your image file */
@@ -820,11 +827,7 @@ margin-bottom: 0.5rem;
   /* CSS for Scroll to Top Button */
   #scrollBtn {
     position: fixed;
-
-    bottom: 93px; /* Place closer to the bottom */
-
-    bottom: 88px; /* Place closer to the bottom */
-
+    bottom: 95px; /* Place closer to the bottom */
     right: 30px; /* Place closer to the right */
     display: none; /* Initially hidden */
     background-color: #d6a52b;
@@ -840,7 +843,43 @@ margin-bottom: 0.5rem;
   }
 
   #scrollBtn:hover {
-    background-color: #000; /* Change color on hover */
+    background-color: #FFD700; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge */
   }
+
+  .social-icons div {
+    display: flex;justify-content: center; gap: 10px; font-size: 20px;
+  }
   
+
+  @media screen and (max-width : 430px) {
+    .footer-section form {
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .footer-section form input {
+      width: 50%;
+    }
+  
+    .footer-section form button {
+      width: 50%;
+    }
+  
+    .image-icon{
+      width: 60px;
+      height: 60px;
+    }
+    .chat-button{
+      font-size: 18px;
+    } 
+  
+    #scrollBtn {
+      right: 25px;
+      font-size: 13px
+    }
+
+    .social-icons div {
+       gap: 16px;
+    }
+   }

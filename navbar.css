@@ -56,11 +56,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(43, 43, 40);
+    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
+    backdrop-filter: blur(15px);
     padding: 10px 20px;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    
 }
 
 .navbar .logo h2 {
@@ -85,7 +86,7 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 5px 10px;
     border-radius: 50px; /* Rounded edges */
-    background-color: rgb(8, 7, 6); /* Slightly darker than navbar */
+    background-color: rgb(133 133 133 / 20%); 
 }
 
 .nav-links a i {

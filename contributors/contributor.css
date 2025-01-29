@@ -82,6 +82,7 @@ body.dark p {
 
 .image-button {
     position: fixed;
+    z-index: 1;
     bottom: 20px;
     left: 20px; /* Aligns the button to the left side */
     background-color: transparent; /* Transparent background */
@@ -547,8 +548,6 @@ body.dark p {
         border-radius: 0;
     }
  }
-
-
  body {
 
   background-image: url('../img/New\ Background.jpeg'); /* Replace with your image file */
@@ -847,4 +846,40 @@ margin-bottom: 0.5rem;
     background-color: #FFD700; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge */
   }
+
+  .social-icons div {
+    display: flex;justify-content: center; gap: 10px; font-size: 20px;
+  }
   
+
+  @media screen and (max-width : 430px) {
+    .footer-section form {
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .footer-section form input {
+      width: 50%;
+    }
+  
+    .footer-section form button {
+      width: 50%;
+    }
+  
+    .image-icon{
+      width: 60px;
+      height: 60px;
+    }
+    .chat-button{
+      font-size: 18px;
+    } 
+  
+    #scrollBtn {
+      right: 25px;
+      font-size: 13px
+    }
+
+    .social-icons div {
+       gap: 16px;
+    }
+   }

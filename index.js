@@ -31,3 +31,16 @@ body.addEventListener("mousemove", function (e) {
         duration: 0.5
     })
 })
+
+gsap.from(".options-container .option-card", {
+    scale: 0,
+    duration: 2,
+    scrollTrigger: {
+        trigger: ".options-container",
+        scroller: "body",
+        scrub: 2,
+        start: "top 50%",
+        end: "top 70%",
+        pin: true
+    }
+})

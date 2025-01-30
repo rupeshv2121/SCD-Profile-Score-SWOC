@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>About Us - Ajivika</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <title>About Us - Ajivika</title>
-  <link rel="stylesheet" href="navbar.css" />
-  <link rel="stylesheet" href="about.css" />
-</head>
+    <!-- Top scroll button -->
+    <button id="scrollBtn" title="Go to top">
+      <i class="fa-solid fa-arrow-up fa-lg"></i>
+    </button>
 
-<body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="logo">
-      <button class="image-button1">
-        <img src="./image.png" alt="Image Button1" class="image-icon1" />
-      </button>
-      <h2 style="margin-top: -10px;">Ajivika</h2>
-    </div>
-    <!-- Floating Image Button -->
+    <div id="cursor"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">
+        <button class="image-button1">
+          <img src="./AJIVIKA2.svg" alt="Image Button1" class="image-icon1" />
+        </button>
+      </div>
+      <!-- Floating Image Button -->
 
     <!-- hamburger menu -->
     <button class="hamburger" onclick="toggleMenu()">
@@ -442,6 +449,15 @@
               <i class="fab fa-instagram"></i>
             </a>
           </div>
+          <!--payment options-->
+          <div class="payments">
+            <h3>
+              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>we accept</h3>
+            <a href="https://www.apple.com/apple-pay/" target="_blank" style="color:#fff;"><i class="fab fa-apple-pay" style="font-size: 40px;"></i></a>
+            <a href="https://pay.google.com/intl/en_in/about/" style="color:#fff;"><i class="fa-brands fa-google-pay" style="font-size: 40px;"></i></a>
+            <a href="https://redemption.mastercard.com/#/user/login?language=en-US" style="color:#fff;"><i class="fa-brands fa-cc-mastercard" style="font-size: 30px;"></i></a>
+            <a href="https://www.visa.com.au/en_au/account/login" style="color:#fff;"><i class="fa-brands fa-cc-visa" style="font-size: 30px;"></i></a>
+          </div>
         </div>
 
         <!-- Subscribe Section -->
@@ -478,11 +494,37 @@
       </div>
 
       <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444" />
-      <div style="text-align: center; font-size: 14px; color: #aaa">
-        <p>&copy; 2024 Ajivika™. All rights reserved.</p>
-        <p>Designed and developed with ❤️ by the Ajivika Team.</p>
+      <div class="imf">
+        <img src="./AJIVIKA2.svg" alt="" height="58px">
+        <div style="text-align: center; font-size: 14px; color: #aaa">
+          <p>&copy; 2024 Ajivika™. All rights reserved.</p>
+          <p>Designed and developed with ❤️ by the Ajivika Team.</p>
+        </div>
       </div>
     </footer>
+
+    <script>
+      // Get the button element
+      const scrollBtn = document.getElementById('scrollBtn');
+  
+      // Show the button when the user scrolls down 100px from the top
+      window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+      };
+  
+      // Scroll to the top of the page when the button is clicked
+      scrollBtn.onclick = function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+      };
+  
+  </script>
 
 </body>
 

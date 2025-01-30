@@ -5,12 +5,26 @@ body {
     background-color: #f9fafb;
 }
 
+:root{
+    --heading-color: rgb(248, 204, 6);
+    --name-color: #111827;
+    --role-color: #4B5563;
+    --quote-color: black;
+    --Tcard-bg: #fff;
+    --gradient-bg: linear-gradient(90deg, #44ff9a, #44b0ff, #8b44ff, #ff6644, #ebff70);
+}
+.dark{
+    --heading-color: #8b4513;
+    --name-color: aqua;
+    --role-color: yellow;
+    --quote-color: white;
+    --Tcard-bg: #010035;
+    --gradient-bg: linear-gradient(90deg, white, #fafafa, rgb(255, 255, 148), aqua, pink);
+}
+
 .image-icon1 {
     width: 68px;
     height: 68px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     position: relative;
   }
@@ -22,10 +36,8 @@ body {
     left: 20px; /* Aligns the button to the left side */
     background-color: transparent; /* Transparent background */
     border: none;
-    border-radius: 50%;
     padding: 0; /* No padding for image button */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
   }
 
@@ -36,19 +48,15 @@ body {
   .image-icon {
     width: 110px;
     height: 110px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    border-radius: 50%;
     position: relative;
   }
   .image-button1 {
     background-color: transparent; /* Transparent background */
     border: none;
-    border-radius: 50%;
     padding: 0; /* No padding for image button */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
   }
 
@@ -60,7 +68,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2b2b28;
+    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
+    backdrop-filter: blur(15px);
     text-align: center;
     padding: 10px 20px;
     position: sticky;
@@ -380,7 +389,7 @@ body {
 
 .main-heading {
     font-size: 2rem;
-    color: rgb(248, 204, 6);
+    color: var(--heading-color);
     font-weight: 700;
     margin-top: 1rem;
 }
@@ -470,7 +479,7 @@ body {
     inset: -1rem;
     z-index: -1;
     filter: blur(16px);
-    background: linear-gradient(90deg, #44ff9a, #44b0ff, #8b44ff, #ff6644, #ebff70);
+    background: var(--gradient-bg)  no-repeat;
     opacity: 0.3;
     border-radius: 16px;
 }
@@ -481,8 +490,28 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+/* Pulse effect */
+.pulse-effect {
+  animation: pulse-animation 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-animation {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
 .testimonial-card {
-    background-color: #fff;
+    background-color: var(--Tcard-bg);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     padding: 1.5rem;
@@ -501,7 +530,7 @@ body {
 .quote {
     margin-top: 1rem;
     font-size: 1rem;
-    color: #111827;
+    color: var(--quote-color);
 }
 
 .profile {
@@ -525,12 +554,12 @@ body {
 .name {
     font-size: 1rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--name-color);
 }
 
 .role {
     font-size: 0.875rem;
-    color: #4B5563;
+    color: var(--role-color);
 }
 
 /* CSS for Scroll to Top Button */

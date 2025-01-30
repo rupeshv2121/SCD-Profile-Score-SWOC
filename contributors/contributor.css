@@ -9,6 +9,7 @@ body.dark {
 body.dark .title {
   background: linear-gradient(90deg, #4a4a4a, #ffffff); /* Dark gradient for text */
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #fff; /* Fallback text color */
 }
@@ -65,9 +66,23 @@ body.dark p {
     padding: 0;
     box-sizing: border-box;
 }
+#cursor{
+  height: 20px;
+  width:20px;
+  background-color: rgba(234, 169, 84, 0.845);
+  border-radius: 50%;
+  position: fixed;
+  font-size: 7px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
 
 .image-button {
     position: fixed;
+    z-index: 1;
     bottom: 20px;
     left: 20px; /* Aligns the button to the left side */
     background-color: transparent; /* Transparent background */
@@ -86,19 +101,16 @@ body.dark p {
   .image-icon {
     width: 80px;
     height: 80px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    border-radius: 50%;
     position: relative;
   }
+  
   .image-button1 {
     background-color: transparent; /* Transparent background */
     border: none;
-    border-radius: 50%;
     padding: 0; /* No padding for image button */
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
   }
 
@@ -109,9 +121,6 @@ body.dark p {
   .image-icon1 {
     width: 68px;
     height: 68px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     position: relative;
   }
@@ -203,7 +212,8 @@ body.dark p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(43, 43, 40);
+    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
+    backdrop-filter: blur(15px);
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -233,7 +243,7 @@ body.dark p {
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 5px 10px;
     border-radius: 50px; /* Rounded edges */
-    background-color: rgb(8, 7, 6); /* Slightly darker than navbar */
+    background-color: rgb(133 133 133 / 20%);
 }
 
 .nav-links a i {
@@ -538,9 +548,6 @@ body.dark p {
         border-radius: 0;
     }
  }
-
- /* Pratik Ghuge CSS start */
-
  body {
 
   background-image: url('../img/New\ Background.jpeg'); /* Replace with your image file */
@@ -551,7 +558,7 @@ body.dark p {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif; /* Default font */
-  color: #fff; /* Text color for contrast */
+  color: black; /* Text color for contrast */
 }
 
 .container {
@@ -571,6 +578,7 @@ body.dark p {
   letter-spacing: 1.5px; /* Adds spacing between letters */
   background: linear-gradient(90deg, #303131, #262728); /* Gradient background */
   -webkit-background-clip: text; /* Clips the gradient to the text */
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent; /* Makes the background of the text transparent */
   text-align: center; /* Centers the text */
 }
@@ -594,13 +602,16 @@ body.dark p {
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-size: larger;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(5px);
   width: 270px;
   margin-bottom: 40px;
   z-index: 1;
+  border: 1px white solid;
 }
 
 .contributor-card:before {
@@ -643,6 +654,74 @@ body.dark p {
 .contributor-card img:hover {
   transform: scale(1.15);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulse Effect for Avatar */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Contributor Name */
+.contributor-card h3 {
+  margin: 15px 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333; /* Default dark color */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.contributor-card h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(145deg, #f1c40f, #f39c12); /* Warm yellow gradient */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.contributor-card h3:hover::after {
+  transform: scaleX(1);
+}
+
+/* Glow Effect for Name on Hover with a Subtle Yellow */
+.contributor-card h3:hover {
+  color: #f39c12; /* Subtle yellow color */
+  text-shadow: 0 4px 20px rgba(243, 156, 18, 0.6); /* Subtle yellow glow effect */
+}
+
+/* Pratik Ghuge CSS end */
+
+.contributor-card button {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  background-color:#d6a52b;
+  color: var(--clouds-color);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.contributor-card button:hover {
+  background-color:linear-gradient(145deg, #f1c40f, #f39c12); /* Warm yellow gradient */
+  transform: translateY(-2px);
 }
 
 /* Pulse Effect for Avatar */
@@ -748,11 +827,7 @@ margin-bottom: 0.5rem;
   /* CSS for Scroll to Top Button */
   #scrollBtn {
     position: fixed;
-
-    bottom: 93px; /* Place closer to the bottom */
-
-    bottom: 88px; /* Place closer to the bottom */
-
+    bottom: 95px; /* Place closer to the bottom */
     right: 30px; /* Place closer to the right */
     display: none; /* Initially hidden */
     background-color: #d6a52b;
@@ -768,6 +843,43 @@ margin-bottom: 0.5rem;
   }
 
   #scrollBtn:hover {
-    background-color: #000; /* Change color on hover */
+    background-color: #FFD700; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge */
   }
+
+  .social-icons div {
+    display: flex;justify-content: center; gap: 10px; font-size: 20px;
+  }
+  
+
+  @media screen and (max-width : 430px) {
+    .footer-section form {
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .footer-section form input {
+      width: 50%;
+    }
+  
+    .footer-section form button {
+      width: 50%;
+    }
+  
+    .image-icon{
+      width: 60px;
+      height: 60px;
+    }
+    .chat-button{
+      font-size: 18px;
+    } 
+  
+    #scrollBtn {
+      right: 25px;
+      font-size: 13px
+    }
+
+    .social-icons div {
+       gap: 16px;
+    }
+   }

@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="pricing.css" />
     <title>Privacy-Policy - Ajivika</title>
@@ -382,13 +380,18 @@
     
   </style>
   <body>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-btn" id="scrollToTopBtn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="logo">
         <button class="image-button1">
-          <img src="./image.png" alt="Image Button1" class="image-icon1" />
+          <img src="./AJIVIKA2.svg" alt="Image Button1" class="image-icon1" />
         </button>
-        <h2 style="margin-top: -10px;margin-left: 5px;">Ajivika</h2>
       </div>
       <!-- Floating Image Button -->
 
@@ -693,6 +696,15 @@
                       <i class="fab fa-instagram"></i>
                   </a>
               </div>
+              <!--payment options-->
+          <div class="payments">
+            <h3>
+              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>we accept</h3>
+            <a href="https://www.apple.com/apple-pay/" target="_blank" style="color:#fff;"><i class="fab fa-apple-pay" style="font-size: 40px;"></i></a>
+            <a href="https://pay.google.com/intl/en_in/about/" style="color:#fff;"><i class="fa-brands fa-google-pay" style="font-size: 40px;"></i></a>
+            <a href="https://redemption.mastercard.com/#/user/login?language=en-US" style="color:#fff;"><i class="fa-brands fa-cc-mastercard" style="font-size: 30px;"></i></a>
+            <a href="https://www.visa.com.au/en_au/account/login" style="color:#fff;"><i class="fa-brands fa-cc-visa" style="font-size: 30px;"></i></a>
+      </div>
           </div>
 
           <!-- Subscribe Section -->
@@ -706,9 +718,12 @@
       </div>
 
       <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444;">
-      <div style="text-align: center; font-size: 14px; color: #aaa;">
-          <p>&copy; 2025 Ajivika™. All rights reserved.</p>
+      <div class="imf">
+        <img src="./AJIVIKA2.svg" alt="" height="58px">
+        <div style="text-align: center; font-size: 14px; color: #aaa">
+          <p>&copy; 2024 Ajivika™. All rights reserved.</p>
           <p>Designed and developed with ❤️ by the Ajivika Team.</p>
+        </div>
       </div>
   </footer>
 
@@ -763,6 +778,27 @@ function toggleDarkMode() {
     document.body.classList.toggle('dark');
 }
 </script>
-    
+
+<script>
+  const scrollBtn = document.getElementById('scrollToTopBtn');
+
+  // Show the button when scrolling down
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
+
+  // Scroll to top functionality
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
 </body>
 </html>

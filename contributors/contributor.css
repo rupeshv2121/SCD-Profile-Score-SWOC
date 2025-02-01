@@ -4,6 +4,48 @@ body.dark {
   background-image: none; /* Optional: Remove background image in dark mode */
   color: #e0e0e0; /* Lighter text color for contrast */
 }
+/* Style the scrollbar container */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height for horizontal scrollbar */
+}
+
+/* Style the scrollbar track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #2d2d2d; /* Dark background */
+  border-radius: 10px;
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f7e8b6, #f0d48c); /* Gradient using different yellow shades */
+  border-radius: 10px; /* Rounded corners */
+  border: 3px solid #1a1a1a; /* Border around the thumb */
+}
+
+/* Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f0d48c, #e6c85b); /* Lighter gradient on hover */
+}
+
+/* Optional: Style for the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: #2d2d2d; /* Dark background for corner */
+}
+
+/* Style for horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+  height: 12px; /* Height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb-horizontal {
+  background: linear-gradient(90deg, #f7e8b6, #f0d48c); /* Horizontal gradient */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb-horizontal:hover {
+  background: linear-gradient(90deg, #f0d48c, #e6c85b);
+}
 
 /* Dark Mode for Title */
 body.dark .title {
@@ -206,18 +248,6 @@ body.dark p {
 .navbar li:hover span{
     opacity: 1;
     display:inline;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
-    backdrop-filter: blur(15px);
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .navbar .logo h2 {

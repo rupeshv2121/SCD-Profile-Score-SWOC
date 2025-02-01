@@ -13,55 +13,342 @@
   </head>
   <style>
     body.dark {
-            background-color: black;
-            color: white;
-        }
+      background-color: black;
+      color: white;
+    }
 
-        body.dark h3, 
-        body.dark ul, 
-        body.dark ul li {
-            color: aqua; /* Aqua text in dark mode */
-        }
-        #cursor{
-          height: 20px;
-          width:20px;
-          background-color: rgba(234, 169, 84, 0.845);
-          border-radius: 50%;
-          position: fixed;
-          font-size: 7px;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 10;
-        }
-         /* CSS for Scroll to Top Button */
-      #scrollBtn {
-        position: fixed;
-    
-        bottom: 93px; /* Place closer to the bottom */
-    
-        bottom: 88px; /* Place closer to the bottom */
-    
-        right: 26px; /* Place closer to the right */
-        display: none; /* Initially hidden */
-        background-color: #d6a52b;
+    body.dark h3, 
+    body.dark ul, 
+    body.dark ul li {
+        color: aqua; 
+    }
+    .scroll-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #d6a52b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      }
+      .scroll-btn:hover {
+      background-color: black;
+      transform: scale(1.1);
+      }
+      .scroll-btn.show {
+      opacity: 1;
+      visibility: visible;
+      }
+      
+      body.dark h1, 
+      body.dark h2, 
+      body.dark h3, 
+      body.dark h4, 
+      body.dark h5, 
+      body.dark h6 {
+        color: aqua;
+      }
+      
+      body.dark p {
+        color: #dcdcdc;
+      }
+      
+      body.dark ul {
+        color: aqua;
+        padding-left: 1.5rem;
+      }
+      
+      body.dark ul li {
+        color: #dcdcdc;
+      }
+      
+      body.dark strong {
+        color: aqua;
+      }
+      
+      body.dark button {
         color: white;
+      }
+      
+      body.dark .privacy-section {
+        background-color: black;
+      }
+      
+      body.dark input, 
+      body.dark textarea {
+        background-color: #333;
+        color: white;
+        border: 1px solid #666;
+      }
+      
+      body.dark .privacy-card {
+        background: linear-gradient(135deg, #333, #444);
+        border: 2px solid #d6a52b;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      }
+      
+      body.dark .privacy-card h3 {
+        color: aqua;
+      }
+      
+      body.dark .privacy-card p, 
+      body.dark .privacy-card ul li {
+        color: #dcdcdc;
+      }
+      
+      body.dark .privacy-card button {
+        background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+        color: white;
+      }
+      
+      .privacy-section {
+        padding: 4rem;
+        background-color: var(--body-bg);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .about-box {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        background-color: var(--primary-color);
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+
+      .about-box h1 {
+        margin-bottom: 10px;
+      }
+
+      
+      .privacy-content {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .privacy-card {
+        background: linear-gradient(135deg, #f9f9f9, #e8e8e8);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 2px solid #d6a52b;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        color: #333;
+        margin-bottom: 1.7rem;
+      }
+      .privacy-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      }
+      
+      .privacy-card:last-child {
+        margin-bottom: 0;
+      }
+      
+      .privacy-card h3 {
+        font-size: 1.8rem;
+        color: aqua;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .privacy-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+      
+      .privacy-card ul {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+      }
+      
+      .privacy-card li {
+        padding: 0.75rem 0;
+        color: #555;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        font-size: 1rem;
+      }
+      
+      .privacy-card li::before {
+        content: '✓';
+        color: #4CAF50;
+        font-weight: bold;
+      }
+      
+      .privacy-card a {
+        color: #1a73e8;
+        text-decoration: underline;
+      }
+      
+      .privacy-card button {
+        padding: 1rem;
         border: none;
-        border-radius: 50%;
-        padding: 15px;
-        font-size: 18px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+        color: white;
+        font-weight: bold;
         cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000; /* Ensure visibility above other elements */
-        transition: background-color 0.3s ease, transform 0.3s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
-    
-      #scrollBtn:hover {
-        background-color: #ffd700; /* Change color on hover */
-        transform: scale(1.2); /* Slightly enlarge */
+      
+      @media (max-width: 1024px) {
+        .privacy-section {
+            padding: 3rem;
+        }
+      
+        .about-box {
+            padding: 2rem;
+        }
+      
+        .privacy-content {
+            gap: 1.5rem;
+        }
+      
+        .privacy-card {
+            padding: 1.5rem;
+        }
+      
+        .privacy-card h3 {
+            font-size: 1.6rem;
+        }
+      
+        .privacy-card p,
+        .privacy-card ul {
+            font-size: 1rem;
+        }
+      
+        .privacy-card li {
+            font-size: 0.95rem;
+        }
       }
-    
+      
+      @media (max-width: 768px) {
+        .privacy-content {
+            flex-direction: column;
+        }
+      
+        .about-box h1 {
+            font-size: 2rem;
+        }
+      
+        .privacy-card::before {
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+        }
+      
+        .privacy-card {
+            padding: 1.5rem;
+        }
+      
+        .privacy-card h3 {
+            font-size: 1.5rem;
+        }
+      
+        .privacy-card p,
+        .privacy-card ul {
+            font-size: 1rem;
+        }
+      
+        .privacy-card li {
+            font-size: 0.9rem;
+        }
+      
+        .privacy-card ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+      
+        .privacy-card li {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+      
+        .privacy-card li::before {
+            content: '';
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .privacy-section {
+            padding: 2rem;
+        }
+      
+        .about-box {
+            padding: 1.5rem;
+        }
+      
+        .privacy-card {
+            padding: 1.2rem;
+        }
+      
+        .privacy-card h3 {
+            font-size: 1.4rem;
+        }
+      
+        .privacy-card p,
+        .privacy-card ul {
+            font-size: 0.95rem;
+        }
+      
+        .privacy-card li {
+            font-size: 0.85rem;
+        }
+      
+        .privacy-card button {
+            padding: 0.8rem;
+        }
+      
+        .privacy-card ul {
+            flex-direction: column;
+        }
+      
+        .privacy-card li {
+            display: block;
+            margin-left: 1rem;
+        }
+      
+        .privacy-card li::before {
+            content: '✓';
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+      }
       
   </style>
   <body>
@@ -163,46 +450,50 @@
       }
     </script>
 
-    <!-- Google Translate Script -->
-    <!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+      <!-- Google Translate Script -->
+      <!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 
-    <script>
-      // Initialize Google Translate
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: "en,hi,es,fr,de,it,ja,zh-CN",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false,
-          },
-          "google_translate_element"
-        );
-      }
-
-      // Show or hide the Google Translate options
-      function toggleTranslate() {
-        const translateElement = document.getElementById(
-          "google_translate_element"
-        );
-        if (
-          translateElement.style.display === "none" ||
-          translateElement.style.display === ""
-        ) {
-          translateElement.style.display = "block";
-        } else {
-          translateElement.style.display = "none";
+      <script>
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+              includedLanguages: "en,hi,es,fr,de,it,ja,zh-CN",
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              autoDisplay: false,
+            },
+            "google_translate_element"
+          );
         }
-      }
-    </script>
+
+        // Show or hide the Google Translate options
+        function toggleTranslate() {
+          const translateElement = document.getElementById(
+            "google_translate_element"
+          );
+          if (
+            translateElement.style.display === "none" ||
+            translateElement.style.display === ""
+          ) {
+            translateElement.style.display = "block";
+          } else {
+            translateElement.style.display = "none";
+          }
+        }
+      </script>
 
     <section class="section home-section">
+
       <div id="google_element"></div>
+
       <script
         type="text/javascript"
         src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"
         onerror="handleError(this)"
-      ></script>
+      >
+      </script>
+
       <script type="text/javascript">
         function loadGoogleTranslate() {
           new google.translate.TranslateElement(
@@ -218,57 +509,77 @@
           console.error("Error loading Google Translate script:", e);
         }
       </script>
-    <button class="back-button" onclick="window.history.back();">
-      <i class="fas fa-arrow-left"></i>
+
+      <button class="back-button" onclick="window.history.back();">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+
+
+    <section class="privacy-section">
+      <div class="about-box">
+          <h1>
+              <i class="fa fa-file-contract"></i> Terms and Conditions
+          </h1>
+          <div class="privacy-content">
+              <div class="privacy-card">
+                  <h3>Acceptance of Terms</h3>
+                  <p>By using this platform, you agree to these Terms of Service. If you do not agree to any part of these terms, please discontinue use of the website.</p>
+              </div>
+    
+              <div class="privacy-card">
+                  <h3>Use of the Platform</h3>
+                  <p>We grant you a limited, non-exclusive, and non-transferable license to use our platform for personal, non-commercial purposes. Any unauthorized use of the platform is strictly prohibited.</p>
+              </div>
+    
+              <div class="privacy-card">
+                  <h3>Intellectual Property</h3>
+                  <p>All content on <strong>AJIVIKA</strong>, including text, images, logos, and designs, is the property of the platform and protected by copyright laws. You may not reproduce, distribute, or create derivative works without prior written consent.</p>
+              </div>
+    
+              <div class="privacy-card">
+                  <h3>User Responsibilities</h3>
+                  <p>As a user of this platform, you agree to:</p>
+                  <ul>
+                      <li>Provide accurate and truthful information when registering or submitting content.</li>
+                      <li>Not engage in unlawful, harmful, or disruptive activities on the platform.</li>
+                      <li>Respect the intellectual property rights of the platform and other users.</li>
+                  </ul>
+              </div>
+    
+              <div class="privacy-card">
+                  <h3>Limitation of Liability</h3>
+                  <p><strong>AJIVIKA</strong> is not responsible for any indirect, incidental, or consequential damages arising from your use of the platform. All services are provided "as is" without warranties of any kind.</p>
+              </div>
+    
+              <div class="privacy-card">
+                  <h3>Modifications to Terms</h3>
+                  <p>We reserve the right to modify these Terms of Service at any time. Updates will be posted on this page, and continued use of the platform signifies your acceptance of the revised terms.</p>
+              </div>
+    
+              <div class="privacy-card">
+                  <h3>Termination</h3>
+                  <p>We reserve the right to suspend or terminate your access to the platform at our sole discretion, without prior notice, for any violation of these Terms.</p>
+              </div>
+    
+              <div class="privacy-card">
+                  <h3>Contact Us</h3>
+                  <p>If you have any questions about these Terms of Service, please contact us at <a href="mailto:contact@ajivika.com">contact@ajivika.com</a>.</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Top scroll button -->
+    <button class="scroll-btn" id="scrollToTopBtn">
+      <i class="fas fa-arrow-up"></i>
     </button>
-
-    <!-- Privacy Section -->
-<!-- Privacy Section -->
-<!-- Privacy Policy Section -->
-<section class="privacy-section light">
-    <div class="about-box">
-      <h1>
-        <i class="fa fa-file-contract"></i> Terms and Conditions
-      
-<h4>1. Acceptance of Terms</h4>
-<p>By using this platform, you agree to these Terms and Service. If you do not agree to any part of these terms, please discontinue use of the website.</p>
-
-<h4>2. Use of the Platform</h4>
-<p>We grant you a limited, non-exclusive, and non-transferable license to use our platform for personal, non-commercial purposes. Any unauthorized use of the platform is strictly prohibited.</p>
-
-<h4>3. Intellectual Property</h4>
-<p>All content on <strong>AJIVIKA</strong>, including text, images, logos, and designs, is the property of the platform and protected by copyright laws. You may not reproduce, distribute, or create derivative works without prior written consent.</p>
-
-<h4>4. User Responsibilities</h4>
-<p>As a user of this platform, you agree to:</p>
-<ul>
-  <li>Provide accurate and truthful information when registering or submitting content.</li>
-  <li>Not engage in unlawful, harmful, or disruptive activities on the platform.</li>
-  <li>Respect the intellectual property rights of the platform and other users.</li>
-</ul>
-
-<h4>5. Limitation of Liability</h4>
-<p><strong>AJIVIKA</strong> is not responsible for any indirect, incidental, or consequential damages arising from your use of the platform. All services are provided "as is" without warranties of any kind.</p>
-
-<h4>6. Modifications to Terms</h4>
-<p>We reserve the right to modify these Terms and Service at any time. Updates will be posted on this page, and continued use of the platform signifies your acceptance of the revised terms.</p>
-
-<h4>7. Termination</h4>
-<p>We reserve the right to suspend or terminate your access to the platform at our sole discretion, without prior notice, for any violation of these Terms.</p>
-
-<h4>8. Contact Us</h4>
-<p>If you have any questions about these Terms and Service, please contact us at <a href="mailto:contact@ajivika.com">contact@ajivika.com</a>.</p>
-</div>
-</div>
-  </section>
-  
+    
   
     <!-- Floating Image Button -->
     <button class="image-button">
       <img src="./image.png" alt="Image Button" class="image-icon" />
     </button>
 
-    <!-- Footer -->
      <!-- Footer -->
     <footer style="background-color: #222; color: #fff; padding: 20px 10px;">
       <div class="footer-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; max-width: 1200px; margin: auto;">
@@ -282,10 +593,10 @@
           <div class="footer-section quick-link" style="flex: 1; min-width: 200px;">
               <h3 style="color: #d6a52b;">Quick Links</h3>
               <ul style="list-style: none; padding: 0; font-size: 14px; line-height: 1.8;">
-                  <li><a href="../index.html" style="color: #fff; text-decoration: none;">Home</a></li>
-                  <li><a href="../about.html" style="color: #fff; text-decoration: none;">About Us</a></li>
-                  <li><a href="../contact.html" style="color: #fff; text-decoration: none;">Contact</a></li>
-                  <li><a href="../pricing.html" style="color: #fff; text-decoration: none;">Go Pro</a></li>
+                  <li><a href="./index.html" style="color: #fff; text-decoration: none;">Home</a></li>
+                  <li><a href="./about.html" style="color: #fff; text-decoration: none;">About Us</a></li>
+                  <li><a href="./contact.html" style="color: #fff; text-decoration: none;">Contact</a></li>
+                  <li><a href="./pricing.html" style="color: #fff; text-decoration: none;">Go Pro</a></li>
               </ul>
           </div>
 
@@ -296,14 +607,14 @@
                   <li><a href="./blog.html" style="color: #fff; text-decoration: none;">Blog</a></li>
                   <li>
                     <a
-                      href="../testimonial.html"
+                      href="./testimonial.html"
                       style="color: #fff; text-decoration: none"
                       >Testimonial</a
                     >
                   </li>
-                  <li><a href="../faq.html" style="color: #fff; text-decoration: none;">FAQs</a></li>
+                  <li><a href="./faq.html" style="color: #fff; text-decoration: none;">FAQs</a></li>
                   <li><a href="./terms.html" style="color: #fff; text-decoration: none;">Terms & Conditions</a></li>
-                  <li><a href="../privacy.html" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+                  <li><a href="./privacy.html" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
               </ul>
           </div>
 
@@ -353,9 +664,9 @@
           <p>Designed and developed with ❤️ by the Ajivika Team.</p>
         </div>
       </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="index.js"></script>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
 
     <script>
       // hamburger menu js
@@ -364,6 +675,7 @@
         navLinks.classList.toggle("active");
       }
     </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const themeToggle = document.querySelector('.theme-switch__checkbox');
@@ -390,6 +702,7 @@
         });
     });
     </script>
+
     <script>document.addEventListener('DOMContentLoaded', () => {
         const themeToggle = document.querySelector('.theme-switch__checkbox');
         const currentTheme = localStorage.getItem('theme');
@@ -401,41 +714,35 @@
             document.body.classList.add('light');
             document.body.classList.remove('dark');
         }
-    });</script>
-
-<script>
-function toggleDarkMode() {
-    document.body.classList.toggle('dark');
-}
-</script>
-
-<!-- Top scroll button -->
-<button id="scrollBtn" title="Go to top">
-  <i class="fa-solid fa-arrow-up fa-lg"></i>
-</button>
-
-<script>
-  // Get the button element
-  const scrollBtn = document.getElementById('scrollBtn');
-
-  // Show the button when the user scrolls down 100px from the top
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
-  };
-
-  // Scroll to the top of the page when the button is clicked
-  scrollBtn.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
     });
-  };
+    </script>
 
-</script>
+    <script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark');
+    }
+    </script>
+
+    <script>
+      const scrollBtn = document.getElementById('scrollToTopBtn');
+    
+      // Show the button when scrolling down
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.add('show');
+        } else {
+          scrollBtn.classList.remove('show');
+        }
+      });
+    
+      // Scroll to top functionality
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
     
 </body>
 </html>

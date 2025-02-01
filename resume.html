@@ -14,6 +14,88 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   </head>
   <style>
+    body.dark {
+      background-color: black;
+      color: white;
+    }
+
+    body.dark .resume-creator-section {
+      background-color: var(--primary-color);
+    }
+
+    body.dark .resume-creator-title {
+      color: #f39c12;
+    }
+
+    body.dark .resume-creator-description {
+      color: #bdc3c7;
+    }
+
+    body.dark .resume-creator-box {
+      background-color: #3b3b3b;
+      border: 1px solid #f39c12;
+    }
+
+    body.dark .resume-creator-subtitle {
+      color: #f1c40f;
+    }
+
+    body.dark .resume-creator-fieldset {
+      border: 1px solid #555;
+      background-color: #333;
+    }
+
+    body.dark .resume-creator-legend {
+      color: #f1c40f;
+    }
+
+    body.dark .resume-creator-label {
+      color: #f1c40f;
+    }
+
+    body.dark input, 
+    body.dark textarea, 
+    body.dark .resume-creator-input,
+    body.dark .resume-creator-textarea,
+    body.dark .resume-creator-input-file {
+      background-color: #333;
+      color: white;
+      border: 1px solid #666;
+    }
+
+    body.dark input:focus, 
+    body.dark textarea:focus,
+    body.dark .resume-creator-input:focus,
+    body.dark .resume-creator-textarea:focus,
+    body.dark .resume-creator-input-file:focus {
+      border-color: #f39c12;
+    }
+
+    body.dark .resume-creator-add-icon {
+      color: #f39c12;
+    }
+
+    body.dark .resume-creator-skills-list li,
+    body.dark .resume-creator-experience-list li,
+    body.dark .resume-creator-certifications-list li,
+    body.dark .resume-creator-languages-list li,
+    body.dark .resume-creator-references-list li,
+    body.dark .resume-creator-projects-list li,
+    body.dark .resume-creator-achievements-list li {
+      background-color: #444;
+      border: 1px solid #777;
+      color: white;
+    }
+
+    body.dark .resume-creator-button {
+      background-color: #f39c12;
+      color: white;
+    }
+
+    body.dark .resume-creator-button:hover {
+      background-color: #e67e22;
+    }
+
     .resume-creator-section {
       max-width: 800px;
       margin: 50px auto;
@@ -149,7 +231,7 @@
     }
 
     .resume-creator-button:hover {
-      background-color: #305c79;
+      background-color: #c8833e;
     }
 
     .remove-btn{

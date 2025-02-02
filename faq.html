@@ -199,24 +199,27 @@
       }
 
       .back-button {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 16px;
-        color: var(--card-bg);
-        background: var(--heading-color);
+        position: absolute;
+        top: 100px;
+        left: 20px;
+        background-color: transparent;
         border: none;
-        padding: 12px 25px;
+        color: #333;
+        font-size: 24px;
         cursor: pointer;
-        border-radius: 25px;
-        margin: 20px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px var(--card-shadow);
+        z-index: 999;
+        transition: color 0.3s ease;
+      }
+      
+      .back-button:hover {
+          color: #d6a52b;
+      }
+      body.dark .back-button{
+        color: white;
       }
 
-      .back-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px var(--card-shadow);
+      body.dark .back-button:hover{
+        color: #d6a52b;
       }
 
       @keyframes fadeInUp {
@@ -789,16 +792,6 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
       }
       
-      .back-button.dark {
-        color: #444;
-        background: #ff8c00;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-      }
-      
-      .back-button.dark:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-      }
     </style>
   </head>
   <body>
@@ -903,6 +896,7 @@
         navLinks.classList.toggle("active");
       }
     </script>
+
     <button class="back-button" onclick="window.history.back();">
       <i class="fas fa-arrow-left"></i>
     </button>

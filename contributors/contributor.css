@@ -949,3 +949,24 @@ body.dark .back-button{
 body.dark .back-button:hover{
   color: #d6a52b;
 }
+
+.social-icons div a {
+  transition: all 0.3s ease;
+}
+
+.social-icons div a:hover {
+  scale: 1.3;
+  rotate: 15deg;
+}
+.social-icons div a i.fa-facebook-f:hover {
+  color: rgb(51, 51, 199);
+}
+.social-icons div a i.fa-x-twitter:hover {
+  color: rgb(51, 98, 199);
+}
+.social-icons div a i.fa-linkedin-in:hover {
+  color: rgb(51, 132, 199);
+}
+.social-icons div a i.fa-instagram:hover {
+  color: rgb(199, 51, 167);
+}

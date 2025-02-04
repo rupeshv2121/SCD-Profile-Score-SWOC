@@ -200,3 +200,39 @@ from January 1, 2025, to March 1, 2025.`;
 
 // Fetch and render contributors on page load
 fetchContributors();
+
+gsap.from(".logo", {
+  opacity: 0,
+  y: -30,
+  delay: 0.5,
+  duration: 1
+})
+
+const tl = gsap.timeline();
+tl.from(".nav-links li", {
+  delay: 1,
+  opacity: 0,
+  stagger: 0.25,
+  duration: 1,
+  y: -30
+})
+
+gsap.from("#contributors .contributor-card button", {
+  opacity: 0,
+  duration: 1,
+  y: -200,
+})
+
+gsap.from(".contributor-card", {
+  scale: 2,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#contributors",
+    scroller: "body",
+    scrub: 2,
+    markers: true,
+    start: "top 20%",
+    end: "top 70%",
+    pin: true
+  }
+})

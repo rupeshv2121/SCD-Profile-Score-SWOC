@@ -105,38 +105,6 @@
       <!-- Dynamic contributors will be added here -->
     </div>
   </div>
-
-  <script src="contributor.js"></script>
-
-
-    <script>
-        // hamburger menu js
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
-
-    
-
-    <section class="section home-section">
-        <div id="google_element"></div>
-        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate" onerror="handleError(this)"></script>
-        <script type="text/javascript">
-          function loadGoogleTranslate() {
-            new google.translate.TranslateElement({
-              pageLanguage: "en",
-              includedLanguages: "en,hi,pa,sa,mr,ur,bn,es,fr,de,it",
-              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, "google_element");
-          }
-          function handleError(e) {
-            console.error("Error loading Google Translate script:", e);
-          }
-        </script>
-
-
-
     <!-- Footer -->
     <footer style="background-color: #222; color: #fff; padding: 20px 10px;">
         <div class="footer-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; max-width: 1200px; margin: auto;">
@@ -229,9 +197,32 @@
     <button class="image-button">
         <img src="image.png" alt="Image Button" class="image-icon">
     </button>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="contributor.js"></script>
+    <script>
+        // hamburger menu js
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    <section class="section home-section">
+        <div id="google_element"></div>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate" onerror="handleError(this)"></script>
+        <script type="text/javascript">
+          function loadGoogleTranslate() {
+            new google.translate.TranslateElement({
+              pageLanguage: "en",
+              includedLanguages: "en,hi,pa,sa,mr,ur,bn,es,fr,de,it",
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, "google_element");
+          }
+          function handleError(e) {
+            console.error("Error loading Google Translate script:", e);
+          }
+        </script>
+
 <script>
     let slideIndex = 0;
     showSlides();

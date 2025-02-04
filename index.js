@@ -39,7 +39,7 @@ gsap.from(".options-container .option-card", {
         trigger: ".options-container",
         scroller: "body",
         scrub: 2,
-        start: "top 50%",
+        start: "top 70%",
         end: "top 70%",
         pin: true
     }

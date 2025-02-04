@@ -166,18 +166,7 @@ body.dark p {
     z-index: 2;
     position: relative;
   }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2b2b28;
-    text-align: center;
-    padding: 10px 20px;
-    position: sticky;
-    height: 80px;
-    top: 0;
-    z-index: 1;
-  }
+
   .navbar .logo {
     gap: 13px;
     display: flex;
@@ -204,7 +193,7 @@ body.dark p {
     opacity: 1;
     display: inline;
   }
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -248,18 +237,6 @@ body.dark p {
 .navbar li:hover span{
     opacity: 1;
     display:inline;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
-    backdrop-filter: blur(15px);
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .navbar .logo h2 {

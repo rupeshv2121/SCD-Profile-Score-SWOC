@@ -243,17 +243,3 @@ gsap.from("#contributors .contributor-card button", {
   duration: 1,
   y: -200,
 })
-
-gsap.from(".contributor-card", {
-  scale: 2,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#contributors",
-    scroller: "body",
-    scrub: 2,
-    markers: true,
-    start: "top 20%",
-    end: "top 70%",
-    pin: true
-  }
-})

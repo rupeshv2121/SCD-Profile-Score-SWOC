@@ -32,12 +32,11 @@ html .dark {
   --card-text: yellow;
   --h2-color: rgb(255, 187, 52);
   --icon-color: white;
-  --left-section: #00001c;
-  --left-gradient: navy;
-  --right-section: navy;
+  --left-section: #3e3628;
+  --right-section:#3e3628;
   --section-color: white;
   --subtitle-color: yellow;
-  --label-color: aqua;
+  --label-color: white;
   --login-link-color: aqua;
 }
 
@@ -88,7 +87,7 @@ animation: fadeIn 1s ease-in-out;
 
 .left-section {
 flex: 1;
-background: #3e3628;
+background:var(--left-section);
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -116,7 +115,7 @@ font-weight: 300;
 }
 
 .right-section {
-  background: #3e3628;
+  background: var(--right-section);
 flex: 1;
 padding: 40px;
 display: flex;
@@ -146,7 +145,7 @@ margin-bottom: 11px;
 display: block;
 font-size: 14px;
 margin-bottom: 5px;
-color: white
+color: var(--label-color)
 /* color: #555; */
 }
 
@@ -223,7 +222,7 @@ box-shadow: 0 0 8px rgba(255, 179, 71, 0.5);
 margin-top: 10px;
 font-size: 14px;
 text-align: center;
-color: white
+color: var(--label-color)
 }
 
 .login-link a {

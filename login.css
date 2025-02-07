@@ -35,12 +35,12 @@
     --card-text: yellow;
     --h2-color: rgb(255, 187, 52);
     --icon-color: white;
-    --left-section: #00001c;
+    --left-section: #3e3628;
     --left-gradient: navy;
-    --right-section: navy;
+    --right-section: #3e3628;
     --section-color: white;
     --subtitle-color: yellow;
-    --label-color: aqua;
+    --label-color: white;
     --login-link-color: aqua;
   }
 
@@ -78,7 +78,7 @@
   .left-section {
     flex: 1;
     /* background: linear-gradient(to bottom right, #ffb347, #ffcc33); */
-    background: #3e3628;
+    background: var(--left-section);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +106,7 @@
     font-weight: 300;
   }
   
-  .right-section {background: #3e3628;
+  .right-section {background: var(--right-section);
     flex: 1;
     padding: 40px;
     display: flex;
@@ -135,11 +135,11 @@
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-    color: white;
+    color: var(--label-color);
   }
 
   .checkbox-group label, .register-link{
-    color: white;
+    color: var(--label-color);
   }
   
   .login-form .input-group input {

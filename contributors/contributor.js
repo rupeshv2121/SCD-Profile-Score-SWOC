@@ -2,6 +2,8 @@ const REPO_OWNER = "Ojas-Arora";
 const REPO_NAME = "SCD-Profile-Score";
 const GITHUB_TOKEN = ""; // Optional: Add your GitHub personal access token to avoid rate limits
 
+document.addEventListener("DOMContentLoaded", fetchContributors);
+
 async function fetchContributors() {
   const contributorsContainer = document.getElementById("contributors");
   const canvas = document.createElement("canvas"); // Create a hidden canvas for certificate generation
@@ -38,22 +40,36 @@ async function fetchContributors() {
       img.style.borderRadius = "50%"; // Optional: Adds a circular avatar
       profileLink.appendChild(img);
 
-      // Contributor name
-      const nameText = document.createElement("div");
+      // Contributor name with GitHub icon link
+      const nameContainer = document.createElement("div");
+      nameContainer.className = "contributor-name";
+      nameContainer.style.textAlign = "center";
+
+      const nameText = document.createElement("span");
       nameText.textContent = contributor.login;
-      nameText.className = "contributor-name";
-      nameText.style.textAlign = "center"; // Center the name below the image
+      nameText.style.marginRight = "8px";
+
+      const githubIcon = document.createElement("a");
+      githubIcon.href = contributor.html_url;
+      githubIcon.target = "_blank";
+      githubIcon.innerHTML = "<i class='fa-brands fa-github'></i>";
+      githubIcon.style.fontSize = "20px";
+      githubIcon.style.color = "black";
+      githubIcon.style.textDecoration = "none";
+
+      nameContainer.appendChild(nameText);
+      nameContainer.appendChild(githubIcon);
 
       // Generate Certificate Button
       const button = document.createElement("button");
-      button.textContent = "CERTIFICATE";
+      button.textContent = "Certificate";
       button.addEventListener("click", () => {
         generateCertificate(contributor.login, contributor.avatar_url);
       });
 
       // Append elements to card
       card.appendChild(profileLink); // Image wrapped in a link
-      card.appendChild(nameText); // Name displayed below
+      card.appendChild(nameContainer); // Name displayed below
       card.appendChild(button);
 
       // Append card to container
@@ -67,7 +83,12 @@ async function fetchContributors() {
       canvas.height = 1000;
 
       // Background gradient
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      const gradient = ctx.createLinearGradient(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
       gradient.addColorStop(0, "#f7e8a1");
       gradient.addColorStop(1, "#f2c94c");
       ctx.fillStyle = gradient;
@@ -175,14 +196,14 @@ from January 1, 2025, to March 1, 2025.`;
             </head>
             <body>
               <h1>Certificate of Contribution</h1>
-              <img src="${canvas.toDataURL('image/png')}" alt="Certificate" />
+              <img src="${canvas.toDataURL("image/png")}" alt="Certificate" />
               <br />
               <button class="download-btn" onclick="downloadCertificate()">Download Certificate</button>
               <script>
                 function downloadCertificate() {
                   const link = document.createElement('a');
                   link.download = '${username}_certificate.png';
-                  link.href = "${canvas.toDataURL('image/png')}";
+                  link.href = "${canvas.toDataURL("image/png")}";
                   link.click();
                 }
               </script>

@@ -78,7 +78,7 @@
   .left-section {
     flex: 1;
     /* background: linear-gradient(to bottom right, #ffb347, #ffcc33); */
-    background: linear-gradient(to bottom right,  var(--left-section), var(--left-gradient));
+    background: #3e3628;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,8 +106,7 @@
     font-weight: 300;
   }
   
-  .right-section {
-    background-color: var(--right-section);
+  .right-section {background: #3e3628;
     flex: 1;
     padding: 40px;
     display: flex;
@@ -136,11 +135,11 @@
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-    color: var(--label-color);
+    color: white;
   }
 
   .checkbox-group label, .register-link{
-    color: var(--label-color);
+    color: white;
   }
   
   .login-form .input-group input {

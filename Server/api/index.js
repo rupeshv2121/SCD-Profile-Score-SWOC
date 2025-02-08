@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { dbConnect } from './dbconnect.js';
+import dbConnect from './dbconnect.js';
 import { app } from './app.js';
 
 // Load environment variables

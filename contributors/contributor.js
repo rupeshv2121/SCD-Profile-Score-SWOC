@@ -139,17 +139,23 @@ async function fetchContributors() {
 
         // Certificate content
         ctx.font = "35px Arial";
-        const content = `This certificate is proudly presented to ${username} for their valuable 
-contribution to SCD-Profile-Score (AJIVIKA) during Social Winter of Code (SWoC) 
-from January 1, 2025, to March 1, 2025.`;
+        const content = `This certificate is proudly presented to ${username} for his/her valuable 
+contribution to SCD-Profile-Score (AJIVIKA). Keep contributing. Best wishes
+for your future endeavors.`;
         const contentLines = content.split("\n");
         contentLines.forEach((line, index) => {
           ctx.fillText(line.trim(), canvas.width / 2, 600 + index * 40);
         });
 
-        // Signature
+        // Signature with decorative underline
         ctx.font = "italic 30px Georgia";
         ctx.fillText("Ojas Arora", canvas.width / 1.5, 850);
+        ctx.strokeStyle = "#5a4637";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 1.5 - 150, 860);
+        ctx.lineTo(canvas.width / 1.5 + 150, 860);
+        ctx.stroke();
 
         // Generated date
         const date = new Date().toLocaleString();

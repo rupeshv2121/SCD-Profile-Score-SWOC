@@ -162,7 +162,7 @@
       <div class="right-section">
         <h1>Members Log in</h1>
         <p class="subtitle">Login to start your journey...</p>
-        <form id="loginForm" class="login-form">
+        <form id="loginForm" method="post" class="login-form">
           <div class="input-group">
             <label for="email"> <i class="fas fa-envelope"></i> Email </label>
             <input
@@ -171,7 +171,7 @@
               placeholder="Enter your email"
               required
             />
-            <p class="error" id="errorMessage"></p>
+            <!-- <p class="error" id="errorMessage"></p> -->
           </div>
           <div class="input-group">
             <label for="password">
@@ -386,5 +386,6 @@
           window.location.href = 'index.html';
         });    
       </script>
+      <script type="module" src="js/login.js"></script>
   </body>
 </html>

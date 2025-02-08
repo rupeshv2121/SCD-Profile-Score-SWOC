@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (data.token) {
           alert('Login successful!');
           localStorage.setItem('authToken', data.token);
-          window.location.href = '/SCD-Profile-Score/';
+          window.location.href = './index.html';
         } else {
           alert('Login failed: ' + data.message);
         }

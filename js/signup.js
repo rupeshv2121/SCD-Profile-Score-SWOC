@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (data.token) {
           alert('Signup successful! You are now logged in.');
           localStorage.setItem('authToken', data.token);
-          window.location.href = '/SCD-Profile-Score/';
+          window.location.href = './index.html';
         } else {
           alert('Signup failed: ' + data.message);
         }

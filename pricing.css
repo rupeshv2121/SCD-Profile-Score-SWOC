@@ -273,7 +273,6 @@ section h2 {
     padding: 0; /* No padding for image button */
     cursor: pointer;
     z-index: 9999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
@@ -284,9 +283,6 @@ section h2 {
 .image-icon {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 2;
     position: relative;
 }

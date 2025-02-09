@@ -1,28 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const signupForm = document.getElementById('signupForm');
-    if (signupForm) {
-      signupForm.addEventListener('submit', handleSignupSubmit);
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+      loginForm.addEventListener('submit', handleLoginSubmit);
     }
   });
   
-  function handleSignupSubmit(event) {
+  function handleLoginSubmit(event) {
     event.preventDefault(); // Prevent the default form submission
   
-    const username = document.getElementById('username').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
   
-    if (password !== confirmPassword) {
-      alert('Passwords do not match');
-      return;
-    }
+    const formData = { email, password };
   
-    const formData = { username, email, password };
   
-   
-     fetch('http://localhost:3000/api/v1/auth/signup', {
-  
+    fetch('http://localhost:3000/api/v1/auth/login', {
+
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -30,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         if (data.token) {
-          alert('Signup successful! You are now logged in.');
+          alert('Login successful!');
           localStorage.setItem('authToken', data.token);
           window.location.href = './index.html';
         } else {
-          alert('Signup failed: ' + data.message);
+          alert('Login failed: ' + data.message);
         }
       })
       .catch(error => console.error('Error:', error));

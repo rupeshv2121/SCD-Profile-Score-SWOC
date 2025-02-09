@@ -13,6 +13,7 @@
     <title>Terms and Conditions - Ajivika</title>
   </head>
   <style>
+<<<<<<< HEAD
     body.dark p {
     color: #dcdcdc;
   }
@@ -107,6 +108,157 @@
   .privacy-card h3 {
     font-size: 1.8rem;
         color: var(--h3-color);
+=======
+    body.dark {
+      background-color: black;
+      color: white;
+    }
+    body.dark h1,
+    body.dark ul, 
+    body.dark ul li {
+        color: aqua; 
+    }
+    .scroll-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #d6a52b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      }
+      .scroll-btn:hover {
+      background-color: black;
+      transform: scale(1.1);
+      }
+      .scroll-btn.show {
+      opacity: 1;
+      visibility: visible;
+      }
+      
+      body.dark p {
+        color: #dcdcdc;
+      }
+      
+      body.dark ul {
+        color: aqua;
+        padding-left: 1.5rem;
+      }
+      
+      body.dark ul li {
+        color: #dcdcdc;
+      }
+      
+      body.dark strong {
+        color: aqua;
+      }
+      
+      body.dark button {
+        color: white;
+      }
+      
+      body.dark .privacy-section {
+        background-color: black;
+      }
+      
+      body.dark input, 
+      body.dark textarea {
+        background-color: #333;
+        color: white;
+        border: 1px solid #666;
+      }
+      
+      body.dark .privacy-card {
+        background: linear-gradient(135deg, #333, #444);
+        border: 2px solid #d6a52b;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      }
+      
+      body.dark .privacy-card h3 {
+        color: aqua;
+      }
+      
+      body.dark .privacy-card p, 
+      body.dark .privacy-card ul li {
+        color: #dcdcdc;
+      }
+      
+      body.dark .privacy-card button {
+        background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+        color: white;
+      }
+      
+      .privacy-section {
+        padding: 4rem;
+        background-color: var(--body-bg);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .about-box {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        background-color: var(--primary-color);
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+
+      .about-box h1 {
+        margin-bottom: 10px;
+      }
+
+      
+      .privacy-content {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .privacy-card {
+        background: linear-gradient(135deg, #f9f9f9, #e8e8e8);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 2px solid #d6a52b;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        color: #333;
+        margin-bottom: 1.7rem;
+      }
+      .privacy-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      }
+      
+      .privacy-card:last-child {
+        margin-bottom: 0;
+      }
+      
+      .privacy-card h3 {
+        font-size: 1.8rem;
+        color: aqua;
+>>>>>>> main
         margin-bottom: 1rem;
         position: relative;
         z-index: 1;
@@ -439,7 +591,7 @@
               <!--payment options-->
           <div class="payments">
             <h3>
-              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>we accept</h3>
+              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>We accept</h3>
             <a href="https://www.apple.com/apple-pay/" target="_blank" style="color:#fff;"><i class="fab fa-apple-pay" style="font-size: 40px;"></i></a>
             <a href="https://pay.google.com/intl/en_in/about/" style="color:#fff;"><i class="fa-brands fa-google-pay" style="font-size: 40px;"></i></a>
             <a href="https://redemption.mastercard.com/#/user/login?language=en-US" style="color:#fff;"><i class="fa-brands fa-cc-mastercard" style="font-size: 30px;"></i></a>

@@ -336,7 +336,7 @@ section h2 {
   left: 20px;
   background-color: transparent;
   border: none;
-  color: var(--back-button-color);
+  color: #333;
   font-size: 24px;
   cursor: pointer;
   z-index: 999;
@@ -344,6 +344,13 @@ section h2 {
 }
 
 .back-button:hover {
+    color: #d6a52b;
+}
+body.dark .back-button{
+  color: white;
+}
+
+body.dark .back-button:hover{
   color: #d6a52b;
 }
 .about-section h1 {

@@ -396,13 +396,14 @@ footer {
       width: 100%;
     }
   }
-  .orange, h3{
+  
+.orange, h3{
     color: #d6a52b;
 }
 .footer-section h3{
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  }
+}
 
 
   /* CSS for Scroll to Top Button */

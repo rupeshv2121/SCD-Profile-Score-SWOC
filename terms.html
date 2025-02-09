@@ -16,8 +16,7 @@
       background-color: black;
       color: white;
     }
-
-    body.dark h3, 
+    body.dark h1,
     body.dark ul, 
     body.dark ul li {
         color: aqua; 
@@ -49,15 +48,6 @@
       .scroll-btn.show {
       opacity: 1;
       visibility: visible;
-      }
-      
-      body.dark h1, 
-      body.dark h2, 
-      body.dark h3, 
-      body.dark h4, 
-      body.dark h5, 
-      body.dark h6 {
-        color: aqua;
       }
       
       body.dark p {
@@ -638,7 +628,7 @@
               <!--payment options-->
           <div class="payments">
             <h3>
-              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>we accept</h3>
+              <i class="fa-solid fa-credit-card" style="color: #d6a52b; margin-right: 8px; padding-top: 15px;"></i>We accept</h3>
             <a href="https://www.apple.com/apple-pay/" target="_blank" style="color:#fff;"><i class="fab fa-apple-pay" style="font-size: 40px;"></i></a>
             <a href="https://pay.google.com/intl/en_in/about/" style="color:#fff;"><i class="fa-brands fa-google-pay" style="font-size: 40px;"></i></a>
             <a href="https://redemption.mastercard.com/#/user/login?language=en-US" style="color:#fff;"><i class="fa-brands fa-cc-mastercard" style="font-size: 30px;"></i></a>
@@ -742,6 +732,12 @@
           behavior: 'smooth'
         });
       });
+    </script>
+
+    <script>
+      document.querySelector('.image-button1').addEventListener('click', function() {
+        window.location.href = 'index.html';
+      });    
     </script>
     
 </body>

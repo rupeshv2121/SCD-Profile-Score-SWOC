@@ -1,24 +1,12 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'
 
-dotenv.config()
-// Database connection
-export const dbConnect = async () => {
-  const url = process.env.MONGO_URI;
-
-  if (!url) {
-    console.error('No URL received from env. Check .env file path.');
-    process.exit(1);
-  }
-
+const dbConnect = async () => {
   try {
-    await mongoose.connect(url, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log('MongoDB connected');
-  } catch (err) {
-    console.error('Database connection error:', err);
-    process.exit(1); // Exit process with failure
+    await mongoose.connect('mongodb://127.0.0.1:27017/scd_profile_db');
+    console.log("Database connected successfully!");
+  } catch (error) {
+    console.error("Database connection error:", error);
   }
 };
+
+export default dbConnect;

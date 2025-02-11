@@ -6,331 +6,7 @@
     <title>Ajivika</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="navbar.css" />
-    <style>
-        .dark-switch {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1000; 
-        }
-
-        body {
-            font-family: sans-serif;
-            background-color: antiquewhite;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Style the scrollbar container */
-        ::-webkit-scrollbar {
-            width: 12px; /* Width of the scrollbar */
-            height: 12px; /* Height for horizontal scrollbar */
-        }
-        
-        /* Style the scrollbar track (background of the scrollbar) */
-        ::-webkit-scrollbar-track {
-            background: #2d2d2d; /* Dark background */
-            border-radius: 10px;
-        }
-        
-        /* Style the scrollbar thumb (the draggable part) */
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #f7e8b6, #f0d48c); /* Gradient using different yellow shades */
-            border-radius: 10px; /* Rounded corners */
-            border: 3px solid #1a1a1a; /* Border around the thumb */
-        }
-        
-        /* Hover effect for the thumb */
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #f0d48c, #e6c85b); /* Lighter gradient on hover */
-        }
-        
-        /* Optional: Style for the scrollbar corner */
-        ::-webkit-scrollbar-corner {
-            background: #2d2d2d; /* Dark background for corner */
-        }
-        
-        /* Style for horizontal scrollbar */
-        ::-webkit-scrollbar-horizontal {
-            height: 12px; /* Height for horizontal scrollbar */
-        }
-        
-        ::-webkit-scrollbar-thumb-horizontal {
-            background: linear-gradient(90deg, #f7e8b6, #f0d48c); /* Horizontal gradient */
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb-horizontal:hover {
-            background: linear-gradient(90deg, #f0d48c, #e6c85b);
-        }
-        .content {
-            padding: 20px;
-            margin-bottom: 60px; /* Space for the bottom icons */
-            flex: 1;
-        }
-        h1 {
-            color: #ffffff;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.75); /* Black color with 50% transparency */
-            backdrop-filter: blur(15px);
-            padding: 20px;
-            margin: 0;
-            font-family: cursive;
-            font-size: 50px;
-        }
-        form {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: antiquewhite;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        label {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        label:hover {
-            color: #3798a3; /* Change color */
-        }
-        input[type="text"] {
-            padding: 10px;
-            border: 2px solid #ccc; /* Default border */
-            border-radius: 4px;
-            width: 100%;
-            max-width: 600px;
-            margin: 10px 0;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            font-size: 16px;
-            outline: none; /* Remove the default outline */
-        }
-        input[type="text"]:hover {
-            border-color: #3798a3; /* Change border color on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-        }
-        input[type="text"]:focus {
-            border-color: #90dcde; /* Highlight border on focus */
-            box-shadow: 0 0 10px #47CACC; /* Add glowing effect */
-            background-color: #f9f9f9; /* Slightly change background color */
-        }
-        .search-button {
-            background-color: rgb(137, 79, 31);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .search-button:hover {
-            background-color: #3798a3;
-            transform: translateY(-3px);
-        }
-        .search-button:active {
-            background-color: #2a6f6e;
-            transform: translateY(0);
-        }
-        #results {
-            display: flex;
-            flex-direction: column;
-            margin: 20px 0;
-        }
-        #results div {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin: 10px 0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #results div:nth-child(odd) {
-            background-color: #ffffff;
-        }
-        #results div:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-        h3 {
-            color: #47CACC;
-        }
-        .background-videos {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .background-videos video {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .bottom-icons {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .bottom-icons a {
-            background-color: antiquewhite;
-            color: rgb(137, 79, 31);
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 24px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: transparent;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 999;
-            transition: color 0.3s ease;
-        }   
-        .back-button:hover {
-            color: #d6a52b;
-        }
-        .chatbot-panel {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #e3f2fd;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            padding: 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .chatbot-panel.open {
-            transform: translateX(0);
-        }
-        @media (min-width: 768px) {
-            .background-videos {
-                flex-direction: row;
-            }
-        }
-        @media (max-width: 768px) {
-            .background-videos {
-                flex-direction: column;
-            }
-            .bottom-icons a {
-                font-size: 20px;
-                padding: 10px;
-            }
-            .background-videos video {
-                height: 150px;
-            }
-        }
-
-        /* CSS for Scroll to Top Button */
-        #scrollBtn {
-            position: fixed;
-        
-            bottom: 93px; /* Place closer to the bottom */
-        
-            bottom: 88px; /* Place closer to the bottom */
-        
-            right: 30px; /* Place closer to the right */
-            display: none; /* Initially hidden */
-            background-color: #d6a52b;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 15px;
-            font-size: 18px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000; /* Ensure visibility above other elements */
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        
-        #scrollBtn:hover {
-            background-color: #000; /* Change color on hover */
-            transform: scale(1.2); /* Slightly enlarge */
-        }
-        body.dark {
-            background-color: black;
-            color: white;
-          }
-
-        body.dark h1{
-            background-color: #2e2e2e;
-        }
-
-        body.dark .content {
-            background-color: #2e2e2e;
-            color: #f0f0f0;
-        }
-        body.dark label {
-            color: #f0f0f0;
-        }
-
-        body.dark .content input[type="text"], 
-        body.dark .content button {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid white;
-        }
-
-        body.dark .content button {
-            background-color: #f39c12;
-            color: white;
-        }
-
-        body.dark .content button:hover {
-            background-color: #e67e22;
-        }
-
-        body.dark .content iframe {
-            background-color: #2c2c2c;
-        }
-        body.dark .content form {
-            background-color: #333;
-            color: #f0f0f0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        body.dark .bottom-icons a {
-            background-color: #444;
-            color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-        }
-
-        body.dark .bottom-icons a i {
-            color: #fff; 
-        }
-
-        body.dark .bottom-icons a:hover {
-            background-color: #555;
-        }
-
-        body.dark .bottom-icons a:hover i {
-            color: #ddd; 
-        }
-    </style>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 
@@ -379,44 +55,37 @@
                 </div>
             </label>
         </div>
-        <form onsubmit="event.preventDefault(); useChatbot();">
+        <form onsubmit="event.preventDefault(); searchJobs();">
             <label for="skills">Enter Skills:</label>
             <input type="text" id="skills" name="skills" placeholder="Enter Skills" required>
-            <button class="search-button" type="submit">Search Jobs</button>
-        </form>
-
-    
-        <div id="results">
-            <!-- Iframe for displaying chatbot responses -->
-            <iframe id="chatbotFrame" style="width: 100%; height: 500px; border: none; display: none;"></iframe>
-        </div>
+            <!-- <button class="search-button" type="submit">Search Jobs</button> -->
+            <form onsubmit="searchJobs(event)">
+                <button class="search-button" type="submit">Search</button>
+            </form>     
+            <div id="job-results" class="job-container"></div>
+        </form>     
     </div>
     
-    <script>
+    <!-- <script>
         function useChatbot() {
             const skillsInput = document.getElementById('skills').value.trim();
             const chatbotFrame = document.getElementById('chatbotFrame');
     
-            // Toggle visibility of the chatbot iframe
             if (chatbotFrame.style.display === 'block') {
-                // If iframe is already visible, hide it
                 chatbotFrame.style.display = 'none';
             } else {
                 if (skillsInput) {
-                    // Construct chatbot link with skills as query parameter
                     const chatbotURL = `https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/12/23/07/20241223075256-8E9BNGRI.json&skills=${encodeURIComponent(skillsInput)}`;
                     
-                    // Set the iframe source to the chatbot URL
                     chatbotFrame.src = chatbotURL;
     
-                    // Make the iframe visible
                     chatbotFrame.style.display = 'block';
                 } else {
                     alert('Please enter some skills before searching.');
                 }
             }
         }
-    </script>
+    </script> -->
     
 
     <div class="bottom-icons">
@@ -427,70 +96,85 @@
         <a href="./contact.html" onclick="toggleChatbotPanel()"><i class="fas fa-comment-alt"></i></a>
     </div>
 
-    
-
     <script>
-        let startIndex = 0;  // Tracks the current index for pagination
-        const pageSize = 10;  // Number of jobs to load per page
-    
-        // Function to get job recommendations
-        async function getRecommendations() {
-            const skills = document.getElementById('skills').value;  // Get user input from the 'skills' field
-    
-            // Fetch job recommendations from the backend
-            const response = await fetch('/predict', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ skills: skills, start_index: startIndex })  // Include the start index for pagination
-            });
-    
-            const data = await response.json();  // Parse JSON response
-            const resultsDiv = document.getElementById('results');  // Job results container
-    
-            // Handle error in the response
-            if (data.error) {
-                resultsDiv.innerHTML = `<p>Error: ${data.error}</p>`;
-            } else {
-                // Append new jobs to the results div
-                data.jobs.forEach(job => {
-                    resultsDiv.innerHTML += `<div class="job-item">
-                        <h3>${job['Job Title']}</h3>
-                        <p>Experience Required: ${job['Job Experience Required']}</p>
-                        <p>Salary: ${job['Job Salary']}</p>
-                        <p>Functional Area: ${job['Functional Area']}</p>
-                        <p>Industry: ${job['Industry']}</p>
-                        <button class="apply-btn"onclick="window.location.href='https://apna.co/jobs/freshers-jobs?sourcePage=Home+Page';">Apply Now</button>
-                    </div>`;
+        async function loadJobs() {
+            const response = await fetch('jobs.csv');
+            const data = await response.text();
+
+            const rows = data.split("\n").slice(1); // Skip header row
+
+            const jobs = rows.map(row => {
+                const columns = row.split(",");
+                if (columns.length < 8) { 
+                    console.warn("Skipping row due to missing data:", row);
+                    return null; 
                 }
-                
-                );
-    
-                // Show or hide the "Show More" button based on the number of jobs loaded
-                const showMoreButton = document.getElementById('showMoreButton');
-                if (data.jobs.length === pageSize) {
-                    showMoreButton.classList.remove('hidden');  // Show "Show More" button if more jobs are available
-                } else {
-                    showMoreButton.classList.add('hidden');  // Hide "Show More" button if no more jobs
-                }
-    
-                // Update the start index to load the next batch on subsequent clicks
-                startIndex += pageSize;
+
+                return {
+                    experience: columns[2]?.trim() || "Not Available",
+                    skills: columns[3] ? columns[3].split("|").map(skill => skill.trim()) : [],
+                    role: columns[4]?.trim() || "Not Available",
+                    functionalArea: columns[5]?.trim() || "Not Available",
+                    industry: columns[6]?.trim() || "Not Available",
+                    title: columns[7]?.trim() || "Not Available"
+                };
+            }).filter(job => job !== null); 
+
+            return jobs;
+        }
+
+        async function searchJobs() {
+            const searchInput = document.getElementById("skills").value.toLowerCase();
+            if (!searchInput) {
+                alert("Please enter at least one skill to search.");
+                return;
             }
+            const jobs = await loadJobs();
+
+            const filteredJobs = jobs.filter(job => 
+                job.skills.some(skill => skill.toLowerCase().includes(searchInput))
+            );
+
+            displayJobs(filteredJobs);
         }
-    
-        // Function to load more jobs when "Show More" is clicked
-        function loadMoreJobs() {
-            getRecommendations();  // Load the next batch of jobs
-        }
-    
-        // Function to toggle the chatbot/quiz panel
-        function toggleChatbotPanel() {
-            const panel = document.getElementById('chatbotPanel');  // Select the panel element
-            panel.classList.toggle('open');  // Toggle the 'open' class to show/hide the panel
-        }
+
+        function displayJobs(jobs) {
+            const jobResultsContainer = document.getElementById("job-results");
+            jobResultsContainer.innerHTML = ''; // Clear previous results
+
+            if (jobs.length === 0) {
+                jobResultsContainer.innerHTML = "<p>No jobs found.</p>";
+            } else {
+                jobs.forEach(job => {
+                    const jobElement = document.createElement('div');
+                    jobElement.classList.add('job');
+                    jobElement.innerHTML = `
+                <span class="badge">hourly</span>
+                <h2>${job.title}</h2>
+                <p class="company">${job.functionalArea}</p>
+                <div class="skills">
+                    ${job.skills.slice(0, 3).map(skill => `<span>${skill}</span>`).join('')}
+                    ${job.skills.length > 3 ? `<span class="extra-skills">+${job.skills.length - 3}</span>` : ''}
+                </div>
+                <p class="description">We are looking for an experienced ${job.role} to work on our projects...</p>
+                <span class="view-job">VIEW JOB</span>
+            `;
+                    jobResultsContainer.appendChild(jobElement);
+                });
+            }
+    }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchButton = document.querySelector("button[type='submit']");
+            if (searchButton) {
+                searchButton.addEventListener("click", searchJobs);
+            } else {
+                console.error("Search button not found!");
+            }
+        });
+
     </script>
+
     
     <!-- script for checking if user is logged in or not -->
     <!-- <script type="module">

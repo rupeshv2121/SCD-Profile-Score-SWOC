@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const formData = { username, email, password };
   
    
-     fetch('http://localhost:3000/api/v1/auth/signup', {
+     fetch('http://localhost:5000/api/v1/auth/signup', {
   
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

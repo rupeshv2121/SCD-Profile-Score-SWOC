@@ -100,48 +100,51 @@
         async function loadJobs() {
             const response = await fetch('jobs.csv');
             const data = await response.text();
-
+    
             const rows = data.split("\n").slice(1); // Skip header row
-
+    
             const jobs = rows.map(row => {
                 const columns = row.split(",");
                 if (columns.length < 8) { 
                     console.warn("Skipping row due to missing data:", row);
                     return null; 
                 }
-
+    
                 return {
                     experience: columns[2]?.trim() || "Not Available",
-                    skills: columns[3] ? columns[3].split("|").map(skill => skill.trim()) : [],
+                    skills: columns[3] ? columns[3].split("|").map(skill => skill.trim().toLowerCase()) : [],
                     role: columns[4]?.trim() || "Not Available",
                     functionalArea: columns[5]?.trim() || "Not Available",
                     industry: columns[6]?.trim() || "Not Available",
                     title: columns[7]?.trim() || "Not Available"
                 };
             }).filter(job => job !== null); 
-
+    
             return jobs;
         }
-
+    
         async function searchJobs() {
-            const searchInput = document.getElementById("skills").value.toLowerCase();
+            const searchInput = document.getElementById("skills").value.trim().toLowerCase();
             if (!searchInput) {
                 alert("Please enter at least one skill to search.");
                 return;
             }
+    
+            const searchedSkills = searchInput.split(",").map(skill => skill.trim()); 
+    
             const jobs = await loadJobs();
-
+    
             const filteredJobs = jobs.filter(job => 
-                job.skills.some(skill => skill.toLowerCase().includes(searchInput))
+                searchedSkills.some(skill => job.skills.includes(skill)) 
             );
-
+    
             displayJobs(filteredJobs);
         }
-
+    
         function displayJobs(jobs) {
             const jobResultsContainer = document.getElementById("job-results");
             jobResultsContainer.innerHTML = ''; // Clear previous results
-
+    
             if (jobs.length === 0) {
                 jobResultsContainer.innerHTML = "<p>No jobs found.</p>";
             } else {
@@ -149,21 +152,21 @@
                     const jobElement = document.createElement('div');
                     jobElement.classList.add('job');
                     jobElement.innerHTML = `
-                <span class="badge">hourly</span>
-                <h2>${job.title}</h2>
-                <p class="company">${job.functionalArea}</p>
-                <div class="skills">
-                    ${job.skills.slice(0, 3).map(skill => `<span>${skill}</span>`).join('')}
-                    ${job.skills.length > 3 ? `<span class="extra-skills">+${job.skills.length - 3}</span>` : ''}
-                </div>
-                <p class="description">We are looking for an experienced ${job.role} to work on our projects...</p>
-                <span class="view-job">VIEW JOB</span>
-            `;
+                    <span class="badge">hourly</span>
+                    <h2>${job.title}</h2>
+                    <p class="company">${job.functionalArea}</p>
+                    <div class="skills">
+                        ${job.skills.slice(0, 3).map(skill => `<span>${skill}</span>`).join('')}
+                        ${job.skills.length > 3 ? `<span class="extra-skills">+${job.skills.length - 3}</span>` : ''}
+                    </div>
+                    <p class="description">We are looking for an experienced ${job.role} to work on our projects...</p>
+                    <span class="view-job">VIEW JOB</span>
+                `;
                     jobResultsContainer.appendChild(jobElement);
                 });
             }
-    }
-
+        }
+    
         document.addEventListener("DOMContentLoaded", function () {
             const searchButton = document.querySelector("button[type='submit']");
             if (searchButton) {
@@ -172,9 +175,8 @@
                 console.error("Search button not found!");
             }
         });
-
     </script>
-
+    
     
     <!-- script for checking if user is logged in or not -->
     <!-- <script type="module">

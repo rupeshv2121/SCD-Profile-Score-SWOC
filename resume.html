@@ -646,6 +646,26 @@
       </div>
     </footer>
 
+    <style>
+      #cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        pointer-events: none;
+        transition: transform 0.15s ease-out;
+      }
+    </style>
+    
+    <script>
+      const customCursor = document.querySelector('#cursor');
+      document.addEventListener('mousemove', (e) => {
+          const x = e.clientX;
+          const y = e.clientY;
+          customCursor.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    </script>
+
     <script>
       // hamburger menu js
       function toggleMenu() {

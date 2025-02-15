@@ -144,7 +144,7 @@
       font-size: 1.3em;
       color: #34495e;
       font-weight: bold;
-      padding: 0 10px;
+      padding: 57px 10px 0px 10px;
     }
 
     .resume-creator-label {
@@ -153,6 +153,36 @@
       font-weight: bold;
       color: #2c3e50;
     }
+    @media (max-width: 768px) {
+  
+  .resume-creator-section {
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+ 
+  .resume-creator-title {
+    font-size: 2em;
+  }
+  
+  .resume-creator-description {
+    font-size: 1em;
+  }
+  
+ 
+  .resume-creator-box {
+    padding: 15px;
+  }
+
+  
+  .resume-creator-input,
+  .resume-creator-textarea,
+  .resume-creator-input-file {
+    font-size: 0.95em;
+    padding: 8px;
+  }
+}
 
     .resume-creator-input,
     .resume-creator-textarea,
@@ -175,7 +205,7 @@
 
     .resume-creator-textarea {
       resize: vertical;
-      height: 100px;
+      height: 51px;
     }
 
     .resume-creator-add-item {
@@ -184,6 +214,17 @@
       gap: 10px;
       margin-bottom: 10px;
     }
+    @media (max-width: 600px) {
+  .resume-creator-add-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .resume-creator-add-item input,
+  .resume-creator-add-item textarea {
+    width: 100%;
+  }
+}
 
     .resume-creator-add-icon {
       cursor: pointer;

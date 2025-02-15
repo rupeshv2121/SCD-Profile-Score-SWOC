@@ -1,0 +1,122 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #faebd7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Profile Container */
+.profile-container {
+    margin-top: 17em;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    text-align: center;
+}
+
+/* Header */
+h2 {
+    color: rgb(255, 179, 71);
+    margin-bottom: 15px;
+}
+
+/* Profile Picture */
+.profile-picture {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: px solid rgb(255, 179, 71);
+    object-fit: cover;
+}
+
+/* Hidden File Input */
+#file-input {
+    display: none;
+}
+.image-icon1 {
+    width: 68px;
+    height: 68px;
+    z-index: 2;
+    position: relative;
+}
+/* Upload Button */
+.upload-btn {
+    display: inline-block;
+    width: 38%;
+    background-color: rgb(255, 179, 71);
+    color: white;
+    padding: 6px 12px;
+    margin-top: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-btn:hover {
+    background-color: rgb(230, 140, 50);
+}
+
+/* Form Input Fields */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    /* font-weight: bold; */
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(15, 15, 14);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: rgb(230, 140, 50);
+    outline: none;
+}
+
+/* Save Button */
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(255, 179, 71);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#cursor {
+    position: fixed; /* Ensures it moves with the viewport */
+    pointer-events: none; /* Prevents interference with clickable elements */
+    transform: translate(-50%, -50%); /* Centers the cursor on the mouse pointer */
+}
+.save-btn:hover {
+    background-color: rgb(230, 140, 50);
+}

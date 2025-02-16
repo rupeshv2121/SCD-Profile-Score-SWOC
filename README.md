@@ -161,7 +161,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 
 
-## 🌱 Contribute
+## 🌱 Contribution
 
 We believe in the power of collaboration. If you have ideas to improve Ajivika, feel free to contribute! Check out our [Contribution Guidelines](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/CONTRIBUTING.md) to get started.
 

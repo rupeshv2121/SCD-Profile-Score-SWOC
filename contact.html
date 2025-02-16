@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="cssfiles/Scroll.css">
   </head>
   <body>
     <div id="cursor"></div>
@@ -405,33 +406,16 @@
       }
     </script>
 
-    <!-- Top scroll button -->
-    <button id="scrollBtn" title="Go to top">
-      <i class="fa-solid fa-arrow-up fa-lg"></i>
-    </button>
+     <!-- Top scroll button -->
+    <div id="scrollButton" class="hidden">
+        <div class="outer-circle">
+            <div class="inner-circle">
+                <div class="arrow">↑</div>
+            </div>
+        </div>
+    </div>
 
-    <script>
-      // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
-  
-      // Show the button when the user scrolls down 100px from the top
-      window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            scrollBtn.style.display = "block";
-        } else {
-            scrollBtn.style.display = "none";
-        }
-      };
-  
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-      };
-  
-    </script>
+    <script src="js/Scroll.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contact-form');

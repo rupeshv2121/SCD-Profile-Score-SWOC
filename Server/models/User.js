@@ -25,6 +25,23 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now, // Automatically set to the current date and time
   },
+  phone: {
+    type: String,
+    required: true,
+    unique: true,
+    match: [/^\+?[1-9]\d{1,14}$/, 'Please enter a valid phone number']
+},
+ title: {
+    type: String,
+    required: true,
+    trim: true
+},
+ linkedin: {
+    type: String,
+    required: true,
+    unique: true,
+    
+},
   dob: {
     type: Date, // Date of Birth field
     required: false, // Optional field

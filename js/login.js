@@ -22,10 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
     })
       .then(response => response.json())
       .then(data => {
+        
         if (data.token) {
           alert('Login successful!');
           localStorage.setItem('authToken', data.token);
-          window.location.href = './index.html';
+          window.location.href = './profile.html';
         } else {
           alert('Login failed: ' + data.message);
         }

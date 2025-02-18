@@ -11,10 +11,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
@@ -249,9 +250,10 @@
         </li>
         <!-- <li><a href="./login.html"><i class="fas fa-sign-in-alt"></i><span>Log In</span></a></li> -->
         <li>
-          <a href="./register.html"
+          <!-- <a href="./register.html"
             ><i class="fas fa-user-plus"></i> <span>Register</span></a
-          >
+          > -->
+          <button onclick="logout()">Logout</button>
         </li>
         <li>
           <button class="translate-button" onclick="toggleTranslate()">
@@ -308,15 +310,15 @@
     </button>
     <div class="profile-container">
         <h2>My Dashboard </h2>
-        <div class="profile-picture">
-            <img id="profile-img" src="user-profile-icon.jpg" alt="Profile Picture">
-            <input type="file" id="file-input" accept="image/*">
-            <label for="file-input" class="upload-btn">Change Photo</label>
-        </div>
-        <form id="profile-form">
+        <form id="profile-form" enctype="multipart/form-data">
+          <div class="profile-picture">
+              <img id="profile-img" src="user-profile-icon.jpg" alt="Profile Picture">
+              <input type="file" id="file-input" accept="image/*" name="profilePic">
+              <label for="file-input" class="upload-btn">Change Photo</label>
+          </div>
             <div class="input-group">
                 <label>Full Name</label>
-                <input type="text" id="name" placeholder="Enter your name">
+                <input type="text" id="username" placeholder="Enter your name">
             </div>
             <div class="input-group">
                 <label>Email</label>
@@ -345,6 +347,12 @@
     });
   
   </script>
+   <script>
+    function logout() {
+        localStorage.removeItem('authToken'); 
+        window.location.href = './login.html'; 
+    }
+</script>
     <script src="profile.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 
-![image](https://github.com/user-attachments/assets/d64cac1d-3385-40da-920c-7105a10c525f)
-![image](https://github.com/user-attachments/assets/66404181-83ae-4e84-8996-60e3e794817e)
+![image](https://github.com/user-attachments/assets/bec4fe88-b2c9-428a-b9f4-79efacf60ea3)
+![image](https://github.com/user-attachments/assets/ac9d2f85-716a-4b26-b076-057c593c6511)
+![image](https://github.com/user-attachments/assets/e2017b9f-367f-49ea-9814-aac7b3980a18)
 
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&background=FFF52500&width=435&lines=Ajivika%3A+Knowledge+without+boundary)](https://git.io/typing-svg)

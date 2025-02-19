@@ -159,7 +159,112 @@ By adhering to these cautions, Ajivika aims to create a safe, respectful, and pr
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/LICENSE) file for details.
 
+## Project Structure
 
+```bash
+
+Directory structure:
+└── ojas-arora-scd-profile-score/
+    ├── README.md
+    ├── CONTRIBUTING.md
+    ├── CONTRIBUTORS.md
+    ├── LEARN.md
+    ├── LICENSE
+    ├── about.css
+    ├── about.html
+    ├── about.txt
+    ├── blog.css
+    ├── blog.html
+    ├── blog1.html
+    ├── blog2.html
+    ├── blog3.html
+    ├── branchupdate.md
+    ├── chatbot.html
+    ├── conn.py
+    ├── contact.css
+    ├── contact.html
+    ├── contact.js
+    ├── courses.html
+    ├── faq.html
+    ├── googletranslate.css
+    ├── index.html
+    ├── index.js
+    ├── index2.html
+    ├── job.webp
+    ├── jobs.csv
+    ├── login.css
+    ├── login.html
+    ├── navbar.css
+    ├── package.json
+    ├── pricing.css
+    ├── pricing.html
+    ├── privacy.css
+    ├── privacy.html
+    ├── profile.css
+    ├── profile.html
+    ├── profile.js
+    ├── register.css
+    ├── register.html
+    ├── resume.css
+    ├── resume.html
+    ├── site.webmanifest
+    ├── style2.css
+    ├── styles.css
+    ├── terms.css
+    ├── terms.html
+    ├── testimonial.css
+    ├── testimonial.html
+    ├── .hintrc
+    ├── Server/
+    │   ├── api/
+    │   │   ├── app.js
+    │   │   ├── dbconnect.js
+    │   │   ├── index.js
+    │   │   ├── server.cjs
+    │   │   └── .env.sample
+    │   ├── controller/
+    │   │   ├── authController.js
+    │   │   ├── contactController.js
+    │   │   └── testimonialController.js
+    │   ├── middleware/
+    │   │   ├── auth.middleware.js
+    │   │   ├── authMiddleware.js
+    │   │   └── upload.js
+    │   ├── models/
+    │   │   ├── Testimonial.js
+    │   │   └── User.js
+    │   └── routes/
+    │       ├── authRoutes.js
+    │       ├── contactRoutes.js
+    │       ├── testimonialRoutes.js
+    │       └── userRoutes.js
+    ├── contributors/
+    │   ├── contributor.css
+    │   ├── contributor.html
+    │   └── contributor.js
+    ├── cssfiles/
+    │   └── Scroll.css
+    ├── js/
+    │   ├── Scroll.js
+    │   ├── login.js
+    │   └── signup.js
+    ├── .github/
+    │   ├── dependabot.yml
+    │   ├── pull_request_template.md
+    │   ├── ISSUE_TEMPLATE/
+    │   │   ├── README
+    │   │   ├── bug.yml
+    │   │   ├── documentation.yml
+    │   │   └── feature.yml
+    │   └── workflows/
+    │       ├── README
+    │       ├── auto-comment-issue-close.yml
+    │       ├── auto-comment-issue-creation.yml
+    │       ├── auto-comment-pr-created.yml
+    │       └── auto-comment-pr-merge.yml
+    └── .ipynb_checkpoints/
+        └── try-checkpoint.ipynb
+```
 
 ## 🌱 Contribution
 

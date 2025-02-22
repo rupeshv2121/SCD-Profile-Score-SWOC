@@ -120,7 +120,9 @@ html .dark {
   display: none;
   position: relative;
 }
-
+legend b{
+  color: red;
+}
 #cursor{
   height: 20px;
   width:20px;

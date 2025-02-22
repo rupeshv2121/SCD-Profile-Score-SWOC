@@ -35,12 +35,12 @@
     --card-text: yellow;
     --h2-color: rgb(255, 187, 52);
     --icon-color: white;
-    --left-section: #00001c;
+    --left-section: #3e3628;
     --left-gradient: navy;
-    --right-section: navy;
+    --right-section: #3e3628;
     --section-color: white;
     --subtitle-color: yellow;
-    --label-color: aqua;
+    --label-color: white;
     --login-link-color: aqua;
   }
 
@@ -51,7 +51,7 @@
     font-size: 30px;
     margin-right: 90%;
     margin-bottom: 40%;
-    color: var(--login-link-color);
+    color: white;
     cursor: pointer;
   }
   
@@ -78,7 +78,7 @@
   .left-section {
     flex: 1;
     /* background: linear-gradient(to bottom right, #ffb347, #ffcc33); */
-    background: linear-gradient(to bottom right,  var(--left-section), var(--left-gradient));
+    background: var(--left-section);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,8 +106,7 @@
     font-weight: 300;
   }
   
-  .right-section {
-    background-color: var(--right-section);
+  .right-section {background: var(--right-section);
     flex: 1;
     padding: 40px;
     display: flex;

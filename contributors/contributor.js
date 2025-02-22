@@ -2,8 +2,6 @@ const REPO_OWNER = "Ojas-Arora";
 const REPO_NAME = "SCD-Profile-Score";
 const GITHUB_TOKEN = ""; // Optional: Add your GitHub personal access token to avoid rate limits
 
-document.addEventListener("DOMContentLoaded", fetchContributors);
-
 async function fetchContributors() {
   const contributorsContainer = document.getElementById("contributors");
   const canvas = document.createElement("canvas"); // Create a hidden canvas for certificate generation
@@ -248,18 +246,4 @@ gsap.from("#contributors .contributor-card button", {
   opacity: 0,
   duration: 1,
   y: -200,
-})
-
-gsap.from(".contributor-card", {
-  scale: 2,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#contributors",
-    scroller: "body",
-    scrub: 2,
-    markers: true,
-    start: "top 20%",
-    end: "top 70%",
-    pin: true
-  }
 })

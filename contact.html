@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="cssfiles/Scroll.css">
   </head>
   <body>
     <div id="cursor"></div>
@@ -111,9 +112,18 @@
             <h1>CONTACT US</h1>
             <p>We would love to hear from you</p>
             <form id="contact-form" action="/api/contact" method="POST">
+              <div class="tooltip">
               <input type="text" name="name" id="name" placeholder="Your Name" required>
+              <span class="tooltiptext">Please enter your full name here.</span> 
+            </div>
+              <div class="tooltip">
                 <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <span class="tooltiptext">Please enter a valid email like example@gmail.com.</span>
+              </div>
+                <div class="tooltip">
                 <textarea name="message" rows="5" id="message" placeholder="Your Message" required></textarea>
+                <span class="tooltiptext">Feel free to describe your message in detail.</span>
+              </div>
                 <button type="submit">Send Message</button>
             </form>
             <div class="social-links">
@@ -127,32 +137,14 @@
 
   
 
-    <!-- Floating Image Button -->
-    <button class="image-button">
-      <img src="./image.png" alt="Image Button" class="image-icon" />
-    </button>
-
-    <script>
-      let slideIndex = 0;
-      showSlides();
-
-      function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-        for (let i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-      }
+    <!-- Floating Chat Button -->
+<a href="chatbot.html">
+  <button class="image-button" fdprocessedid="pv3d3b" style="border-radius: 50%; background-color: #f5a623; padding: 0px; border: none;">
+    <!-- Font Awesome chat icon -->
+    <i class="fas fa-comment-dots" style="border-radius: 50%; background-color: #f5a623; padding: 10px; border: none; font-size: 30px;"></i>
+  </button>
+</a>
+ 
     </script>
 
     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #444" />
@@ -414,33 +406,16 @@
       }
     </script>
 
-    <!-- Top scroll button -->
-    <button id="scrollBtn" title="Go to top">
-      <i class="fa-solid fa-arrow-up fa-lg"></i>
-    </button>
+     <!-- Top scroll button -->
+    <div id="scrollButton" class="hidden">
+        <div class="outer-circle">
+            <div class="inner-circle">
+                <div class="arrow">↑</div>
+            </div>
+        </div>
+    </div>
 
-    <script>
-      // Get the button element
-      const scrollBtn = document.getElementById('scrollBtn');
-  
-      // Show the button when the user scrolls down 100px from the top
-      window.onscroll = function () {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            scrollBtn.style.display = "block";
-        } else {
-            scrollBtn.style.display = "none";
-        }
-      };
-  
-      // Scroll to the top of the page when the button is clicked
-      scrollBtn.onclick = function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-      };
-  
-    </script>
+    <script src="js/Scroll.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contact-form');
@@ -454,7 +429,7 @@
           const message = document.getElementById('message').value;
   
           try {
-            const response = await fetch('http://127.0.0.1:3000/api/v1/contact', {
+            const response = await fetch('http://127.0.0.1:5000/api/v1/contact', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

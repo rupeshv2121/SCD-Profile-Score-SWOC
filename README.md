@@ -1,6 +1,7 @@
 
-![image](https://github.com/user-attachments/assets/d64cac1d-3385-40da-920c-7105a10c525f)
-![image](https://github.com/user-attachments/assets/66404181-83ae-4e84-8996-60e3e794817e)
+![image](https://github.com/user-attachments/assets/bec4fe88-b2c9-428a-b9f4-79efacf60ea3)
+![image](https://github.com/user-attachments/assets/ac9d2f85-716a-4b26-b076-057c593c6511)
+![image](https://github.com/user-attachments/assets/e2017b9f-367f-49ea-9814-aac7b3980a18)
 
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&background=FFF52500&width=435&lines=Ajivika%3A+Knowledge+without+boundary)](https://git.io/typing-svg)
@@ -159,9 +160,114 @@ By adhering to these cautions, Ajivika aims to create a safe, respectful, and pr
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/LICENSE) file for details.
 
+## Project Structure
 
+```bash
 
-## 🌱 Contribute
+Directory structure:
+└── ojas-arora-scd-profile-score/
+    ├── README.md
+    ├── CONTRIBUTING.md
+    ├── CONTRIBUTORS.md
+    ├── LEARN.md
+    ├── LICENSE
+    ├── about.css
+    ├── about.html
+    ├── about.txt
+    ├── blog.css
+    ├── blog.html
+    ├── blog1.html
+    ├── blog2.html
+    ├── blog3.html
+    ├── branchupdate.md
+    ├── chatbot.html
+    ├── conn.py
+    ├── contact.css
+    ├── contact.html
+    ├── contact.js
+    ├── courses.html
+    ├── faq.html
+    ├── googletranslate.css
+    ├── index.html
+    ├── index.js
+    ├── index2.html
+    ├── job.webp
+    ├── jobs.csv
+    ├── login.css
+    ├── login.html
+    ├── navbar.css
+    ├── package.json
+    ├── pricing.css
+    ├── pricing.html
+    ├── privacy.css
+    ├── privacy.html
+    ├── profile.css
+    ├── profile.html
+    ├── profile.js
+    ├── register.css
+    ├── register.html
+    ├── resume.css
+    ├── resume.html
+    ├── site.webmanifest
+    ├── style2.css
+    ├── styles.css
+    ├── terms.css
+    ├── terms.html
+    ├── testimonial.css
+    ├── testimonial.html
+    ├── .hintrc
+    ├── Server/
+    │   ├── api/
+    │   │   ├── app.js
+    │   │   ├── dbconnect.js
+    │   │   ├── index.js
+    │   │   ├── server.cjs
+    │   │   └── .env.sample
+    │   ├── controller/
+    │   │   ├── authController.js
+    │   │   ├── contactController.js
+    │   │   └── testimonialController.js
+    │   ├── middleware/
+    │   │   ├── auth.middleware.js
+    │   │   ├── authMiddleware.js
+    │   │   └── upload.js
+    │   ├── models/
+    │   │   ├── Testimonial.js
+    │   │   └── User.js
+    │   └── routes/
+    │       ├── authRoutes.js
+    │       ├── contactRoutes.js
+    │       ├── testimonialRoutes.js
+    │       └── userRoutes.js
+    ├── contributors/
+    │   ├── contributor.css
+    │   ├── contributor.html
+    │   └── contributor.js
+    ├── cssfiles/
+    │   └── Scroll.css
+    ├── js/
+    │   ├── Scroll.js
+    │   ├── login.js
+    │   └── signup.js
+    ├── .github/
+    │   ├── dependabot.yml
+    │   ├── pull_request_template.md
+    │   ├── ISSUE_TEMPLATE/
+    │   │   ├── README
+    │   │   ├── bug.yml
+    │   │   ├── documentation.yml
+    │   │   └── feature.yml
+    │   └── workflows/
+    │       ├── README
+    │       ├── auto-comment-issue-close.yml
+    │       ├── auto-comment-issue-creation.yml
+    │       ├── auto-comment-pr-created.yml
+    │       └── auto-comment-pr-merge.yml
+    └── .ipynb_checkpoints/
+        └── try-checkpoint.ipynb
+```
+
+## 🌱 Contribution
 
 We believe in the power of collaboration. If you have ideas to improve Ajivika, feel free to contribute! Check out our [Contribution Guidelines](https://github.com/Ojas-Arora/SCD-Profile-Score/blob/main/CONTRIBUTING.md) to get started.
 
@@ -170,7 +276,7 @@ We believe in the power of collaboration. If you have ideas to improve Ajivika, 
 <div align="center">
 <table>
 <tr>
-<td align="center"><a href="https://github.com/Ojas-Arora"><img src="https://media.licdn.com/dms/image/v2/D5603AQF-0oeQKjHUGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731090529812?e=1740614400&v=beta&t=urY8EklFDUSFuxKUQtHCq6eK8inuueVUkFH1u9wypQM" width=150px height=150px /></a></br> <h4 style="color:cyan;">Ojas Arora</h4>
+<td align="center"><a href="https://github.com/Ojas-Arora"><img src="https://media.licdn.com/dms/image/v2/D5603AQE_oGyp9N_-7w/profile-displayphoto-shrink_800_800/B56ZUP6MjiHEAg-/0/1739728669386?e=1745452800&v=beta&t=7qdHp6ZphCg0fA-qY6EklX5JNAy5ShAFqEXxSqfxuqw" width=150px height=150px /></a></br> <h4 style="color:cyan;">Ojas Arora</h4>
 <a href="https://www.linkedin.com/in/ojasarora14/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
  <a href="https://github.com/Ojas-Arora"><img src="https://img.icons8.com/fluency/2x/github.png" width="32px" height="32px"></img></a>
    </td>

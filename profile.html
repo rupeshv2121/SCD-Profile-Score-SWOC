@@ -6,7 +6,7 @@
     <title>Profile Page</title>
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -250,11 +250,11 @@
         </li>
         <!-- <li><a href="./login.html"><i class="fas fa-sign-in-alt"></i><span>Log In</span></a></li> -->
         <li>
-          <!-- <a href="./register.html"
-            ><i class="fas fa-user-plus"></i> <span>Register</span></a
-          > -->
-          <button onclick="logout()">Logout</button>
+          <a class="logout-button" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+          </a>
         </li>
+        
         <li>
           <button class="translate-button" onclick="toggleTranslate()">
             🌐

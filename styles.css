@@ -115,6 +115,13 @@ body {
     background: rgba(255, 255, 255, 0.8);
     color: black;
 }
+/* 
+@media screen and (max-width: 768px) {
+    .slider {
+        width: 90%;
+    }
+    
+} */
 
 /* Style the scrollbar container */
 ::-webkit-scrollbar {

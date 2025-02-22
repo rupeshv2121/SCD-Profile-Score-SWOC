@@ -392,7 +392,7 @@
     
             <!-- Skills -->
             <fieldset class="resume-creator-fieldset">
-              <legend class="resume-creator-legend">Skills</legend>
+              <legend class="resume-creator-legend">Skills<b>*</b></legend>
               <div class="resume-creator-skills-container">
                 <div class="resume-creator-add-item">
                   <input type="text" id="skill-input" placeholder="Enter a skill" class="resume-creator-input" required />
@@ -407,10 +407,10 @@
               <legend class="resume-creator-legend">Work Experience</legend>
               <div class="resume-creator-experience-container">
                 <div class="resume-creator-add-item">
-                  <input type="text" id="job-title" placeholder="Job Title" class="resume-creator-input" required />
-                  <input type="text" id="company-name" placeholder="Company Name" class="resume-creator-input" required />
-                  <input type="text" id="job-duration" placeholder="Duration (e.g., Jan 2020 - Dec 2022)" class="resume-creator-input" required />
-                  <textarea id="job-description" placeholder="Job Description" class="resume-creator-textarea" required></textarea>
+                  <input type="text" id="job-title" placeholder="Job Title" class="resume-creator-input"  />
+                  <input type="text" id="company-name" placeholder="Company Name" class="resume-creator-input"  />
+                  <input type="text" id="job-duration" placeholder="Duration (e.g., Jan 2020 - Dec 2022)" class="resume-creator-input"  />
+                  <textarea id="job-description" placeholder="Job Description" class="resume-creator-textarea" ></textarea>
                   <span class="resume-creator-add-icon" onclick="addExperience()">+</span>
                 </div>
                 <ul class="resume-creator-experience-list" id="experience-list"></ul>
@@ -422,7 +422,7 @@
               <legend class="resume-creator-legend">Certifications</legend>
               <div class="resume-creator-certifications-container">
                 <div class="resume-creator-add-item">
-                  <input type="text" id="certification-input" placeholder="Enter Certification" class="resume-creator-input" required />
+                  <input type="text" id="certification-input" placeholder="Enter Certification" class="resume-creator-input" />
                   <span class="resume-creator-add-icon" onclick="addItem('Certification', 'certifications-list', 'certification-input')">+</span>
                 </div>
                 <ul class="resume-creator-certifications-list" id="certifications-list"></ul>
@@ -434,9 +434,9 @@
               <legend class="resume-creator-legend">Projects</legend>
               <div class="resume-creator-projects-container">
                 <div class="resume-creator-add-item">
-                  <input type="text" id="project-title" placeholder="Project Title" class="resume-creator-input" required />
-                  <textarea id="project-description" placeholder="Project Description" class="resume-creator-textarea" required></textarea>
-                  <input type="text" id="project-duration" placeholder="Duration (e.g., Jan 2022 - Dec 2022)" class="resume-creator-input" required />
+                  <input type="text" id="project-title" placeholder="Project Title" class="resume-creator-input"  />
+                  <textarea id="project-description" placeholder="Project Description" class="resume-creator-textarea" ></textarea>
+                  <input type="text" id="project-duration" placeholder="Duration (e.g., Jan 2022 - Dec 2022)" class="resume-creator-input"  />
                   <input type="url" id="project-link" placeholder="Project Link (e.g., https://github.com)" class="resume-creator-input" />
                   <span class="resume-creator-add-icon" onclick="addProject()">+</span>
                 </div>
@@ -450,7 +450,7 @@
               <legend class="resume-creator-legend">Achievements</legend>
               <div class="resume-creator-achievements-container">
                 <div class="resume-creator-add-item">
-                  <textarea id="achievement-input" placeholder="Describe your achievement" class="resume-creator-textarea" required></textarea>
+                  <textarea id="achievement-input" placeholder="Describe your achievement" class="resume-creator-textarea" ></textarea>
                   <span class="resume-creator-add-icon" onclick="addItem('Achievement', 'achievements-list', 'achievement-input')">+</span>
                 </div>
                 <ul class="resume-creator-achievements-list" id="achievements-list"></ul>
@@ -459,7 +459,7 @@
     
             <!-- Languages -->
             <fieldset class="resume-creator-fieldset">
-              <legend class="resume-creator-legend">Languages</legend>
+              <legend class="resume-creator-legend">Languages <b>*</b></legend>
               <div class="resume-creator-languages-container">
                 <div class="resume-creator-add-item">
                   <input type="text" id="language-input" placeholder="Enter Language" class="resume-creator-input" required />
@@ -474,8 +474,8 @@
               <legend class="resume-creator-legend">References</legend>
               <div class="resume-creator-references-container">
                 <div class="resume-creator-add-item">
-                  <input type="text" id="reference-name" placeholder="Reference Name" class="resume-creator-input" required />
-                  <input type="text" id="reference-contact" placeholder="Contact Information" class="resume-creator-input" required />
+                  <input type="text" id="reference-name" placeholder="Reference Name" class="resume-creator-input" />
+                  <input type="text" id="reference-contact" placeholder="Contact Information" class="resume-creator-input"  />
                   <span class="resume-creator-add-icon" onclick="addReference()">+</span>
                 </div>
                 <ul class="resume-creator-references-list" id="references-list"></ul>
@@ -876,8 +876,31 @@
       
     </script>
 
-    <script>
+<script>
+      function validateForm() {
+        let requiredFields = document.querySelectorAll(".resume-creator-input[required], .resume-creator-textarea[required]");
+        let isValid = true;
+      
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            isValid = false;
+            field.style.border = "2px solid red"; // Highlight empty fields
+          } else {
+            field.style.border = "1px solid #ccc"; // Reset border if filled
+          }
+        });
+      
+        if (!isValid) {
+          alert("Please fill all the required (*) fields before downloading.");
+          return false;
+        }
+        return true;
+      }
+
       function generatePDF() {
+        if (!validateForm()) {
+      return;
+    }
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
       
@@ -984,6 +1007,7 @@
         window.location.href = 'index.html';
       });    
     </script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
   </body>
 </html>
